@@ -6,3 +6,5 @@ QEDm_012: Currently QEDm does not constrain the FHIR Resources. This has been de
 US-Core github is https://github.com/HL7/US-Core-R4
 
 See a blog Rene wrote on concerns with QEDm http://www.ringholm.com/column/Context_issues_with_IHE_QED.htm
+
+.
