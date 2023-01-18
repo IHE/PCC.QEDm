@@ -71,9 +71,12 @@ pages:
   other.md:
     title: Changes to Other Profiles
     generation: markdown
+  downloads.md:
+    title: Downloads and Analysis
+    generation: markdown
     
 menu:
-  FooBar Home: index.html
+  QEDm Home: index.html
   Volume 1:
     Introduction: volume-1.html
     Actors and Transactions: volume-1.html#actors-and-transactions
@@ -84,6 +87,8 @@ menu:
     Cross-Profile Considerations: volume-1.html#other-grouping
   Volume 2:
     "Mobile Query Existing Data [PCC-44]": PCC-44.html
-  Test Plan: testplan.html
   Artifacts: artifacts.html
-  Other: other.html
+  Other: 
+    Changes to Other profiles: other.html
+    Test Plan: testplan.html
+    Downloads: downloads.html

@@ -23,22 +23,14 @@ This guide is organized into the following sections:
    1. [Cross Profile Considerations](volume-1.html#other-grouping)
 
 2. Volume 2: Transaction Detail
-   1. [FooBar do \[domain-YY\]](domain-YY.html)
-
-3. Volume 3: Metadata and Content
-  - **TODO: point to your content profiles if you have them**
-
-4. Volume 4: National Extensions
-  - **TODO: point at your national extensions if you have them**
+   1. [Mobile Query for Existing Data \[PCC-44\]](PCC-44.html)
 
 5. Test Plan
   - [Test Plan](testplan.html)
-    - **TODO: point to your appendix if you have them**
+
 6. Other
   - [Changes to Other Profiles](other.html)
-    - **TODO: Actor and transaction definitions, new glossary terms.**
-    - **TODO: Any changes needed to other specifications.**
-
+  - [Downloads and Analysis](downloads.html)
 
 See also the [Table of Contents](toc.html) and
 the index of [Artifacts](artifacts.html) defined as part of this implementation guide.
@@ -55,28 +47,3 @@ mustSupport of true - only has a meaning on items that are minimal cardinality o
 The consuming actors should handle these elements being populated or being absent/empty. 
 Note that sometimes mustSupport will appear on elements with a minimal cardinality greater than zero (0), this is due to inheritance from a less constrained profile.
 
-### Download 
-
-You can also download:
-
-* [this entire guide](full-ig.zip),
-* the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), [ttl](definitions.ttl.zip), or [csv](csvs.zip) format, or
-* the example resources in [json](examples.json.zip), [xml](examples.xml.zip) or [ttl](examples.ttl.zip) format.
-
-The source code for this Implementation Guide can be found on **TODO: Put your github repo here**
-
-#### Cross Version Analysis
-
-{% include cross-version-analysis.xhtml %}
-
-#### Dependency Table
-
-{% include dependency-table.xhtml %}
-
-#### Globals Table
-
-{% include globals-table.xhtml %}
-
-#### IP Statements
-
-{% include ip-statements.xhtml %}

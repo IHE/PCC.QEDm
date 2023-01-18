@@ -1,4 +1,4 @@
-This section corresponds to transaction [ITI-Y] of the IHE Technical Framework. Transaction [ITI-Y] is used by the Client and Server Actors. The go [ITI-Y] transaction is used to query and get back results.
+This section corresponds to transaction [PCC-44] of the IHE Technical Framework. Transaction [ITI-Y] is used by the Client and Server Actors. The go [ITI-Y] transaction is used to query and get back results.
 
 ### Scope
 
@@ -60,8 +60,8 @@ This message uses the HTTP GET method on the target Server endpoint to convey th
 ### CapabilityStatement Resource
 
 Server implementing this transaction shall provide a CapabilityStatement Resource as described in ITI TF-2x: Appendix Z.3 indicating the transaction has been implemented. 
-* Requirements CapabilityStatement for [Client](CapabilityStatement-IHE.FooBar.client.html)
-* Requirements CapabilityStatement for [Server](CapabilityStatement-IHE.FooBar.server.html)
+* Requirements CapabilityStatement for [Client](CapabilityStatement-IHE.QEDm.client.html)
+* Requirements CapabilityStatement for [Server](CapabilityStatement-IHE.QEDm.server.html)
 
 ### Security Considerations
 
