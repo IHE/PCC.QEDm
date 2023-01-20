@@ -1,7 +1,44 @@
 
-**This Implementation Guide template includes skeleton pages for each part of an IHE supplement. The instructions for how to fill out these sections can be found in the included [Supplement Template](https://github.com/IHE/supplement-template/blob/master/suppl_template.md). This supplement template should not be included in your github repo or publication. It is included here for easy reference.**
+The Query for Existing Data for Mobile Profile (QEDm) supports dynamic
+queries for clinical data elements, including observations, allergy and
+intolerances, problems, diagnostic results, medications, immunizations,
+procedures, encounters and provenance by making the information widely
+available to other systems within and across enterprises to support
+provision of better clinical care. It defines a transaction used to
+query a list of specific data elements, persisted as FHIR resources.
 
-**TODO: Write your executive overview here. Usually a one paragraph explanation of what problem this implementation guide solves.**
+QEDm is functionally equivalent to the QED Profile (based on HL7v3), but
+QEDm is better suited for implementation by application on mobile
+devices or where the http/REST technology is preferred. The term
+“mobile” must be understood in a wide sense: it refers not only to
+applications on devices used for mobility that are resource- and
+platform-constrained. (e.g., tablets, smartphones, and embedded devices
+including home-health devices), but also to larger systems deployed in
+environments where interoperability requirements are simple, such as
+pulling the latest summary for display.
+
+The Query for Existing Data for Mobile (QEDm) Profile defines a
+standardized interface to health (HTTP-based RESTful APIs) suited for
+deployment of mobile applications on resource-constrained devices with
+simple programming environment (e.g., JavaScript), simple protocol stack
+(e.g., HTTP), and simple display functionality (e.g., HTML browser). The
+goal is to limit required additional libraries that are often necessary
+to process SOAP, MIME-Multipart, MTOM/XOP Web Services.
+
+The Query for Existing Data for Mobile Profile (QEDm) Profile, uses the
+already defined actors Clinical Data Consumer and Clinical Data Source,
+for which it specifies option and a transaction to be used for querying
+a list of specific data elements, persisted as FHIR resources. The
+current version of Supplement doesn’t consider the reconciliation of the
+fine-grained data elements gathered by the Clinical Data Source and/or
+Clinical Data Consumer Actors. In order to perform reconciliation a
+grouping with RECON Reconciliation Agent should be considered.
+
+The QEDm Profile may also be deployed in conjunction with document
+sharing profiles such as MHD or XDS Profiles. The Document Provenance
+Option in QEDm is used in particular by the mXDE Profile to address the
+combined deployment of QEDm for access to fine-grained data element with
+links to source documents accessible through the MHD or XDS Profiles
 
 <div markdown="1" class="stu-note">
 
@@ -13,7 +50,7 @@
 ### Organization of This Guide
 This guide is organized into the following sections:
 
-1. Volume 1:
+1. Volume 1: Profiles
    1. [Introduction](volume-1.html)
    1. [Actors and Transactions](volume-1.html#actors-and-transactions)
    1. [Actor Options](volume-1.html#actor-options)
@@ -29,11 +66,10 @@ This guide is organized into the following sections:
   - [Test Plan](testplan.html)
 
 6. Other
-  - [Changes to Other Profiles](other.html)
+  - [Changes to Other Documents](other.html)
   - [Downloads and Analysis](downloads.html)
 
-See also the [Table of Contents](toc.html) and
-the index of [Artifacts](artifacts.html) defined as part of this implementation guide.
+See also the [Table of Contents](toc.html) and the index of [Artifacts](artifacts.html) defined as part of this implementation guide.
 
 ### Conformance Expectations
 
