@@ -62,12 +62,11 @@ This guide is organized into the following sections:
 2. Volume 2: Transaction Detail
    1. [Mobile Query for Existing Data \[PCC-44\]](PCC-44.html)
 
-5. Test Plan
-  - [Test Plan](testplan.html)
+5. [Test Plan](testplan.html)
 
 6. Other
-  - [Changes to Other Documents](other.html)
-  - [Downloads and Analysis](downloads.html)
+   1. [Changes to Other Documents](other.html)
+   2. [Downloads and Analysis](downloads.html)
 
 See also the [Table of Contents](toc.html) and the index of [Artifacts](artifacts.html) defined as part of this implementation guide.
 
