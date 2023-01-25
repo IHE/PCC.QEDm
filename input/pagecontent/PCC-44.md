@@ -25,11 +25,11 @@ and codes that should be considered.
 ### 2:3.44.3 Referenced Standards
 
 - HL7 FHIR - [FHIR standard Release 4:] (http://www.hl7.org/fhir/R4/index.html)
-- IETF RFC2616 - Hypertext Transfer Protocol – HTTP/1.1
-- IETF RFC7540 - Hypertext Transfer Protocol – HTTP/2
-- IETF RFC3986 - Uniform Resource Identifier (URI): Generic Syntax
-- IETF RFC4627 - The application/json Media Type for JavaScript Object Notation (JSON)
-- IETF RFC6585 - Additional HTTP Status Codes
+- IETF RFC2616: Hypertext Transfer Protocol – HTTP/1.1
+- IETF RFC7540: Hypertext Transfer Protocol – HTTP/2
+- IETF RFC3986: Uniform Resource Identifier (URI): Generic Syntax
+- IETF RFC4627: The application/json Media Type for JavaScript Object Notation (JSON)
+- IETF RFC6585: Additional HTTP Status Codes
 
 ### 2:3.44.4 Messages
 
