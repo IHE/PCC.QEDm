@@ -99,7 +99,8 @@ Options that may be selected for each actor in this profile, if any, are
 listed in the Table 1:X.2-1. Dependencies between options when applicable
 are specified in notes.
 
-**Table 1:X.2-1: QEDm - Actors and Options
+**Table 1:X.2-1: QEDm - Actors and Options**
+
 <table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
@@ -132,7 +133,7 @@ are specified in notes.
 </tr>
 <tr class="even">
 <td>Immunizations (Note 1)</td>
-<td>Section 1:X.2.1.6/td>
+<td>Section 1:X.2.1.6</td>
 </tr>
 <tr class="odd">
 <td>Procedures (Note 1)</td>
