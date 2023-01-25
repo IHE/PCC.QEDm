@@ -9,7 +9,7 @@ Explain
 - blah
 - blah
 """
-* url = "https://profiles.ihe.net/Domain/Profile/CapabilityStatement/IHE.QEDm.client"
+* url = "https://profiles.ihe.net/PCC/QEDm/CapabilityStatement/IHE.QEDm.client"
 * name = "IHE_QEDm_client"
 * title = "IHE QEDm client"
 * status = #active
@@ -102,7 +102,7 @@ Explain
 - blah
 - blah
 """
-* url = "https://profiles.ihe.net/Domain/Profile/CapabilityStatement/IHE.QEDm.server"
+* url = "https://profiles.ihe.net/PCC/QEDm/CapabilityStatement/IHE.QEDm.server"
 * name = "IHE_QEDm_supplier"
 * title = "IHE QEDm Server"
 * status = #active

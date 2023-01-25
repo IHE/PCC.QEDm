@@ -4,9 +4,9 @@ hide footbox
 participant "Client" as Client
 participant "Server" as Server
 activate "Client"
-"Client" -> "Server" : 1. Go Query [domain-YY]
+"Client" -> "Server" : 1. Go Query [PCC-44]
 activate "Server"
-"Server" --> "Client" : 2. Go Response [domain-YY]
+"Server" --> "Client" : 2. Go Response [PCC-44]
 deactivate "Client"
 deactivate "Server"
 @enduml

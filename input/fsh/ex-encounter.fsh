@@ -1,4 +1,4 @@
-Instance:   example
+Instance:   ex-encounter
 InstanceOf: Encounter
 Title: "Example Encounter"
 Description:      "holding typical values"
