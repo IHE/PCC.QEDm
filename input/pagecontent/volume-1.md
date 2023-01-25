@@ -334,7 +334,7 @@ A Clinical Data Source that implements the Document Provenance Option
 responds to the message semantics specified for Provenance in \[PCC-44\]
 in PCC TF-2: 3.44.4.1.2.1.9.
 
-#### 1:X.2.2.10 Occupational Data for Health Option 
+#### 1:X.2.2.10 Occupational Data for Health Option
 
 A Clinical Data Source that implements the Occupational Data for Health
 Option responds to the message semantics specified for Occupational Data
@@ -343,12 +343,15 @@ content specified in the Reference link location.
 
 ## 1:X.3 QEDm Required Actor Groupings
 
-**Table 1:X.3-1: QED for Mobile - Required Actor Groupings**
+<a name="required-groupings"> </a>
+
+**Table 1:X.3-1: QEDm - Required Actor Groupings**
 
 | QEDm Actor             | Actor to be grouped with | Reference |
 |------------------------|--------------------------|-----------|
 | Clinical Data Consumer | None                     | \-        |
 | Clinical Data Source   | None                     | \-        |
+{:.grid .table-striped}
 
 ## 1:X.4 QEDm Overview
 
