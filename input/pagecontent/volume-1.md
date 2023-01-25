@@ -78,7 +78,7 @@ The Clinical Data Source in this profile responds to FHIR-based queries
 for one or more fine-grained data elements (FHIR resources) defined by
 the options listed in Section X.2.
 
-FHIR Capability Statement for [Client]{CapabilityStatement-IHE.QEDm.client.html}
+FHIR Capability Statement for [Client](CapabilityStatement-IHE.QEDm.client.html)
 
 #### 1:X.1.1.2 Clinical Data Consumer
 
