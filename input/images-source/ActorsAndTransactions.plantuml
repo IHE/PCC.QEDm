@@ -1,5 +1,5 @@
 @startuml
 agent "Clinical Data Consumer" as Client
 agent "Clinical Data Source" as Server
-Client -- Server : "Mobile Query Exisitng Data [PCC-44] ↓"
+Client -- Server : "Mobile Query Existing Data [PCC-44] ↓"
 @enduml
