@@ -53,9 +53,6 @@ the relevant transaction between them.
 </div>
 <br clear="all">
 
-<div>
-<img alt="QEDm Actor Diagram" src="qedm_x11.png" width="100%">
-</div>
 **Figure: 1:X.1-1: QEDm Actor Diagram**
 
 Table 1:X.1-1 lists the transactions for each actor directly involved in
@@ -69,7 +66,7 @@ optional transactions (labeled “O”).
 |------------------------|----------------------------------------|----------------|---------------------------|
 | Clinical Data Source   | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3               |
 | Clinical Data Consumer | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3.              |
-{: .grid}
+{:.grid .table-striped}
 
 ### 1:X.1.1 Actor Descriptions and Actor Profile Requirements
 
@@ -384,119 +381,124 @@ parameterized queries that result in a list of returned data elements.
 
 **Figure 1:X.4.2.1.2-1: Use Case \#1 Process Flow in QEDm Profile**
 
-If process flow “swimlane” diagrams require additional explanation
-to clarify conditional flows, or flow variations need to be described
-where alternate systems may be playing different actor roles, document
-those conditional flows here.
+#### 1:X.4.2.2 Use Case \#2: Discovery and Retrieval of Existing Data Elements with Source Document Links
+
+##### 1:X.4.2.2.1 Discovery and Retrieval of Existing Data Elements with Source Document Links Description
+
+In this use case, the physician, by using a mobile device, needs to
+access all existing data elements and eventually to retrieve and consume
+the source documents, if any.
+
+For example, a mobile application involved in a workflow needs to
+discover all Encounters which the patient has participated in and, for
+those of interest, it needs to retrieve and show the related document
+where the Encounter was originally specified.
+
+##### 1:X.4.2.2.2 Discovery and Retrieval of Existing Data Elements with Source Document Links Process Flow
+
+The Mobile Query Existing Data \[PCC-44\] transaction is used to provide
+parameterized queries that result in a list of returned data elements.
+One of the query options specifies that provenance information must be
+included in the result to obtain the links to source documents, if any.
+
+The mobile application implements The Clinical Data Consumer to perform
+the query.
+
+The mobile application also implements an MHD Document Consumer and
+retrieves the document from the MHD Document Responder by using the
+related returned document link.
+
+<div>
+<img alt="Use Case #2 Process Flow Diagram" src="qedm_x42221.png" width="100%">
+</div>
+
+**Figure 1:X.4.2.2.2-1: Use Case \#2 Process Flow in QEDm Profile**
 
 
-## XX.5 QEDm Security Considerations <a name="security-considerations"> </a>
+## 1:X.5 QEDm Security Considerations
 
-See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
+<a name="security-considerations"> </a>
 
-The following is instructions to the editor and this text is not to be included in a publication. 
-The material initially from [RFC 3552 "Security Considerations Guidelines" July 2003](https://tools.ietf.org/html/rfc3552).
+See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
 
-This section should address downstream design considerations, specifically for: Privacy, Security, and Safety. These might need to be individual header sections if they are significant or need to be referenced.
+The QEDm Profile provides an API for accessing Data Element level
+details that are identifiable to a specific Patient. Thus, all the data
+communicated, including the query parameters, should be considered
+Patient Identifiable data. The grouping with IUA, or some similar User
+Authentication and Authorization solution, is critical to enforcing
+Privacy and Security. All accesses to this data should be recorded as
+audit log for security surveillance and Privacy reporting. These topics
+are discussed in Appendix Z.8 with recommendations.
 
-The editor needs to understand Security and Privacy fundamentals. 
-General [Security and Privacy guidance](http://hl7.org/fhir/secpriv-module.html) is provided in the FHIR Specification. 
-The FHIR core specification should be leveraged where possible to inform the reader of your specification.
+The Document Provenance Option adds an additional protection against
+Data Integrity and Data Authenticity risks. The Provenance record
+associated with a Data Element returned by the Clinical Data Source
+would indicate the source of the data. In the case where Provenance is
+specific to a Document, grouping with MHD Document Consumer or XDS
+Document Consumer enables the retrieval of that source Document. The
+mXDE Profile ITI TF-1:45.5 Security Considerations includes further
+discussion on the specific Security Considerations of bridging between a
+Document Sharing environment and a Data Element access model.
 
-IHE FHIR based profiles should reference the [ITI Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html) section 8 Mobile Security and Privacy Considerations base when appropriate.
+## 1:X.6 QEDm Cross-Profile Considerations
 
-IHE Document Content profiles can reference the security and privacy provided by the Document Sharing infrastructure as directly grouped or possibly to be grouped.
+<a name="other-grouping"> </a>
 
-   While it is not a requirement that any given specification or system be
-   immune to all forms of attack, it is still necessary for authors of specifications to
-   consider as many forms as possible.  Part of the purpose of the
-   Security and Privacy Considerations section is to explain what attacks have been 
-   considered and what countermeasures can be applied to defend against them.
-   
-   There should be a clear description of the kinds of threats on the
-   described specification.  This should be approached as an
-   effort to perform "due diligence" in describing all known or
-   foreseeable risks and threats to potential implementers and users.
+**ITI mXDE – Mobile Cross-Enterprise Document Data Element Extraction**
 
-Authors MUST describe:
-* which attacks have been considered and addressed in the specification
-* which attacks have been considered but not addressed in the specification
-* what could be done in system design, system deployment, or user training
+A Clinical Data Source may be grouped with a Data Element Extractor
+which requires the addition of necessary provenance information to
+ensure consistency within each returned data element.
 
+This grouping allows the extraction of data elements and the addition of
+references to data origins (e.g., Documents) used in generating the
+result.
 
-   At least the following forms of attack MUST be considered:
-   eavesdropping, replay, message insertion, deletion, modification, and
-   man-in-the-middle.  Potential denial of service attacks MUST be
-   identified as well.  If the specification incorporates cryptographic
-   protection mechanisms, it should be clearly indicated which portions
-   of the data are protected and what the protections are (i.e.,
-   integrity only, confidentiality, and/or endpoint authentication,
-   etc.).  Some indication should also be given to what sorts of attacks
-   the cryptographic protection is susceptible.  Data which should be
-   held secret (keying material, random seeds, etc.) should be clearly
-   labeled.
+A Clinical Data Consumer may be grouped with a Data Element Provenance
+Consumer to extract the identifiers (provenance information) that
+consistently link the returned data elements to the related data origin.
 
-   If the specification involves authentication, particularly user-host
-   authentication, the security of the authentication method MUST be
-   clearly specified.  That is, authors MUST document the assumptions
-   that the security of this authentication method is predicated upon.
+**ITI PIX - Patient Identity Cross Referencing and ITI PDQ - Patient Demographics Query**
 
-   The threat environment addressed by the Security and Privacy Considerations
-   section MUST at a minimum include deployment across the global
-   Internet across multiple administrative boundaries without assuming
-   that firewalls are in place, even if only to provide justification
-   for why such consideration is out of scope for the protocol.  It is
-   not acceptable to only discuss threats applicable to LANs and ignore
-   the broader threat environment.  In
-   some cases, there might be an Applicability Statement discouraging
-   use of a technology or protocol in a particular environment.
-   Nonetheless, the security issues of broader deployment should be
-   discussed in the document.
+A Clinical Data Consumer may be grouped with a Patient Identifier
+Cross-reference Consumer or a Patient Demographics Consumer to resolve
+patient identifiers prior to submitting queries to a Clinical Data
+Source.
 
-   There should be a clear description of the residual risk to the user
-   or operator of that specification after threat mitigation has been
-   deployed.  Such risks might arise from compromise in a related
-   specification (e.g., IPsec is useless if key management has been
-   compromised), from incorrect implementation, compromise of the
-   security technology used for risk reduction (e.g., a cipher with a
-   40-bit key), or there might be risks that are not addressed by the
-   specification (e.g., denial of service attacks on an
-   underlying link protocol).  Particular care should be taken in
-   situations where the compromise of a single system would compromise
-   an entire protocol.  For instance, in general specification designers
-   assume that end-systems are inviolate and don't worry about physical
-   attack.  However, in cases (such as a certificate authority) where
-   compromise of a single system could lead to widespread compromises,
-   it is appropriate to consider systems and physical security as well.
+Within an enterprise, the need to cross-reference patient identifiers
+may not be necessary. However, once enterprise boundaries are crossed,
+these identifiers will need to be resolved. In that case profiles such
+as PIX, PIXm, PDQ and/or PDQm may be used.
 
-   There should also be some discussion of potential security risks
-   arising from potential misapplications of the specification or technology
-   described in the specification.  
-  
-This section also include specific considerations regarding Digital Signatures, Provenance, Audit Logging, and De-Identification.
+**ITI MHD – Mobile Health Documents**
 
-Where audit logging is specified, a StructureDefinition profile(s) should be included, and Examples of those logs might be included.
+A Clinical Data Source may be grouped with an MHD Document Responder.
+Data gathered from clinical documents submitted to the Document
+Responder can be a source of information returned by the Clinical Data
+Source. It may include references to documents used in generating the
+QEDm returned data-elements, by using the FHIR Provenance Resource.
 
-## XX.6 QEDm Cross-Profile Considerations <a name="other-grouping"> </a>
+A Clinical Data Consumer may be grouped with an MHD Document Consumer.
+The Clinical Data Consumer may use the references to access the source
+documents.
 
-This section is informative, not normative. It is intended to put
-this profile in context with other profiles. Any required groupings
-should have already been described above. Brief descriptions can go
-directly into this section; lengthy descriptions should go into an
-appendix. Examples of this material include ITI Cross Community Access
-(XCA) Grouping Rules (Section 18.2.3), the Radiology associated profiles
-listed at wiki.ihe.net, or ITI Volume 1 Appendix E “Cross Profile
-Considerations”, and the “See Also” sections Radiology Profile
-descriptions on the wiki such as
-<http://wiki.ihe.net/index.php/Scheduled_Workflow#See_Also>. If this
-section is left blank, add “Not applicable.”
+**ITI XDS - Cross-Enterprise Document Sharing**
 
-Consider using a format such as the following:
+A Clinical Data Source may be grouped with an XDS Document Repository.
+Data gathered from clinical documents submitted to the Document
+Repository can be a source of information returned by the Clinical Data
+Source. Information returned by the Clinical Data Source may include
+references to all documents used in generating the results, by using the
+FHIR Provenance Resource.
 
-other profile acronym - other profile name
+**Content Integration Profiles**
 
-A other profile actor name in other profile name might
-be grouped with a this profile actor name to describe
-benefit/what is accomplished by grouping.
+A Content Creator may be grouped with a Clinical Data Consumer to obtain
+some or all of the information necessary to create a Medical Summary
+based on information found in a Clinical Data Source.
 
+A Content Creator may be grouped with a Clinical Data Source. When
+grouped with a Content Creator, the Clinical Data Source shall respond
+to queries containing the relevant vocabulary codes used by the Content
+Creator.
 
