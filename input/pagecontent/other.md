@@ -1,5 +1,5 @@
 <div markdown="1" class="stu-note">
-This section modifies other IHE profiles or the General Introduction appendices and is not a part of the xxx Profile. The content here will be incorporated into the target narrative at a future time, usually when xxx Profile goes normative.
+This section modifies other IHE profiles or the General Introduction appendices and is not a part of the Query for Existing Data for Mobile (QEDm) Profile. The content here will be incorporated into the target narrative at a future time, usually when QEDm Profile goes normative.
 </div>
 
 ## IHE Technical Frameworks General Introduction Appendix A: Actors
@@ -24,7 +24,7 @@ This section modifies other IHE profiles or the General Introduction appendices 
 
 | Transaction                    | Definition                                                                              |
 | ------------------------------ | --------------------------------------------------------------------------------------- |
-| none |  |
+| Mobile Query for Existing Data [PCC-44] | This transaction uses RESTful API to query clinical data elements and retrieve them as sets of FHIR resources. |
 {:.grid .table-striped}
 
 ## IHE Technical Frameworks General Introduction Appendix D: Glossary
