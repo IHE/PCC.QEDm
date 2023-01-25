@@ -1,104 +1,166 @@
 
-# 1:XX Profile name
+The Query for Existing Data for Mobile (QEDm) Profile supports dynamic
+queries for clinical data elements, including observations, allergy and
+intolerances, problems, diagnostic results, medications, immunizations,
+procedures, encounters and provenance by making the information widely
+available to other systems within and across enterprises to support
+provision of better clinical care. It defines a transaction used to
+query a list of specific data elements, persisted as FHIR resources.
 
-**TODO: Provide an end-user friendly overview of what the profile does for them. Keep it brief (a paragraph or two, up to a page). If extensive detail is needed, it should be included in Section XX.4- Use Cases.**
+QEDm is functionally equivalent to the QED Profile (based on HL7v3), but
+QEDm is better suited for implementation by application on mobile
+devices or where the http/REST technology is preferred. The term
+“mobile” must be understood in a wide sense: it refers not only to
+applications on devices used for mobility that are resource- and
+platform-constrained. (e.g., tablets, smartphones, and embedded devices
+including home-health devices), but also to larger systems deployed in
+environments where interoperability requirements are simple, such as
+pulling the latest summary for display.
 
-**TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/). **
+The QEDm Profile defines a standardized interface to health (HTTP-based RESTful APIs) suited for
+deployment of mobile applications on resource-constrained devices with
+simple programming environment (e.g., JavaScript), simple protocol stack
+(e.g., HTTP), and simple display functionality (e.g., HTML browser). The
+goal is to limit required additional libraries that are often necessary
+to process SOAP, MIME-Multipart, MTOM/XOP Web Services.
 
-## 1:X.1 QEDm Actors, Transactions, and Content Modules <a name="actors-and-transactions"> </a>
+The QEDm Profile uses the already defined actors Clinical Data Consumer and Clinical Data Source,
+for which it specifies option and a transaction to be used for querying
+a list of specific data elements, persisted as FHIR resources. The
+current version of Supplement doesn’t consider the reconciliation of the
+fine-grained data elements gathered by the Clinical Data Source and/or
+Clinical Data Consumer Actors. In order to perform reconciliation a
+grouping with RECON Reconciliation Agent should be considered.
 
-* Actors
+The QEDm Profile may also be deployed in conjunction with document
+sharing profiles such as MHD or XDS Profiles. The Document Provenance
+Option in QEDm is used in particular by the mXDE Profile to address the
+combined deployment of QEDm for access to fine-grained data element with
+links to source documents accessible through the MHD or XDS Profiles.
 
-  - [Client](#client)
+## 1:X.1 QEDm Actors, Transactions, and Content Modules
 
-  - [Server](#server)
+<a name="actors-and-transactions"> </a>
 
-* Transactions
+This section defines the actors, transactions, and/or content modules in
+this implementation guide. Further information about actor and transaction definitions can be found in the IHE Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
 
-  - [PCC-44](PCC-44.html)
-
-Actors and transactions are used to achieve this use-case...
-
-<div>
-{%include usecase1-processflow.svg%}
-</div>
-<br clear="all">
-
-**Figure: Use Case 1 Process Flow**
-
-This section defines the actors and transactions in this implementation guide.
-
-Figure below shows the actors directly
-involved in the QEDm 
-Profile and the relevant transactions between them.
+Figure X.1-1 shows the actors directly involved in the QEDm Profile and
+the relevant transaction between them.
 
 <div>
 {%include ActorsAndTransactions.svg%}
 </div>
 <br clear="all">
 
-**Figure: QEDm Actor Diagram**
+<div>
+<img alt="QEDm Actor Diagram" src="qedm_x11.png" width="100%">
+</div>
+**Figure: 1:X.1-1: QEDm Actor Diagram**
 
-Table XX.1-1: Profile Acronym Profile - Actors and Transactions
+Table 1:X.1-1 lists the transactions for each actor directly involved in
+the QEDm Profile. To claim compliance with this profile, an actor shall
+support all required transactions (labeled “R”) and may support the
+optional transactions (labeled “O”).
 
-|         |               |                        |                 |                                   |
-|---------|---------------|------------------------|-----------------|-----------------------------------|
-| Actors  | Transactions  | Initiator or Responder | Optionality     | Reference                         |
-| Actor A | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-|         | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-| Actor F | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-|         | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-| Actor D | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-| Actor E | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-|         | Transaction 3 |                        | O ( See Note 1) | Domain Acronym TF-2: 3.Y3 |
-|         | Transaction 4 |                        | O ( See Note 1) | Domain Acronym TF-2: 3.Y4 |
-| Actor B | Transaction 3 |                        | R               | Domain Acronym TF-2: 3.Y3 |
-|         | Transaction 4 |                        | O ( See Note 2) | Domain Acronym TF-2: 3.Y4 |
+**Table 1:X.1-1: QEDm Integration Profile - Actors and Transactions**
+
+| Actors                 | Transactions                           | Optionality    | Reference                 |
+|------------------------|----------------------------------------|----------------|---------------------------|
+| Clinical Data Source   | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3               |
+| Clinical Data Consumer | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3.              |
 {: .grid}
 
-Note 1: *For example, a note could specify that at least one of the
-transactions shall be supported by an actor or other variations. For
-example: Note: Either Transaction Y3 or Transaction Y4 shall be
-implemented for Actor E. *
+### 1:X.1.1 Actor Descriptions and Actor Profile Requirements
 
-Note 2: *For example, could specify that Transaction Y4 is required
-if Actor B supports XYZ Option, see Section XX.3.X.*
+#### 1:X.1.1.1 Clinical Data Source
 
-### XX.1.1 Actors
-The actors in this profile are described in more detail in the sections below.
+<a name="client"> </a>
 
-#### XX.1.1.1 Client <a name="client"> </a>
-
-The Client queries for blah meeting certain criteria and may retrieve selected blah.
+The Clinical Data Source in this profile responds to FHIR-based queries
+for one or more fine-grained data elements (FHIR resources) defined by
+the options listed in Section X.2.
 
 FHIR Capability Statement for [Client]{CapabilityStatement-IHE.QEDm.client.html}
 
-#### XX.1.1.2 Server <a name="server"> </a>
+#### 1:X.1.1.2 Clinical Data Consumer
 
-The Sever processes query request from the Client actor.
+Server <a name="server"> </a>
+
+The Clinical Data Consumer in this profile sends FHIR-based queries to the Clinical Data Source for one or more fine-grained data elements (FHIR resources) defined by the options listed in Section X.2. Rendering or further processing of the data is not defined by this profile.
 
 FHIR Capability Statement for [Server](CapabilityStatement-IHE.QEDm.server.html)
 
-### Transaction Descriptions
-The transactions in this profile are summarized in the sections below.
+## 1:X.2 QEDm Actor Options
 
-#### QEDm do transaction
+<a name="actor-options"> </a>
 
-This transaction is used to **do things**
+Options that may be selected for each actor in this profile, if any, are
+listed in the Table 1:X.2-1. Dependencies between options when applicable
+are specified in notes.
 
-For more details see the detailed [transaction description](domain-YY.html)
-
-## XX.2 QEDm Actor Options <a name="actor-options"> </a>
-
-Options that may be selected for each actor in this implementation guide, are listed in Table 3.2-1 below. Dependencies 
-between options when applicable are specified in notes.
-
-|         |             |
-|---------|-------------|
-| Actor   | Option Name |
-| Actor A | Option AB  |
-| Actor B | none |
-{: .grid}
+**Table 1:X.2-1: QEDm - Actors and Options
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
+<thead>
+<tr class="header">
+<th>Actor</th>
+<th>Option Name</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="10">Clinical Data Source</td>
+<td>Simple Observations (Note 1)</td>
+<td>Section 1:X.2.1.1</td>
+</tr>
+<tr class="even">
+<td>Allergies and Intolerances (Note 1)</td>
+<td>Section 1:X.2.1.2</td>
+</tr>
+<tr class="odd">
+<td>Conditions (Note 1)</td>
+<td>Section 1:X.2.1.3</td>
+</tr>
+<tr class="even">
+<td>Diagnostic Results (Note 1)</td>
+<td>Section 1:X.2.1.4</td>
+</tr>
+<tr class="odd">
+<td>Medications (Note 1)</td>
+<td>Section 1:X.2.1.5</td>
+</tr>
+<tr class="even">
+<td>Immunizations (Note 1)</td>
+<td>Section 1:X.2.1.6/td>
+</tr>
+<tr class="odd">
+<td>Procedures (Note 1)</td>
+<td>Section 1:X.2.1.7</td>
+</tr>
+<tr class="even">
+<td>Encounters (Note 1)</td>
+<td>Section 1:X.2.1.8</td>
+</tr>
+<tr class="odd">
+<td>Document Provenance (Note 1)</td>
+<td>Section 1:X.2.1.9</td>
+</tr>
+<tr class="even">
+<td>Occuupational Data for Health (Note 1)</td>
+<td>Section 1:X.2.1.10</td>
+</tr>
+<tr class="odd">
+<td rowspan="10">Clinical Data Consumer</td>
+<td>XDS Document Consumer Integration (Note 2)</td>
+<td>Section 1:45.2.2.1</td>
+</tr>
+<tr class="even">
+<td>MHD Document Consumer Integration (Note 2)</td>
+<td>Section 1:45.2.2.2</td>
+</tr>
+</tbody>
+</table>
 
 #### XX.2.1 AB Option
 
