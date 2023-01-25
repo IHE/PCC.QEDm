@@ -82,7 +82,7 @@ FHIR Capability Statement for [Client]{CapabilityStatement-IHE.QEDm.client.html}
 
 #### 1:X.1.1.2 Clinical Data Consumer
 
-Server <a name="server"> </a>
+<a name="server"> </a>
 
 The Clinical Data Consumer in this profile sends FHIR-based queries to the Clinical Data Source for one or more fine-grained data elements (FHIR resources) defined by the options listed in Section X.2. Rendering or further processing of the data is not defined by this profile.
 
