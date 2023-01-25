@@ -4,15 +4,9 @@ hide footbox
 participant "Clinical Data Consumer" as Client
 participant "Clinical Data Source" as Server
 activate "Client"
-<<<<<<< HEAD
 "Client" -> "Server" : 1. Mobile Query Existing Data Request [PCC-44]
 activate "Server"
 "Server" --> "Client" : 2. Mobile Query Existing Data Response [PCC-44]
-=======
-"Client" -> "Server" : 1. Go Query [PCC-44]
-activate "Server"
-"Server" --> "Client" : 2. Go Response [PCC-44]
->>>>>>> e2e9916fa80654db3ff23d434bc07ca7cb7692dd
 deactivate "Client"
 deactivate "Server"
 @enduml
