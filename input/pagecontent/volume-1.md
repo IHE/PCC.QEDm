@@ -153,362 +153,242 @@ are specified in notes.
 </tr>
 <tr class="odd">
 <td rowspan="10">Clinical Data Consumer</td>
-<td>XDS Document Consumer Integration (Note 2)</td>
-<td>Section 1:45.2.2.1</td>
+<td>Simple Observations (Note 1)</td>
+<td>Section 1:X.2.2.1</td>
 </tr>
 <tr class="even">
-<td>MHD Document Consumer Integration (Note 2)</td>
-<td>Section 1:45.2.2.2</td>
+<td>Allergies and Intolerances (Note 1)</td>
+<td>Section 1:X.2.2.2</td>
+</tr>
+<tr class="odd">
+<td>Conditions (Note 1)</td>
+<td>Section 1:X.2.2.3</td>
+</tr>
+<tr class="even">
+<td>Diagnostic Results (Note 1)</td>
+<td>Section 1:X.2.2.4</td>
+</tr>
+<tr class="odd">
+<td>Medications (Note 1)</td>
+<td>Section 1:X.2.2.5</td>
+</tr>
+<tr class="even">
+<td>Immunizations (Note 1)</td>
+<td>Section 1:X.2.2.6</td>
+</tr>
+<tr class="odd">
+<td>Procedures (Note 1)</td>
+<td>Section 1:X.2.2.7</td>
+</tr>
+<tr class="even">
+<td>Encounters (Note 1)</td>
+<td>Section 1:X.2.2.8</td>
+</tr>
+<tr class="odd">
+<td>Document Provenance (Note 1)</td>
+<td>Section 1:X.2.2.9</td>
+</tr>
+<tr class="even">
+<td>Occuupational Data for Health (Note 1)</td>
+<td>Section 1:X.2.2.10</td>
 </tr>
 </tbody>
 </table>
 
-#### XX.2.1 AB Option
+*Note 1: At least one of these options shall be supported by the related actor.*
 
-**TODO: describe this option and the Volume 1 requirements for this option
+### 1:X.2.1 Clinical Data Consumer Options
 
-## XX.3 QEDm Required Actor Groupings <a name="required-groupings"> </a>
+#### 1:X.2.1.1 Simple Observations Option
 
-*Describe any requirements for actors in this profile to be grouped
-with other actors.*
+A Clinical Data Consumer that implements the Simple Observations Option
+performs the Mobile Query Existing Data transaction using the vocabulary
+specified for Simple Observations in \[PCC-44\] in PCC TF-2:
+3.44.4.1.2.1.1.
 
-*This section specifies all REQUIRED Actor Groupings (although
-“required” sometimes allows for a selection of one of several). To
-SUGGEST other profile groupings or helpful references for other profiles
-to consider, use Section XX.6 Cross Profile Considerations. Use Section
-X.5 for security profile recommendations.*
+#### 1:X.2.1.2 Allergies and Intolerances Option
 
-An actor from this profile (Column 1) shall implement all of the
-required transactions and/or content modules in this profile ***in
-addition to*** ***<u>all</u>*** of the requirements for the grouped
-actor (Column 2) (Column 3 in alternative 2).
+A Clinical Data Consumer that implements the Allergies and Intolerances
+Option performs the Mobile Query Existing Data transaction using the
+vocabulary specified for Allergies and Intolerances in \[PCC-44\] in PCC
+TF-2: 3.44.4.1.2.1.2.
 
-If this is a content profile, and actors from this profile are grouped
-with actors from a workflow or transport profile, the Reference column
-references any specifications for mapping data from the content module
-into data elements from the workflow or transport transactions.
+#### 1:X.2.1.3 Conditions Option
 
-In some cases, required groupings are defined as at least one of an
-enumerated set of possible actors; this is designated by merging column
-one into a single cell spanning multiple potential grouped actors. Notes
-are used to highlight this situation.
+A Clinical Data Consumer that implements the Conditions Option performs
+the Mobile Query Existing Data transaction using the vocabulary
+specified for Conditions in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.3.
 
-Section XX.5 describes some optional groupings that may be of interest
-for security considerations and Section XX.6 describes some optional
-groupings in other related profiles.
+#### 1:X.2.1.4 Diagnostic Results Option
 
-Two alternatives for Table XX.3-1 are presented below.
+A Clinical Data Consumer
+that implements the Diagnostic Results Option performs the Mobile Query
+Existing Data transaction using the vocabulary specified for Diagnostic
+Results in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.4.
 
--   If there are no required groupings for any actor in this profile,
-    use alternative 1 as a template.
+#### 1:X.2.1.5 Medications Option
 
--   If an actor in this profile (with no option), has a required
-    grouping, use alternative 1.
+A Clinical Data Consumer
+that implements the Medications Option performs the Mobile Query
+Existing Data transaction using the vocabulary specified for Medications
+in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.5.
 
--   If any required grouping is associated with an actor/option
-    combination in this profile, use alternative 2.
+#### 1:X.2.1.6 Immunizations Option
 
-alternative 1 Table XX.3-1: Profile Name - Required Actor
-Groupings
+A Clinical Data Consumer
+that implements the Immunizations Option performs the Mobile Query
+Existing Data transaction using the vocabulary specified for
+Immunizations in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.6.
 
-All actors from this profile should be listed in Column 1, even if
-none of the actors has a required groupings. If no required grouping
-exists, “None” should be indicated in Column 2. If an actor in a content
-profile is required to be grouped with an actor in a transport or
-workflow profile, it will be listed **with at least one** required
-grouping. Do not use “XD\*” as an actor name.
+#### 1:X.2.1.7 Procedures Option
 
-In some cases, required groupings are defined as at least one of an
-enumerated set of possible actors; to designate this, create a row for
-each potential actor grouping and merge column one to form a single cell
-containing the profile actor which should be grouped with at least one
-of the actors in the spanned rows. In addition, a note should be
-included to explain the enumerated set. See example below showing
-Document Consumer needing to be grouped with at least one of XDS.b
-Document Consumer, XDR Document Recipient or XDM Portable Media
-Importer
+A Clinical Data Consumer that implements the Procedures Option performs
+the Mobile Query Existing Data transaction using the vocabulary
+specified for Procedures in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.7.
 
-The author should pay special consideration to security profiles in
-this grouping section. Consideration should be given to Consistent Time
-(CT) Client, ATNA Secure Node or Secure Application, as well as other
-profiles. For the sake of clarity and completeness, even if this table
-begins to become long, a line should be added for each actor for each of
-the required grouping for security. Also see the ITI document titled
-‘Cookbook: Preparing the IHE Profile Security Section’ at
-<http://ihe.net/Technical_Frameworks/#IT> for a list of suggested IT and
-security groupings.
+#### 1:X.2.1.8 Encounters Option
 
-<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
-<thead>
-<tr class="header">
-<th>this Profile Acronym Actor</th>
-<th>Actor(s) to be grouped with</th>
-<th>Reference</th>
-<th>Content Bindings Reference</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Actor A</td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p>
-<p><em>e.g., ITI CT / Time Client</em></p></td>
-<td><p><em>TF Reference; typically from Vol 1</em></p>
-<p><em>e.g., ITI-TF-1: 7.1</em></p></td>
-<td>--</td>
-</tr>
-<tr class="even">
-<td>Actor B</td>
-<td>None</td>
-<td>--</td>
-<td>--</td>
-</tr>
-<tr class="odd">
-<td><p>Actor C</p>
-<p><em>In this example, Actor C shall be grouped with all three actors listed in column 2</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td><p>Actor D <em>(See note 1)</em></p>
-<p><em>In this example, the note is used to indicate that the Actor D shall be grouped with one or more of the two actors of the two actors in column 2.</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td><p>Actor E</p>
-<p><em>In rare cases, the actor to be grouped with must implement an option. An example is in column 2.)</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym Actor</em></p>
-<p><em>e.g., ITI RFD Form Filler with the Archive Form Option</em></p></td>
-<td><p><em>TF Reference to the Option definition; typically from Vol 1</em></p>
-<p><em>(e.g., ITI TF-1: 17.3.11)</em></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><em>e.g., Content Consumer (See Note 1)</em></td>
-<td><em>ITI XDS.b / Document Consumer</em></td>
-<td><em>ITI TF-1: 10.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>ITI XDR / Document Recipient</em></td>
-<td><em>ITI TF-1: 15.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>ITI XDM / Portable Media Importer</em></td>
-<td><em>ITI TF-1: 16.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="even">
-<td><em>e.g., Content Consumer</em></td>
-<td><em>ITI CT / Time Client</em></td>
-<td><em>ITI TF-1: 7.1</em></td>
-<td>--</td>
-</tr>
-</tbody>
-</table>
+A Clinical Data Consumer that implements the Encounters Option performs
+the Mobile Query Existing Data transaction using the vocabulary
+specified for Encounters in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.8.
 
-Note 1: *This is a short note. It may be used to describe situations
-where an actor from this profile may be grouped with one of several
-other profiles/actors.*
+#### 1:X.2.1.9 Document Provenance Option
 
-Note 2: *A note could also be used to explain why the grouping is
-required, if that is still not clear from the text above.*
+This option is different than the above options that allow the selection
+of appropriate clinical content to query. It provides a means to extend
+the traceability of information used for clinical decisions: when a data
+element is accessed by a Clinical Data Consumer, identifiers from that
+data element can be retrieved to enable access to one or more documents
+in which this data element was originally recorded, providing a valuable
+broader clinical context.
 
-alternative 2 Table XX.3-1: this Profile Acronym Profile
-- Required Actor Groupings
+A Clinical Data Consumer that implements the Document Provenance Option
+performs the Mobile Query Existing Data transaction using the vocabulary
+specified for Provenance in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.9.
 
-All actors from this profile should be listed in Column 1. If no
-required grouping exists, “None” should be indicated in Column 3. 
+#### 1:X.2.1.10 Occupational Data for Health Option
 
-Guidance on using the “Grouping Condition” column:
+A Clinical Data Consumer that implements the Occupational Data for
+Health Option performs the Mobile Query Existing Data transaction using the vocabulary
+specified for Occupational Data for Health in \[PCC-44\] in PCC TF-2:
+3.44.4.1.2.1.10.
 
--   If an actor has no required grouping, Column 2 should contain “--“.
-    See Actor A below.
+### 1:X.2.2 Clinical Data Source Options
 
--   If an actor has a required grouping that is not associated with a
-    profile option (i.e., it has no condition), column 2 should contain
-    “Required”. See Actor B below.
+#### 1:X.2.2.1 Simple Observations Option
 
--   Sometimes an option requires that an actor in this profile be
-    grouped with an actor in another profile. That condition is
-    specified in Column 2. See Actor C below.
+A Clinical Data Source that implements the Simple Observations Option
+responds to the message semantics specified for Simple Observations in
+\[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.1.
 
-<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
-<tbody>
-<tr class="odd">
-<td>this Profile Acronym Actor</td>
-<td>Grouping Condition</td>
-<td>Actor(s) to be grouped with</td>
-<td>Reference</td>
-</tr>
-<tr class="even">
-<td>Actor A</td>
-<td>--</td>
-<td>None</td>
-<td>--</td>
-</tr>
-<tr class="odd">
-<td>Actor B</td>
-<td>Required</td>
-<td><p><em>external Domain Acronym or blank profile acronym/Actor</em></p>
-<p><em>e.g., ITI CT / Time Client</em></p></td>
-<td><p><em>TF Reference; typically from Vol 1</em></p>
-<p><em>(e.g., ITI TF-1: 7.1)</em></p></td>
-</tr>
-<tr class="even">
-<td>Actor C</td>
-<td>With the <em>Option name in this profile</em> Option</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>Where the Option is defined in this profile Section XX.3 z</em></td>
-</tr>
-<tr class="odd">
-<td><p>Actor D</p>
-<p><em>if an actor has both required and conditional groupings, list the Required grouping first</em></p></td>
-<td>Required</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>If the <em>Option name in this profile</em> Option is supported.</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>If the <em>other Option name in this profile</em> Option is supported.</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="even">
-<td><p>Actor E</p>
-<p><em>(In rare cases, the actor to be grouped with must implement an option, an example is in column 3)</em></p></td>
-<td>Required</td>
-<td><p><em>external Domain Acronym or blank profile acronym/Actor</em> with the <em>option name</em></p>
-<p><em>e.g. ITI RFD Form Filler with the Archive Form Option</em></p></td>
-<td><p><em>TF Reference to the Option definition; typically from Vol 1</em></p>
-<p><em>(eg ITI TF-1:17.3.11)</em></p></td>
-</tr>
-</tbody>
-</table>
+#### 1:X.2.2.2 Allergies and Intolerances Option
 
+A Clinical Data Source that implements the Allergies and Intolerances
+Option responds to the message semantics specified for Allergies and
+Intolerances in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.2.
 
-## XX.4 QEDm Overview <a name="overview"> </a>
+#### 1:X.2.2.3 Conditions Option
 
-This section shows how the transactions/content modules of the profile
-are combined to address the use cases.
+A Clinical Data Consumer that implements the Conditions Option responds
+to the message semantics specified for Conditions in \[PCC-44\] in PCC
+TF-2: 3.44.4.1.2.1.3.
 
-Use cases are informative, not normative, and “SHALL” language is
-not allowed in use cases.
+#### 1:X.2.2.4 Diagnostic Results Option
 
-### XX.4.1 Concepts
+A Clinical Data Source that implements the Diagnostic Results Option
+responds to the message semantics specified for Diagnostic Results in
+\[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.4.
 
-If needed, this section provides an overview of the concepts that
-provide necessary background for understanding the profile. If not
-needed, state “Not applicable.” For an example of why/how this section
-may be needed, please see ITI Cross Enterprise Workflow (XDW).
+#### 1:X.2.2.5 Medications Option
 
-It may be useful in this section but is not necessary, to provide a
-short list of the use cases described below and explain why they are
-different.
+A Clinical Data Source that implements the Medications Option responds
+to the message semantics specified for Medications in \[PCC-44\] in PCC
+TF-2: 3.44.4.1.2.1.5.
 
-### XX.4.2 Use Cases
+#### 1:X.2.2.6 Immunizations Option
 
-#### XX.4.2.1 Use Case \#1: simple name
+A Clinical Data Source that implements the Immunizations Option responds
+to the message semantics specified for Immunizations in \[PCC-44\] in
+PCC TF-2: 3.44.4.1.2.1.6.
 
-One or two sentence simple description of this particular use
-case.
+#### 1:X.2.2.7 Procedures Option
 
-Note that Section XX.4.2.1 repeats in its entirety for additional use
-cases (replicate as Section XX.4.2.2, XX.4.2.3, etc.).
+A Clinical Data Source that implements the Procedures Option responds to
+the message semantics specified for Procedures in \[PCC-44\] in PCC
+TF-2: 3.44.4.1.2.1.7.
 
-##### XX.4.2.1.1 simple name Use Case Description
+#### 1:X.2.2.8 Encounters Option
 
-Describe the key use cases addressed by the profile. Limit to a
-maximum of one page of text or consider an appendix.
+A Clinical Data Source that implements the Encounters Option responds to
+the message semantics specified for Encounters in \[PCC-44\] in PCC
+TF-2: 3.44.4.1.2.1.8.
 
-##### XX.4.2.1.2 simple name Process Flow
+#### 1:X.2.2.9 Document Provenance Option
 
-Diagram and describe the process flow(s) covered by this profile in
-order to satisfy the use cases. Demonstrate how the profile transactions
-are combined/sequenced. To provide context and demonstrate how the
-profile interacts with other profiles, feel free to include transactions
-and events that are “external” to this profile (using appropriate
-notation.)
+This option is different than the above options that allow the selection
+of appropriate clinical content to query. It provides a means to extend
+the traceability of information used for clinical decisions: when a data
+element is accessed by a Clinical Data Consumer, identifiers from that
+data element can be provided to the Clinical Data Consumer to enable
+access to one or more documents in which this data element was
+originally recorded, providing a valuable broader clinical context.
 
-The set of process flows will typically be exemplary, not exhaustive
-(i.e., it will address all the use cases, but will not show all possible
-combinations of actors, or all possible sequencing of transactions).
+A Clinical Data Source that implements the Document Provenance Option
+responds to the message semantics specified for Provenance in \[PCC-44\]
+in PCC TF-2: 3.44.4.1.2.1.9.
 
-If there are detailed behavioral rules that apply to a specific process
-flow or multiple process flows, an appendix may be added as needed.
+#### 1:X.2.2.10 Occupational Data for Health Option 
 
-The roles at the top of the swimlane diagram should correspond to
-actor names, include the profile acronym:actor name if referencing an
-actor from a different profile.
+A Clinical Data Source that implements the Occupational Data for Health
+Option responds to the message semantics specified for Occupational Data
+for Health in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.10 with the profiled
+content specified in the Reference link location.
 
-Modify the following “Swimlane Diagram”.
+## 1:X.3 QEDm Required Actor Groupings
+
+**Table 1:X.3-1: QED for Mobile - Required Actor Groupings**
+
+| QEDm Actor             | Actor to be grouped with | Reference |
+|------------------------|--------------------------|-----------|
+| Clinical Data Consumer | None                     | \-        |
+| Clinical Data Source   | None                     | \-        |
+
+## 1:X.4 QEDm Overview
+
+<a name="overview"> </a>
+
+### 1:X.4.1 Concepts
+
+The QEDm Profile supports a broad set of the QED use cases and
+functionality while keeping the implementation as simple as possible.
+
+### 1:X.4.2 Use Cases
+
+#### 1:X.4.2.1 Use Case \#1: Discovery and Retrieval of Existing Data Elements
+
+##### 1:X.4.2.1.1 Discovery and Retrieval of Existing Data Elements Description
+
+In this use case, the patient, by using a mobile device, needs access to
+existing data elements. For example, a mobile application involved in a workflow needs to
+discover all the current Observations and Medications.
+
+##### 1:X.4.2.1.2 Discovery and Retrieval of Existing Data Elements Process Flow
+
+The Mobile Query Existing Data transaction is used to provide
+parameterized queries that result in a list of returned data elements.
 
 <div>
 {%include usecase1-processflow.svg%}
 </div>
 <br clear="all">
 
-Figure XX.4.2.2-1: Basic Process Flow in Profile Acronym Profile
+**Figure 1:X.4.2.1.2-1: Use Case \#1 Process Flow in QEDm Profile**
 
 If process flow “swimlane” diagrams require additional explanation
 to clarify conditional flows, or flow variations need to be described
 where alternate systems may be playing different actor roles, document
 those conditional flows here.
 
-Delete the material below if this is a workflow or transport
-profile. Delete the material above if this profile is a content module
-only profile.
-
-**Pre-conditions**:
-
-Very briefly (typically one sentence) describe the conditions or
-timing when this content module would be used.
-
-**Main Flow**:
-
-Typically in an enumerated list, describe the clinical workflow
-when, where, and how this content module would be used.
-
-**Post-conditions:**
-
-Very briefly (typically one sentence) describe the state of the
-clinical scenario after this content module has been created including
-examples of potential next steps.
 
 ## XX.5 QEDm Security Considerations <a name="security-considerations"> </a>
 
