@@ -1,5 +1,5 @@
 @startuml
-agent "Client" as Client
-agent "Server" as Server
-Client -- Server : "go [domain-YY] ↓"
+agent "Clinical Data Consumer" as Client
+agent "CLinical Data Source" as Server
+Client -- Server : "Mobile Query Exisitng Data [PCC-44] ↓"
 @enduml
