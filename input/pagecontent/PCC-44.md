@@ -16,15 +16,15 @@ and codes that should be considered.
 
 **Table: Actor Roles**
 
-| Actor             | Role                        |
-|-------------------|-----------------------------|
+| Actor                                 | Role                                              |
+|---------------------------------------|---------------------------------------------------|
 | [Clinical Data Consumer](volume-1.html#client)    | Queries the Clinical Data Source for clinical data content. Clinical content requested by the Clinical Data Consumer depends on query options supported by the consumer. |
 | [Clinical Data Source](volume-1.html#server) | Responds to query, supplying the FHIR Resources representing the clinical data content that match the search criteria provided by the Clinical Data Consumer. |
 {:.grid .table-striped}
 
 ### 2:3.44.3 Referenced Standards
 
-- HL7 FHIR - [FHIR standard Release 4:] (http://www.hl7.org/fhir/R4/index.html)
+- HL7 FHIR: [FHIR standard Release 4](http://www.hl7.org/fhir/R4/index.html)
 - IETF RFC2616: Hypertext Transfer Protocol – HTTP/1.1
 - IETF RFC7540: Hypertext Transfer Protocol – HTTP/2
 - IETF RFC3986: Uniform Resource Identifier (URI): Generic Syntax
@@ -58,20 +58,99 @@ Existing Data message.
 The Clinical Data Consumer executes an HTTP GET against the proper
 Clinical Data Source’s QEDm URL.
 
-The search target follows the FHIR http specification [http://hl7.org/fhir/R4/http.html]
-(http://hl7.org/fhir/R4/http.html), addressing the proper FHIR
+The search target follows the FHIR http specification [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html), addressing the proper FHIR
 Resource type, according to the supported query options (see Section
 2:3.44.4.1.2.1). The syntax of the FHIR query is:
 
+```
 GET \[base\]/\[Resource-type\]{?\[parameters\]}
+```
 
 with the following constraints:
 
-- The \[base\] represents the Service Base URL
+- The `\[base\]` represents the Service Base URL
 
-- The \[Resource-type\] represents the name of the FHIR Resource to consider (each option can involve one or more Resources), as specified in Section 3.44.4.1.2.1
+- The `\[Resource-type\]` represents the name of the FHIR Resource to consider (each option can involve one or more Resources), as specified in Section 3.44.4.1.2.1
 
-- The \[parameters\] represents a series of encoded name-value pairs representing the filter for the query, as specified in Section 3.44.4.1.2.1, as well as control parameters to modify the behavior of the Clinical Data Source such as response format, or pagination. See ITI TF-2x: Appendix Z.6 for more details on response format.
+- The `\[parameters\]` represents a series of encoded name-value pairs representing the filter for the query, as specified in Section 3.44.4.1.2.1, as well as control parameters to modify the behavior of the Clinical Data Source such as response format, or pagination. See ITI TF-2x: Appendix Z.6 for more details on response format.
+
+###### 3.44.4.1.2.1 Query Search Paramters
+
+All query parameter values shall be appropriately encoded per RFC3986
+“percent” encoding rules. Note that percent encoding does restrict the
+character set to a subset of ASCII characters which is used for encoding
+all other characters used in the URL.
+
+The FHIR Resource type or types supported by the Clinical Data Consumer
+and Clinical Data Source are determined by a QEDm named option. An actor
+claiming named option is required to support the FHIR Resource types
+listed below. According to the supported option, the Clinical Data
+Consumer may query and the Clinical Data Source shall be capable of
+responding on the Resource types specified in Table X.3-2 by processing
+all the search parameters defined in the following sections.
+
+The Clinical Data Source may choose to support additional query
+parameters beyond the subset defined by the profiling listed below, if
+done according to the core FHIR specification. Such additional
+parameters are considered out of scope for this transaction. The
+Clinical Data Source may ignore any additional parameter not specified
+in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
+
+**Table 2:3.44.4.1.2.1-1: QEDm Options, FHIR Resources and Query Search Parameters**
+
+
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
+<thead>
+<tr class="header">
+<th>QEDm Actor Option</th>
+<th>FHIR Resource Type</th>
+<th>Reference</th>
+<th>Search Paramters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+| QEDm Actor Option                | FHIR Resource Type           | Reference                                                                                    | Search Parameters           |
+|----------------------------------|------------------------------|----------------------------------------------------------------------------------------------|-----------------------------|
+| **Simple Observations**          | **Observation**              | <http://hl7.org/fhir/R4/observation.html>                                                    | See Section 3.44.4.1.2.1.1  |
+| **Allergies and Intolerances**   | **AllergyIntolerance**       | <http://hl7.org/fhir/R4/allergyintolerance.html>                                             | See Section 3.44.4.1.2.1.2  |
+| **Condition**                    | **Condition (See Note 1)**   | <http://hl7.org/fhir/R4/condition.html>                                                      | See Section 3.44.4.1.2.1.3  |
+| **Diagnostic Results**           | **DiagnosticReport**         | <http://hl7.org/fhir/R4/diagnosticreport.html>                                               | See Section 3.44.4.1.2.1.4  |
+| **Medications**                  | **Medication:**              | <http://hl7.org/fhir/R4/medication.html>                                                     | See Section 3.44.4.1.2.1.5  |
+|                                  | **Medication Statement**     | <http://hl7.org/fhir/R4/medicationstatement.html>                                            |                             |
+|                                  | **Medication Request**       | <http://hl7.org/fhir/R4/medicationrequest.html>                                              |                             |
+| **Immunizations**                | **Immunization**             | <http://hl7.org/fhir/R4/immunization.html>                                                   | See Section 3.44.4.1.2.1.6  |
+| **Procedures**                   | **Procedure**                | <http://hl7.org/fhir/R4/procedure.html>                                                      | See Section 3.44.4.1.2.1.7  |
+| **Encounters**                   | **Encounter**                | <http://hl7.org/fhir/R4/encounter.html>                                                      | See Section 3.44.4.1.2.1.8  |
+| **Provenance**                   | **Provenance**               | <http://hl7.org/fhir/R4/provenance.html>                                                     | See Section 3.44.4.1.2.1.9  |
+| **Occupational Data for Health** | **Observation (See Note 2)** | [CombatZonePeriod](http://hl7.org/fhir/us/odh/StructureDefinition-odh-CombatZonePeriod.html) | See Section 3.44.4.1.2.1.10 |
+|                                  |                              | [EmploymentStatus](http://hl7.org/fhir/us/odh/StructureDefinition-odh-EmploymentStatus.html) |                             |
+|                                  |                              | [PastOrPresentJob](http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html) |                             |
+|                                  |                              | [RetirementDate](http://hl7.org/fhir/us/odh/StructureDefinition-odh-RetirementDate.html)     |                             |
+|                                  |                              | [UsualWork](http://hl7.org/fhir/us/odh/StructureDefinition-odh-UsualWork.html)               |                             |
+
+
+
 
 ##### Expected Actions
 
