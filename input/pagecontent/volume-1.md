@@ -64,8 +64,8 @@ optional transactions (labeled “O”).
 
 | Actors                 | Transactions                           | Optionality    | Reference                 |
 |------------------------|----------------------------------------|----------------|---------------------------|
-| Clinical Data Source   | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3               |
-| Clinical Data Consumer | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3.              |
+| Clinical Data Source   | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3.44            |
+| Clinical Data Consumer | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3.44            |
 {:.grid .table-striped}
 
 ### 1:X.1.1 Actor Descriptions and Actor Profile Requirements
@@ -77,6 +77,7 @@ optional transactions (labeled “O”).
 The Clinical Data Source in this profile responds to FHIR-based queries
 for one or more fine-grained data elements (FHIR resources) defined by
 the options listed in Section X.2.
+
 
 FHIR Capability Statement for [Client](CapabilityStatement-IHE.QEDm.client.html)
 
@@ -422,7 +423,7 @@ related returned document link.
 
 <a name="security-considerations"> </a>
 
-See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
+See ITI TF-2: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations).
 
 The QEDm Profile provides an API for accessing Data Element level
 details that are identifiable to a specific Patient. Thus, all the data
@@ -439,7 +440,8 @@ associated with a Data Element returned by the Clinical Data Source
 would indicate the source of the data. In the case where Provenance is
 specific to a Document, grouping with MHD Document Consumer or XDS
 Document Consumer enables the retrieval of that source Document. The
-mXDE Profile ITI TF-1:45.5 Security Considerations includes further
+mXDE Profile ITI TF-1: 
+45.5 Security Considerations includes further
 discussion on the specific Security Considerations of bridging between a
 Document Sharing environment and a Data Element access model.
 
