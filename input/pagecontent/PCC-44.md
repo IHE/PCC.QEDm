@@ -181,7 +181,8 @@ in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.
 <tr class="odd">
 <td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-EmploymentStatus.html">EmploymentStatus</a></td>
 </tr>
-<tr class="even="http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html">PastOrPresentJob</a></td>
+<tr class="even>
+<td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html">PastOrPresentJob</a></td>
 </tr>
 <tr class="odd">
 <td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-RetirementDate.html">RetirementDate</a></td>
