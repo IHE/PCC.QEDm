@@ -98,7 +98,6 @@ in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.
 
 **Table 2:3.44.4.1.2.1-1: QEDm Options, FHIR Resources and Query Search Parameters**
 
-
 <table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
@@ -139,7 +138,7 @@ in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.
 <td><a href="http://hl7.org/fhir/R4/medication.html">http://hl7.org/fhir/R4/medication.html</a></td>
 <td>See Section 3.44.4.1.2.1.5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Medication Statement</td>
 <td><a href="http://hl7.org/fhir/R4/medicationstatement.html">http://hl7.org/fhir/R4/medicationstatement.html</a></td>
 <td>See Section 3.44.4.1.2.1.5</td>
@@ -182,13 +181,12 @@ in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.
 <tr class="odd">
 <td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-EmploymentStatus.html">EmploymentStatus</a></td>
 </tr>
-<tr class="odd">
-<td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html">PastOrPresentJob</a></td>
+<tr class="even="http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html">PastOrPresentJob</a></td>
 </tr>
 <tr class="odd">
 <td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-RetirementDate.html">RetirementDate</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-UsualWork.html">UsualWork</a></td>
 </tr>
 </tbody>
