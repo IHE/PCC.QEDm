@@ -138,6 +138,7 @@ GET \[base\]/AllergyIntolerance?\[parameters\]
 |------------|-----------|----------------------|------------------------|
 |            |           | Clinical Data Source | Clinical Data Consumer |
 | patient    | reference | R                    | R                      |
+{:.grid .table-striped}
 
 ###### 2:3.44.4.1.2.1.3 Conditions Option Search Parameters 
 
@@ -158,6 +159,7 @@ GET \[base\]/Condition?\[parameters\]
 | patient                   | reference         | R                    | O                                     |
 | patient + category        | reference + token | O                    | O                                     |
 | patient + clinical-status | reference + token | O                    | O                                     |
+{:.grid .table-striped}
 
 *Note 1: The Clinical Data Consumer shall support at least one of the search parameters combinations*
 
@@ -181,6 +183,7 @@ Table 2:3.44.4.1.2.1.4-1: Diagnostic Reposts Option Search Parameters
 | patient + category + code        | reference + token        |                                    | R                    | O                                              |
 | patient + category + date        | reference + token + date | date modifiers ‘ge’,‘le’,’gt’,’lt’ | R                    | O                                              |
 | patient + category + code + date | reference + token + date | date modifiers ‘ge’,‘le’,’gt’,’lt’ | O                    | O                                              |
+{:.grid .table-striped}
 
 *Note 1: The Clinical Data Consumer shall support at least one of the search parameters combinations*
 
@@ -210,6 +213,7 @@ GET \[base\]/MedicationStatement?\[parameters\]
 |------------|-----------|--------------------------------|----------------------|------------------------|
 |            |           |                                | Clinical Data Source | Clinical Data Consumer |
 | patient    | reference | MedicationStatement:medication | R                    | R                      |
+{:.grid .table-striped}
 
 For MedicationRequest:
 
@@ -223,6 +227,7 @@ GET \[base\]/MedicationRequest?\[parameters\]
 |------------|-----------|------------------------------|----------------------|------------------------|
 |            |           |                              | Clinical Data Source | Clinical Data Consumer |
 | patient    | reference | MedicationRequest:medication | R                    | R                      |
+{:.grid .table-striped}
 
 ###### 2:3.44.4.1.2.1.6 Immunizations Option Search Parameters 
 
@@ -239,6 +244,7 @@ GET \[base\]/Immunization?\[parameters\]
 |-----------|-----------|----------------------|------------------------|
 |           |           | Clinical Data Source | Clinical Data Consumer |
 | patient   | reference | R                    | R                      |
+{:.grid .table-striped}
 
 ###### 2:3.44.4.1.2.1.7 Procedures Option Search Parameters 
 
@@ -258,6 +264,7 @@ GET \[base\]/Procedure?\[parameters\]
 |                |                  |                                    | Clinical Data Source | Clinical Data Consumer <sup>(1)</sup> |
 | patient        | reference        |                                    | R                    | O                                     |
 | patient + date | reference + date | date modifiers ‘ge’,‘le’,’gt’,’lt’ | R                    | O                                     |
+{:.grid .table-striped}
 
 *Note 1: The Clinical Data Consumer shall support at least one of the search parameters combinations*
 
@@ -279,6 +286,7 @@ GET \[base\]/Encounter?\[parameters\]
 |                |                  |                                    | Clinical Data Source | Clinical Data Consumer <sup>(1)</sup> |
 | patient        | reference        |                                    | R                    | O                                     |
 | patient + date | reference + date | date modifiers ‘ge’,‘le’,’gt’,’lt’ | R                    | O                                     |
+{:.grid .table-striped}
 
 *Note 1: The Clinical Data Consumer shall support at least one of the search parameters combinations*
 
@@ -428,7 +436,7 @@ OperationOutcome Resource that contains those warnings.
 The response shall adhere to the FHIR Bundle constraints specified in
 ITI TF-2x: Appendix Z.1.
 
-###### 3.44.4.2.2.1 Document Provenance Option
+###### 2:3.44.4.2.2.1 Document Provenance Option
 
 A Clinical Data Source that supports the Document Provenance Option is
 part of a document sharing environment. This enables it to access the
@@ -440,51 +448,35 @@ for every document from which it extracted data elements.
 
 The Clinical Data Source may return Provenance Resources used for other
 purposes than the one defined here. These would not have the indicated
-Provenance.policy for this transaction.
+`Provenance.policy` for this transaction.
 
 The following bullets list the constraints for the FHIR Provenance
 Resource:
 
-- Provenance.target shall be a reference to each of the FHIR Resources extracted from the document referenced by the Provenance.entity element.
+- `Provenance.target` shall be a reference to each of the FHIR Resources extracted from the document referenced by the Provenance.entity element.
 
-- Provenance.policy shall contain the static URI “urn:ihe:pcc:qedm:2017:document-provenance-policy”.
+- `Provenance.policy` shall contain the static URI `“urn:ihe:pcc:qedm:2017:document-provenance-policy”`.
 
-- Provenance.agent shall contain at least one entry \[1..\*\] holding the description of the system that extracted the elements from the document.
+- `Provenance.agent` shall contain at least one entry \[1..\*\] holding the description of the system that extracted the elements from the document.
 
-<!-- -->
+    - `Provenance.agent.type` shall contain “assembler” code in the system “http://terminology.hl7.org/CodeSystem/provenance-participant-type”.
 
--   Provenance.agent.type shall contain “assembler” code in the system
-    “http://terminology.hl7.org/CodeSystem/provenance-participant-type”.
+    - `Provenance.agent.who` shall be a Device Resource identifying the extraction device. This should be by reference to a known Device Resource but may be a contained resource or an identifier.
 
--   Provenance.agent.who shall be a Device Resource identifying the
-    extraction device. This should be by reference to a known Device
-    Resource but may be a contained resource or an identifier.
+- `Provenance.entity` shall contain one element \[1..1\] describing the document from which the elements were extracted.
 
-<!-- -->
+    - `Provenance.entity.role` shall be the code “source”
 
--   Provenance.entity shall contain one element \[1..1\] describing the
-    document from which the elements were extracted.
+    -  `Provenance.entity.what` shall be populated with one or more of the following:
 
-<!-- -->
+        - `Provenance.entity.what.reference` shall be the reference to the DocumentReference Resource as specified in the MHD Profile.
 
--   Provenance.entity.role shall be the code “source”
+        - `Provenance.entity.what.identifier` shall be the reference metadata attributes used to access documents in the XDS Profile:
 
--   Provenance.entity.what shall be populated with one or more of the
-    following:
 
-<!-- -->
+            - The value of `DocumentEntry.repositoryUniqueId` as `.system`
 
--   Provenance.entity.what.reference shall be the reference to the
-    DocumentReference Resource as specified in the MHD Profile.
-
--   Provenance.entity.what.identifier shall be the reference metadata
-    attributes used to access documents in the XDS Profile:
-
-<!-- -->
-
--   The value of DocumentEntry.repositoryUniqueId as .system
-
--   The value of DocumentEntry.uniqueId as .value
+            - The value of `DocumentEntry.uniqueId` as `.value`
 
 A FHIR StructureDefinition can be found in implementation materials; see
 ITI TF-2x: Appendix W for instructions on how to get to the
@@ -492,8 +484,7 @@ implementation materials.
 
 ###### 2:3.44.4.2.2.2 Resource Bundling
 
-Resource Bundling shall comply with the guidelines in ITI TF-2x:
-Appendix Z.1.
+Resource Bundling shall comply with the guidelines in ITI TF-2: Appendix Z.1.
 
 The Clinical Data Source shall include all resources to be returned as a
 contained resource. This means that the query shall return resource data
@@ -517,7 +508,7 @@ resources. The document references enable the Clinical Data Consumer to
 access the documents from which the data elements were extracted.
 
 When a Provenance resource is received with Provenance.policy valued at
-“urn:ihe:pcc:qedm:2017:document-provenance-policy” and Provenance.target
+`“urn:ihe:pcc:qedm:2017:document-provenance-policy”` and `Provenance.target`
 has a reference for the data element(s) for which a document reference
 is sought, the Clinical Data Consumer:
 
@@ -559,33 +550,51 @@ event as defined in ITI TF-2: Table 2:3.20.4.1.1.1-1. The message shall
 comply with the following pattern:
 
 - Event
+
     - EventID = EV(110112, DCM, “Query”)
+
     - EventTypeCode = EV(“PCC-44”, “IHE Transactions”, “Mobile Query Existing Data”)
+
     - EventActionCode = “E” (Execute)
 
 - Source of the request (1..1)
+
     - UserID = The Clinical Data Consumer Actor system identity
+
     - RoleIDCode = EV(110153, DCM, “Source”)
 
 -   Human Requestor (0..n)  one for each know User
-    - UserID = Identity of the human that initiated the transaction.
+
+    - UserID = Identity of the human that initiated the transaction
+
     - RoleIDCode = Access Control role(s) the user holds that allows this transaction
 
 - Destination of the request (1..1)
+
     - Clinical Data Source Actor system identity
+
     - RoleIDCode = EV(110152, DCM, “Destination”)
 
 - Audit Source (1..1)
+
     - not specified
 
 - Patient (1..1)
+
     - ParticipantObjectTypeCode = “1” (Person)
+
     - ParticipantObjectTypeCodeRole = “1” (Patient)
+
     - ParticipantObjectID = The ‘patient’ parameter value
 
 -  Query Parameters (1..1)
+
     - ParticipantObjectTypeCode = “2” (system object)
+
     - ParticipantObjectTypeCode Role = “24” (query)
+
     - ParticipantObjectIDTypeCode = EV(“PCC-44”, “IHE Transactions”, “Mobile Query Existing Data”)
+
     - ParticipantObjectQuery = Requested URL including query parameters, base64 encoded
+
     - ParticipantObjectDetail = HTTP Request Headers contained in the query (e.g., Accept header)
