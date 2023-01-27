@@ -1,6 +1,4 @@
 
-# 4 National Extensions
-
 ## 4.1 National Extensions for IHE United States
 
 ### 4.1.1 Comment Submission
