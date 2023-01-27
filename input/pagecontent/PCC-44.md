@@ -241,7 +241,85 @@ GET \[base\]/Observation?\[parameters\]
 
 **Table 2:3.44.4.1.2.1.1-1: Simple Observations Option Search Parameters**
 
-
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
+<thead>
+<tr class="header">
+<th rowspan="2">Parameters</th>
+<th rowspan="2">Type</th>
+<th rowspan="2">Modifiers</th>
+<th colspan="2">Optionality</th>
+</tr>
+</thead>
+<tr>
+<td>Clinical Data Source</td>
+<td>Clinical Data Consumer (See Note 1)</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td width="144">
+<p>patient + category</p>
+</td>
+<td width="132">
+<p>reference + token</p>
+</td>
+<td width="102">
+<p>R</p>
+</td>
+<td width="102">
+<p>O</p>
+</td>
+</tr>
+<tr>
+<td width="144">
+<p>patient + category + code</p>
+</td>
+<td width="132">
+<p>reference + token</p>
+</td>
+<td width="102">
+<p>R</p>
+</td>
+<td width="102">
+<p>O</p>
+</td>
+</tr>
+<tr>
+<td width="144">
+<p>patient + category + date</p>
+</td>
+<td width="132">
+<p>reference + token + date</p>
+</td>
+<td width="150">
+<p>date modifiers &lsquo;ge&rsquo;,&lsquo;le&rsquo;,&rsquo;gt&rsquo;,&rsquo;lt&rsquo;</p>
+</td>
+<td width="102">
+<p>R</p>
+</td>
+<td width="102">
+<p>O</p>
+</td>
+</tr>
+<tr>
+<td width="144">
+<p>patient + category + code + date</p>
+</td>
+<td width="132">
+<p>reference + token + date</p>
+</td>
+<td width="150">
+<p>date modifiers &lsquo;ge&rsquo;,&lsquo;le&rsquo;,&rsquo;gt&rsquo;,&rsquo;lt&rsquo;</p>
+</td>
+<td width="102">
+<p>O</p>
+</td>
+<td width="102">
+<p>O</p>
+</td>
+</tr>
+</tbody>
+</table>
 
 ##### Expected Actions
 
