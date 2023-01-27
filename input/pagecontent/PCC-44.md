@@ -174,9 +174,9 @@ in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.
 </tr>
 <tr class="even">
 <td rowspan="5">Occupational Data for Health</td>
-<td>rowspan="5">Observation (See Note 2)</td>
+<td rowspan="5">Observation (See Note 2)</td>
 <td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-CombatZonePeriod.html">CombatZonePeriod</a></td>
-<tdrowspan="5">See Section 3.44.4.1.2.1.10</td>
+<td rowspan="5">See Section 3.44.4.1.2.1.10</td>
 </tr>
 <tr class="odd">
 <td><a href="http://hl7.org/fhir/us/odh/StructureDefinition-odh-EmploymentStatus.html">EmploymentStatus</a></td>
@@ -238,7 +238,7 @@ following table, according to the related optionality.
 GET \[base\]/Observation?\[parameters\]
 ```
 
-**Table 2:3.44.4.1.2.1.1-1: Simple Observations Option Search Parameters
+**Table 2:3.44.4.1.2.1.1-1: Simple Observations Option Search Parameters**
 
 
 
