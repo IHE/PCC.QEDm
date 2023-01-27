@@ -204,30 +204,6 @@ designated by a named option.
 See [https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir](ITI TF-2: Appendix Z.10 “Profiling conventions for constraints on
 FHIR) for a description of terms used in the Optionality columns.
 
-
-**TODO Remove extra table below once html table above finalized**
-
-
-| QEDm Actor Option                | FHIR Resource Type           | Reference                                                                                    | Search Parameters           |
-|----------------------------------|------------------------------|----------------------------------------------------------------------------------------------|-----------------------------|
-| **Simple Observations**          | **Observation**              | <http://hl7.org/fhir/R4/observation.html>                                                    | See Section 3.44.4.1.2.1.1  |
-| **Allergies and Intolerances**   | **AllergyIntolerance**       | <http://hl7.org/fhir/R4/allergyintolerance.html>                                             | See Section 3.44.4.1.2.1.2  |
-| **Condition**                    | **Condition (See Note 1)**   | <http://hl7.org/fhir/R4/condition.html>                                                      | See Section 3.44.4.1.2.1.3  |
-| **Diagnostic Results**           | **DiagnosticReport**         | <http://hl7.org/fhir/R4/diagnosticreport.html>                                               | See Section 3.44.4.1.2.1.4  |
-| **Medications**                  | **Medication:**              | <http://hl7.org/fhir/R4/medication.html>                                                     | See Section 3.44.4.1.2.1.5  |
-|                                  | **Medication Statement**     | <http://hl7.org/fhir/R4/medicationstatement.html>                                            |                             |
-|                                  | **Medication Request**       | <http://hl7.org/fhir/R4/medicationrequest.html>                                              |                             |
-| **Immunizations**                | **Immunization**             | <http://hl7.org/fhir/R4/immunization.html>                                                   | See Section 3.44.4.1.2.1.6  |
-| **Procedures**                   | **Procedure**                | <http://hl7.org/fhir/R4/procedure.html>                                                      | See Section 3.44.4.1.2.1.7  |
-| **Encounters**                   | **Encounter**                | <http://hl7.org/fhir/R4/encounter.html>                                                      | See Section 3.44.4.1.2.1.8  |
-| **Provenance**                   | **Provenance**               | <http://hl7.org/fhir/R4/provenance.html>                                                     | See Section 3.44.4.1.2.1.9  |
-| **Occupational Data for Health** | **Observation (See Note 2)** | [CombatZonePeriod](http://hl7.org/fhir/us/odh/StructureDefinition-odh-CombatZonePeriod.html) | See Section 3.44.4.1.2.1.10 |
-|                                  |                              | [EmploymentStatus](http://hl7.org/fhir/us/odh/StructureDefinition-odh-EmploymentStatus.html) |                             |
-|                                  |                              | [PastOrPresentJob](http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html) |                             |
-|                                  |                              | [RetirementDate](http://hl7.org/fhir/us/odh/StructureDefinition-odh-RetirementDate.html)     |                             |
-|                                  |                              | [UsualWork](http://hl7.org/fhir/us/odh/StructureDefinition-odh-UsualWork.html)               |                             |
-{:.grid .table-striped}
-
 ###### 2:3.44.1.2.1.1 Simple Observations Option Search Parameters
 
 When supporting the Simple Observations Option, the Clinical Data
