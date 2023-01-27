@@ -115,6 +115,96 @@ in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.
 <td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
 <td>See Section 3.44.4.1.2.1.1</td>
 </tr>
+<tr class="even">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="even">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td rowspan="3">Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="even">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="even">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="even">
+<td rowspan="5">Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
+<tr class="odd">
+<td>Simple Observations</td>
+<td>Observation</td>
+<td><a href="http://hl7.org/fhir/R4/observation.html">http://hl7.org/fhir/R4/observation.html</a></td>
+<td>See Section 3.44.4.1.2.1.1</td>
+</tr>
 </tbody>
 </table>
 
@@ -148,6 +238,7 @@ in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.
 |                                  |                              | [PastOrPresentJob](http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html) |                             |
 |                                  |                              | [RetirementDate](http://hl7.org/fhir/us/odh/StructureDefinition-odh-RetirementDate.html)     |                             |
 |                                  |                              | [UsualWork](http://hl7.org/fhir/us/odh/StructureDefinition-odh-UsualWork.html)               |                             |
+{:.grid .table-striped}
 
 
 
