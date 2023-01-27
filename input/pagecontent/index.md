@@ -62,9 +62,11 @@ This guide is organized into the following sections:
 2. Volume 2: Transaction Detail
    1. [Mobile Query for Existing Data \[PCC-44\]](PCC-44.html)
 
-5. [Test Plan](testplan.html)
+3. [Volume 4: National Extensions](volume-4.html)
 
-6. Other
+4. [Test Plan](testplan.html)
+
+5. Other
    1. [Changes to Other Documents](other.html)
    2. [Downloads and Analysis](downloads.html)
 
