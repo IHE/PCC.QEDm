@@ -72,7 +72,7 @@ with the following constraints:
 
 - The `\[Resource-type\]` represents the name of the FHIR Resource to consider (each option can involve one or more Resources), as specified in Section 3.44.4.1.2.1
 
-- The `\[parameters\]` represents a series of encoded name-value pairs representing the filter for the query, as specified in Section 3.44.4.1.2.1, as well as control parameters to modify the behavior of the Clinical Data Source such as response format, or pagination. See ITI TF-2x: Appendix Z.6 for more details on response format.
+- The `\[parameters\]` represents a series of encoded name-value pairs representing the filter for the query, as specified in Section 3.44.4.1.2.1, as well as control parameters to modify the behavior of the Clinical Data Source such as response format, or pagination. See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format0 for more details on response format.
 
 ###### 3.44.4.1.2.1 Query Search Paramters
 
@@ -98,14 +98,35 @@ in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.
 
 **Table 2:3.44.4.1.2.1-1: QEDm Options, FHIR Resources and Query Search Parameters**
 
-**TODO: add table 2:3.44.4.1.2.1-1
+| QEDm Actor Option                | FHIR Resource Type           | Reference                                                                                    | Search Parameters           |
+|----------------------------------|------------------------------|----------------------------------------------------------------------------------------------|-----------------------------|
+| **Simple Observations**          | **Observation**              | <http://hl7.org/fhir/R4/observation.html>                                                    | See Section 3.44.4.1.2.1.1  |
+| **Allergies and Intolerances**   | **AllergyIntolerance**       | <http://hl7.org/fhir/R4/allergyintolerance.html>                                             | See Section 3.44.4.1.2.1.2  |
+| **Condition**                    | **Condition (See Note 1)**   | <http://hl7.org/fhir/R4/condition.html>                                                      | See Section 3.44.4.1.2.1.3  |
+| **Diagnostic Results**           | **DiagnosticReport**         | <http://hl7.org/fhir/R4/diagnosticreport.html>                                               | See Section 3.44.4.1.2.1.4  |
+| **Medications**                  | **Medication:**              | <http://hl7.org/fhir/R4/medication.html>                                                     | See Section 3.44.4.1.2.1.5  |
+|                                  | **Medication Statement**     | <http://hl7.org/fhir/R4/medicationstatement.html>                                            |                             |
+|                                  | **Medication Request**       | <http://hl7.org/fhir/R4/medicationrequest.html>                                              |                             |
+| **Immunizations**                | **Immunization**             | <http://hl7.org/fhir/R4/immunization.html>                                                   | See Section 3.44.4.1.2.1.6  |
+| **Procedures**                   | **Procedure**                | <http://hl7.org/fhir/R4/procedure.html>                                                      | See Section 3.44.4.1.2.1.7  |
+| **Encounters**                   | **Encounter**                | <http://hl7.org/fhir/R4/encounter.html>                                                      | See Section 3.44.4.1.2.1.8  |
+| **Provenance**                   | **Provenance**               | <http://hl7.org/fhir/R4/provenance.html>                                                     | See Section 3.44.4.1.2.1.9  |
+| **Occupational Data for Health** | **Observation (See Note 2)** | [CombatZonePeriod](http://hl7.org/fhir/us/odh/StructureDefinition-odh-CombatZonePeriod.html) | See Section 3.44.4.1.2.1.10 |
+|                                  |                              | [EmploymentStatus](http://hl7.org/fhir/us/odh/StructureDefinition-odh-EmploymentStatus.html) |                             |
+|                                  |                              | [PastOrPresentJob](http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html) |                             |
+|                                  |                              | [RetirementDate](http://hl7.org/fhir/us/odh/StructureDefinition-odh-RetirementDate.html)     |                             |
+|                                  |                              | [UsualWork](http://hl7.org/fhir/us/odh/StructureDefinition-odh-UsualWork.html)               |                             |
+{:.grid .table-striped}
+
+*Note 1: The intended use of FHIR Condition resource includes recording of detailed information about conditions, problems or diagnoses recognized by a clinician.*
+
+*Note 2: Definitions and vocabularies for these resources are available at the referenced link.*
 
 Sections 2:3.44.4.1.2.1.1 through 2:3.44.4.1.2.1.10 detail the search
 parameters combinations to be supported for each of the FHIR Resources
 designated by a named option.
 
-See [https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir](ITI TF-2: Appendix Z.10 “Profiling conventions for constraints on
-FHIR) for a description of terms used in the Optionality columns.
+See [ITI TF-2: Appendix Z.10 “Profiling conventions for constraints on FHIR](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir) for a description of terms used in the Optionality columns.
 
 ###### 2:3.44.1.2.1.1 Simple Observations Option Search Parameters
 
@@ -120,7 +141,16 @@ GET \[base\]/Observation?\[parameters\]
 
 **Table 2:3.44.4.1.2.1.1-1: Simple Observations Option Search Parameters**
 
-**TODO: Add table 2:3.44.4.1.2.1.1-1
+| Parameters                       | Type                     | Modifiers                          | Optionality          |                                       |
+|----------------------------------|--------------------------|------------------------------------|----------------------|---------------------------------------|
+|                                  |                          |                                    | Clinical Data Source | Clinical Data Consumer <sup>(1)</sup> |
+| patient + category               | reference + token        |                                    | R                    | O                                     |
+| patient + category + code        | reference + token        |                                    | R                    | O                                     |
+| patient + category + date        | reference + token + date | date modifiers ‘ge’,‘le’,’gt’,’lt’ | R                    | O                                     |
+| patient + category + code + date | reference + token + date | date modifiers ‘ge’,‘le’,’gt’,’lt’ | O                    | O                                     |
+{:.grid .table-striped}
+
+*Note 1: The Clinical Data Consumer shall support at least one of the search parameters combinations.*
 
 ###### 2:3.44.4.1.2.1.2 Allergies and Intolerances Option Search Parameters 
 
@@ -155,7 +185,7 @@ GET \[base\]/Condition?\[parameters\]
 
 | Parameters                | Type              | Optionality          |                                       |
 |---------------------------|-------------------|----------------------|---------------------------------------|
-|                           |                   | Clinical Data Source | Clinical Data Consumer <sup>(1)</sup> |
+|                           |                   | Clinical Data Source | Clinical Data Consumer (See Note 1)   |
 | patient                   | reference         | R                    | O                                     |
 | patient + category        | reference + token | O                    | O                                     |
 | patient + clinical-status | reference + token | O                    | O                                     |
@@ -261,7 +291,7 @@ GET \[base\]/Procedure?\[parameters\]
 
 | Parameter      | Type             | Modifiers                          | Optionality          |                                       |
 |----------------|------------------|------------------------------------|----------------------|---------------------------------------|
-|                |                  |                                    | Clinical Data Source | Clinical Data Consumer <sup>(1)</sup> |
+|                |                  |                                    | Clinical Data Source | Clinical Data Consumer (See Note 1)   |
 | patient        | reference        |                                    | R                    | O                                     |
 | patient + date | reference + date | date modifiers ‘ge’,‘le’,’gt’,’lt’ | R                    | O                                     |
 {:.grid .table-striped}
@@ -283,7 +313,7 @@ GET \[base\]/Encounter?\[parameters\]
 
 | Parameter      | Type             | Modifiers                          | Optionality          |                                       |
 |----------------|------------------|------------------------------------|----------------------|---------------------------------------|
-|                |                  |                                    | Clinical Data Source | Clinical Data Consumer <sup>(1)</sup> |
+|                |                  |                                    | Clinical Data Source | Clinical Data Consumer (Ssee Note 1)   |
 | patient        | reference        |                                    | R                    | O                                     |
 | patient + date | reference + date | date modifiers ‘ge’,‘le’,’gt’,’lt’ | R                    | O                                     |
 {:.grid .table-striped}
@@ -369,7 +399,7 @@ JSON. The Clinical Data Source shall support both message encodings,
 whilst the Clinical Data Consumer shall support one and may support
 both.
 
-See ITI TF-2: Appendix Z.6 for details.
+See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for details.
 
 ##### 2:3.44.4.1.3 Expected Actions
 
@@ -390,8 +420,8 @@ for the specification about the Provenance content. If the fine-grained
 data element has not been extracted from a document, the Provenance
 Resource may be absent.
 
-See ITI TF-2x: Appendix Z.6 for more details on response format
-handling. See ITI TF-2x: Appendix Z.7 for handling guidance for Access
+See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format
+handling. See [ITI TF-2: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for handling guidance for Access
 Denied.
 
 #### 3.44.4.2 Mobile Query Existing Data Response message
@@ -409,7 +439,7 @@ Existing Data Request message.
 
 Based on the query results, the Clinical Data Source will either return
 an error or success. The guidance on handling Access Denied related to
-use of 200, 403 and 404 can be found in ITI TF-2x: Appendix Z.7.
+use of 200, 403 and 404 can be found in [ITI TF-2: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results).
 
 When the Clinical Data Source needs to report an error, it shall use
 HTTP error response codes and should include a FHIR OperationOutcome
@@ -429,12 +459,12 @@ status code shall be 200.
 
 The Mobile Query Existing Data Response message shall be a FHIR Bundle
 Resource containing zero or more clinical data Resources plus optional
-Provenance Resources (see Section 3.44.4.2.2.1). If the Clinical Data
+Provenance Resources (see Section 2:3.44.4.2.2.1). If the Clinical Data
 Source is sending warnings, the Bundle Resource shall also contain an
 OperationOutcome Resource that contains those warnings.
 
 The response shall adhere to the FHIR Bundle constraints specified in
-ITI TF-2x: Appendix Z.1.
+[ITI TF-2: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles).
 
 ###### 2:3.44.4.2.2.1 Document Provenance Option
 
@@ -479,12 +509,12 @@ Resource:
             - The value of `DocumentEntry.uniqueId` as `.value`
 
 A FHIR StructureDefinition can be found in implementation materials; see
-ITI TF-2x: Appendix W for instructions on how to get to the
+[ITI TF-2: Appendix W](https://profiles.ihe.net/ITI/TF/Volume2/ch-W.html) for instructions on how to get to the
 implementation materials.
 
 ###### 2:3.44.4.2.2.2 Resource Bundling
 
-Resource Bundling shall comply with the guidelines in ITI TF-2: Appendix Z.1.
+Resource Bundling shall comply with the guidelines in [ITI TF-2: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles).
 
 The Clinical Data Source shall include all resources to be returned as a
 contained resource. This means that the query shall return resource data
@@ -523,7 +553,7 @@ Provenance.entity.
 #### 2:3.44.4.3 Conformance Resource
 
 Clinical Data Sources implementing this transaction shall provide a
-Conformance Resource as described in ITI TF-2x: Appendix Z.3 indicating
+Conformance Resource as described in [ITI TF-2: Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) indicating
 the query operation for the Resources have been implemented and shall
 include all the supported query parameters.
 
@@ -531,7 +561,7 @@ include all the supported query parameters.
 
 The retrieved content contains PHI that shall be protected.
 
-See the general Security Considerations in PCC TF-1: X.5.
+See the [QEDm Security Considerations](http://build.fhir.org/ig/IHE/QEDm/branches/master/volume-1.html#1x5-qedm-security-considerations).
 
 #### 2:3.44.5.1 Security Audit Considerations
 
@@ -546,7 +576,7 @@ generate audit messages.
 
 Both actors generate a “Query” Audit Message, which is consistent with
 ATNA. The Mobile Query Existing Data \[PCC-44\] is a Query Information
-event as defined in ITI TF-2: Table 2:3.20.4.1.1.1-1. The message shall
+event as defined in [ITI TF-2: Table 3.20.4.1.1.1-1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20.4.1.1.1). The message shall
 comply with the following pattern:
 
 - Event
