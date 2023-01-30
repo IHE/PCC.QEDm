@@ -47,13 +47,14 @@ These issues have been resolved and documented in the publication.
 **QEDm_011:** For the Medications Option, should we add split in two distinct options and add a specific query to the Medication Resource?
 
 - In the current specification, the Medication Option includes both queries for the medication request and the medication statement. It was discussed if those should each be a distinct option.
-   - Resolution: In the trial implementation version of this profile, it was decided to keep those as a single option and consider implementers feedback if they need to be split.
+   **- Resolution:** In the trial implementation version of this profile, it was decided to keep those as a single option and consider implementers feedback if they need to be split.
 
 - Current specification allows to retrieve the Medication Resource related to each MedicationRequest or MedicationStatement by performing a query by ‘patient’ for those resources and by supporting the “\_include” of the related Medication into the returned Bundle. It was discussed the need to include a specific query for the Medication Resource, along with query parameters for searching on Medication such as: code, ingredient, container, form…
    - Resolution: It was decided in the Trial implementation version to not include a specific query for the Medication Resource and consider implementer’s feedback if such a query was needed.
    
 **QEDm_001:** Agree on the list of requirements for QEDm by comparing with QED.
-   - Resolution: 
+   **- Resolution:** 
+
 |    | Requirements                                                               | QED                  | QEDm                                      |
 |----|----------------------------------------------------------------------------|----------------------|-------------------------------------------|
 | 1  | Support __listing__ of Problems, Medications, Allergies, Med-Allergies     | Yes                  | Yes, by using the FHIR COndition Resource |
@@ -66,4 +67,19 @@ These issues have been resolved and documented in the publication.
 | 8  | Shows specific DEs that have been auto de-duplicated                       | No? (not with RECON) | No, too complex                           |
 {:.grid .table-striped}
 
+**QEDm_002:** Scope Listing of Data Elements
+Which is the best approach in specifying the QEDm query transaction and complementary provenance information? 
+FHIR  allows essentially two approaches (querying strategies in FHIR STU3):
+1. Querying ‘named’ Lists of resources (‘Operations’)
+2. Querying directly the underlying resources
+Considerations:
+- Only the support for listing Resources has sense from a clinical point of view (see Issue QEDm:001 - requirements 1,2,3)
+- FHIR List resource enumerates a flat collection of resources and provides features for managing the collection. While a particular List instance may represent a "snapshot", from a business process perspective the notion of "List" is dynamic – items are added and removed over time. The list resource references other resources. Lists may be curated and have specific business meaning (see [here](https://www.hl7.org/FHIR/list.html#queryfor) more comments).
+**- Resolution:** Basic remains the goal and Argonauts doesn’t consider ‘curated lists’ (aka ‘named’ Lists of resources) as a basic function   start consider querying directly the underlying resources
 
+
+
+
+
+**QEDm_003:** which are the QEDm query parameters to consider for accessing Data Elements (Resources)?
+- Resolution: 
