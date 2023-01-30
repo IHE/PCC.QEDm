@@ -86,135 +86,34 @@ Considerations:
 
 **QEDm_004:** To define the core set of FHIR resources that align with QED and related QEDm’s options
 
-- Resolution strategy:
-   - consider a subset of FHIR Resources: the stable ones.
+Resolution strategy:
+ - consider a subset of FHIR Resources: the stable ones.
 (keep in the Supplement the complete table to make evident all open issues about Resources until the final review: see “Classification of Information” section for more details)
-   - consider the STU3 version of Resources
+ - consider the STU3 version of Resources
 
+Comments:
 
+Here below a comparison table between the current clinicalinformation classification/options from QED, QEDm and FHIR Resources.
 
-***QEDm_004: To define the core set of FHIR resources that align with
-QED and related QEDm’s options***
+Alternative classifications from Argonauts and US Core projects/initiatives have been considered and discussed.
 
-> *Resolution strategy:*
+| QED Option                  | QEDm Option              | FHIR Resource/Profile                               |
+|-----------------------------|--------------------------|-----------------------------------------------------|
+| Vital Signs                 | Simple Observation       | Observation (Vital Signs are profiled Observations) |
+| Diagnostic Results          | Diagnostic Results Option| DiagnosticReport                                    |
+| Problems and Allergies      | Allergy and Intolerances | AllergyIntolerance                                  |
+| Medications                 | Conditions               | Condition                                           |
+| Immunizations               | Medications              | Medication; MedicationStatement; MedicationRequest  |
+| Professional Services       | Immunizations            | Immunization                                        |
+|                             | Procedures               | Procedures                                          |
+|                             | Encounters               | Encounter                                           |
+|                             | Provenance               | Provenance                                          |
+|                             |                          | Goals &rarr; not considered                         |
+|                             |                          | Assessment and Plan &rarr; not considered           |
+|                             |                          | CareTeam &rarr; not considered                      |
+|                             |                          | Practitioner &rarr; not considered                  |
+|                             |                          | Organization &rarr; not considered                  |
+|                             |                          | Location &rarr; not considered                  |
+{:.grid .table-striped}
 
--   *consider a subset of FHIR Resources: the stable ones.  
-    (keep in the Supplement the complete table to make evident all open
-    issues about Resources until the final review: see “Classification
-    of Information” section for more details)*
-
--   *consider the STU3 version of Resources.*
-
-> *Comments:*
->
-> *Here below a comparison table between the current clinical
-> information classification/options from QED, QEDm and FHIR Resources.*
->
-> *Alternative classifications from Argonauts and US Core
-> projects/initiatives have been considered and discussed.*
-
-<table>
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 24%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>QED Option</th>
-<th>QEDm Option</th>
-<th>FHIR Resource/Profile</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Vital Signs</td>
-<td>Simple Observations</td>
-<td><p>Observation</p>
-<p>(Vital Signs are profiled Observations)</p></td>
-</tr>
-<tr class="even">
-<td>Diagnostic Results</td>
-<td>Diagnostic Results Option</td>
-<td><a
-href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport.html">DiagnosticReport</a></td>
-</tr>
-<tr class="odd">
-<td rowspan="2">Problems and Allergies</td>
-<td>Allergy and Intolerances</td>
-<td>AllergyIntolerance</td>
-</tr>
-<tr class="even">
-<td>Conditions</td>
-<td>Condition</td>
-</tr>
-<tr class="odd">
-<td>Medications</td>
-<td>Medications</td>
-<td><p>Medication</p>
-<p>MedicationStatement</p>
-<p>MedicationRequest</p></td>
-</tr>
-<tr class="even">
-<td>Immunizations</td>
-<td>Immunizations</td>
-<td>Immunization</td>
-</tr>
-<tr class="odd">
-<td rowspan="2">Professional Services</td>
-<td>Procedures</td>
-<td>Procedures</td>
-</tr>
-<tr class="even">
-<td>Encounters</td>
-<td>Encounter</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Provenance</td>
-<td>Provenance</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td>Goals not considered</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td>Assessment and Plan not considered</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td>CareTeam not considered</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td><a
-href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-pract.html">Practitioner</a>
-not considered</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td><a
-href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-organization.html">Organization</a>
-not considered</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td><a
-href="http://hl7.org/fhir/us/core/StructureDefinition-us-core-location.html">Location</a>
-not considered</td>
-</tr>
-</tbody>
-</table>
-
-> ***Resolution:***
-
--   ***Only a core-set of FHIR resources will be considered,
-    consequently only a limited number of options are going to be
-    specified. See the table above.***
+**Resolution:** Only a core-set of FHIR resources will be considered, consequently only a limited number of options are going to be specified. See the table above.
