@@ -93,7 +93,7 @@ Resolution strategy:
 
 Comments:
 
-Here below a comparison table between the current clinicalinformation classification/options from QED, QEDm and FHIR Resources.
+Below is a comparison table between the current clinical information classification/options from QED, QEDm and FHIR Resources.
 
 Alternative classifications from Argonauts and US Core projects/initiatives have been considered and discussed.
 
@@ -117,3 +117,80 @@ Alternative classifications from Argonauts and US Core projects/initiatives have
 {:.grid .table-striped}
 
 **Resolution:** Only a core-set of FHIR resources will be considered, consequently only a limited number of options are going to be specified. See the table above.
+
+**QEDm_005:** Managing reconciliation of Data Elements
+
+How to record reconciliation performed on the FHIR resources returned by the QEDm query transaction?
+
+Considerations:  
+- Reconciliation of clinical data without a manual intervention has no sense. 
+- An automatic algorithm could work well if limited to the data deduplication.
+
+Consequences:
+- a 'manual reconciliation' can be conceived at the Clinical Data Consumer side and it’s necessary when this actor is going to perform multiple query for gathering and merging information from different sources the reconciliation is obtained by considering a Reconciliation Agent grouped with it.
+- an ‘automatic deduplication’ can be conceived as option for the Clinical Data Source*
+
+Reconciliation/deduplication specific content is already defined by RECON. The results of reconciliation are noted in the FHIR List resource by using the FHIR Provenance resource. See the following two sections:
+- PCC Vol.3: 6.6.A - FHIR Reconciled List
+- PCC Vol.3: 6.6.B - FHIR Provenance Constraints
+
+BUT:
+- RECON specifications must be updated to FHIR STU3
+
+- See also considerations about multi-stage import/reconciliation supported by the Provenance Resource: [http://hl7.org/fhir/2017Jan/provenance.html#6.2.4.6](http://hl7.org/fhir/2017Jan/provenance.html)
+
+**Resolution:** __too complex, no reconciliation and no deduplication will be considered by QEDm__ (no automatic operations specified by RECON Profile)
+
+**QEDm_006:** new name for the \[PCC-44\] transaction: “Mobile Query Existing Data”?
+
+In order to appear more generic, it’s proposed to use the name “Mobile Query Existing Data” for the transaction \[PCC-44\] to be aligned with the QED \[PCC-2\] “Query Existing Data” transaction, just like done with PIX/PIXm and PDQ/PDQm.>
+
+**Resolution:** ok to rename.
+
+
+**QEDm_007:** How to consider the “Multi-Patient Query Option” in the query transaction?
+
+**Resolution:** ok to remove this option from this year scope
+
+**QEDm_008:** Consistency – How to identify Document Sources of Data Elements
+
+Strategy:
+Consider the FHIR Provenance resource as used in PCC-RECON: “When the Data Element comes from a Document, the ID of the document is used as the source. When the Data Element is the result of a query (such as QED), the query ID is the source.
+
+When the data comes directly from a system, provenance may not exist because there is not a document source ID from the system. The solution is to start broad and add the “provenance” Option (source of the data). …”
+
+**Resolution:**
+
+- The original Document(s) reference(s) can be supported by the Provenance.entity: http://hl7.org/fhir/STU3/provenance.html (in general each Provenance object can link N ‘target’ Resources to M ‘entity’ Documents)
+
+- To consider also the available FHIR specifications on FHIR & XDS Documents https://www.hl7.org/FHIR/STU3/usecases.html#xds
+
+   - specifically, the DocumentReference FHIR resource: https://www.hl7.org/FHIR/STU3/documentreference.html
+
+- Additional considerations on query for including Provenance:
+
+   - FHIR query on “resource” (e.g., medication), add “\_revinclude” with “Provenance”. GET \[base\]/MedicationRequest?\_revinclude=Provenance:target&criteria...Always on the GET by client and server must support.
+
+   - For list FHIR is an “operation” (not RESTful GET). Is it worth exposing “list operations” because may be perfectly reconciled.
+
+   - Use Doc Resource versus and/or provenance resource.
+
+***QEDm_009:** QED retirement
+
+**Resolution:**
+
+- it may be considered, but the timing is independent of QEDm completion
+
+**QEDm_010:** Which is the best FHIR Implementation Guide to refer?
+
+- Should we move to US-Core? Are they other countries/international efforts?
+
+- Alternative is Argonaut (modified, by removing a few US specific).
+
+Considerations:
+
+- STU 3 ‘final’ has been released and the US Core IG has been aligned to STU3
+
+**Resolution:**
+
+- No need to base the whole profile on US Core specific constrains. US Core resource specific profiling or other profiling can be referenced only if/when necessary.
