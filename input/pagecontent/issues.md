@@ -81,6 +81,7 @@ FHIR  allows essentially two approaches (querying strategies in FHIR STU3):
 Considerations:
 - Only the support for listing Resources has sense from a clinical point of view (see Issue QEDm:001 - requirements 1,2,3)
 - FHIR List resource enumerates a flat collection of resources and provides features for managing the collection. While a particular List instance may represent a "snapshot", from a business process perspective the notion of "List" is dynamic – items are added and removed over time. The list resource references other resources. Lists may be curated and have specific business meaning (see [here](https://www.hl7.org/FHIR/list.html#queryfor) more comments).
+
 &rarr; **Resolution:** Basic remains the goal and Argonauts doesn’t consider ‘curated lists’ (aka ‘named’ Lists of resources) as a basic function   start consider querying directly the underlying resources
 
 
@@ -144,7 +145,7 @@ BUT:
 
 - See also considerations about multi-stage import/reconciliation supported by the Provenance Resource: [http://hl7.org/fhir/2017Jan/provenance.html#6.2.4.6](http://hl7.org/fhir/2017Jan/provenance.html)
 
-&rarr; **Resolution:** __too complex, no reconciliation and no deduplication will be considered by QEDm__ (no automatic operations specified by RECON Profile)
+&rarr; **Resolution:** too complex, no reconciliation and no deduplication will be considered by QEDm (no automatic operations specified by RECON Profile)
 
 **QEDm_006: New name for the \[PCC-44\] transaction: “Mobile Query Existing Data”?**
 
@@ -182,9 +183,7 @@ When the data comes directly from a system, provenance may not exist because the
 
 **QEDm_009: QED retirement**
 
-&rarr; **Resolution:**
-
-- it may be considered, but the timing is independent of QEDm completion
+&rarr; **Resolution:** it may be considered, but the timing is independent of QEDm completion
 
 **QEDm_010: Which is the best FHIR Implementation Guide to refer?**
 
@@ -196,6 +195,4 @@ Considerations:
 
 - STU 3 ‘final’ has been released and the US Core IG has been aligned to STU3
 
-&rarr; **Resolution:**
-
-- No need to base the whole profile on US Core specific constrains. US Core resource specific profiling or other profiling can be referenced only if/when necessary.
+&rarr; **Resolution:** No need to base the whole profile on US Core specific constrains. US Core resource specific profiling or other profiling can be referenced only if/when necessary.
