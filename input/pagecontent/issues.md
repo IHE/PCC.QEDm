@@ -6,7 +6,7 @@
 
 ## Issues
 
-###Submit an Issue
+### Submit an Issue
 IHE welcomes [New Issues](https://github.com/IHE/QEDm/issues/new/choose) from the GitHub community. 
 For those without GitHub access, issues may be submitted to the [PCC Public Comment form](https://www.ihe.net/PCC_Public_Comments/).
 
