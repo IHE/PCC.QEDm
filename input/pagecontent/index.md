@@ -42,7 +42,7 @@ links to source documents accessible through the MHD or XDS Profiles
 
 <div markdown="1" class="stu-note">
 
-| [Significant Changes, Open, and Closed Issues](issues.html) |
+| [Significant Changes, Open and Closed Issues](issues.html) |
 {: .grid}
 
 </div>
