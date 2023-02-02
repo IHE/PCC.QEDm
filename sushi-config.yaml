@@ -69,7 +69,7 @@ pages:
     title: "Test Plan"
     generation: markdown
   issues.md:
-    title: Open and Closed Issues
+    title: Significant Changes & Issues
     generation: markdown
   other.md:
     title: Changes to Other Documents
