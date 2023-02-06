@@ -72,7 +72,7 @@ pages:
     title: Significant Changes & Issues
     generation: markdown
   other.md:
-    title: Changes to Other Documents
+    title: Changes to Other IHE Specifications
     generation: markdown
   downloads.md:
     title: Downloads and Analysis
@@ -91,9 +91,9 @@ menu:
   Volume 2:
     "Mobile Query Existing Data [PCC-44]": PCC-44.html
   Volume 4: volume-4.html
-  Test Plan: testplan.html
   Artifacts: artifacts.html
-  Other: 
-    Changes to Other Documents: other.html
-    Downloads: downloads.html
+  Other:  
+    Test Plan: testplan.html    
+    Changes to Other IHE Specifications: other.html
+    Downloads and Analysis: downloads.html
 
