@@ -5,7 +5,7 @@ You can also download:
 * the definition resources in [json](definitions.json.zip), or [xml](definitions.xml.zip) format, or
 * the example resources in [json](examples.json.zip), or [xml](examples.xml.zip) format.
 
-The source code for this Implementation Guide can be found at https://github.com/IHE/QEDm.
+The source code for this Implementation Guide can be found at [https://github.com/IHE/QEDm](https://github.com/IHE/QEDm).
 
 #### Cross Version Analysis
 
