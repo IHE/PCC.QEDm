@@ -11,7 +11,7 @@ description: The Query for Existing Data for Mobile Profile (QEDm) supports dyna
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
 #date: 2022-01-02
-status: draft
+status: active
 publisher:
   - name: IHE Patient Care Coordination Technical Committee
   - url: https://www.ihe.net/ihe_domains/patient_care_coordination/
@@ -28,9 +28,50 @@ jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 copyrightYear: 2023+
 
 dependencies:
-  id: ihe.iti.mxde
-  uri: https://profiles.ihe.net/ITI/mXDE/ImplementationGuide/ihe.iti.mxde
-  version: current
+  ihe.iti.mhd: 
+    id: iheitimhd
+    uri: https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd
+    version: current
+#    version: 4.2.0
+  ihe.iti.pdqm: 
+    id: ihepdqm
+    uri: https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm
+    version: current
+#    version: 2.4.0
+  ihe.iti.pixm:
+    id: iheitipixm
+    uri: https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm
+    version: current
+#    version: 3.0.2
+  ihe.iti.mcsd:
+    id: iheitimcsd
+    uri: https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd
+    version: current
+#    version: 3.8.0
+  ihe.formatcode.fhir:
+    id: iheformatcodefhir
+    uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
+    version: current
+#    version: 1.1.0
+  ihe.iti.balp:
+    id: iheitibasicaudit
+    uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
+    version: current
+#    version: 1.1.1
+  ihe.iti.pmir:
+    id: iheitipmir
+    uri: https://profiles.ihe.net/ITI/PMIR/ImplementationGuide/ihe.iti.pmir
+    version: current
+#    version: 1.5.0
+  ihe.iti.svcm:
+    id: iheitisvcm
+    uri: https://profiles.ihe.net/ITI/SVCM/ImplementationGuide/ihe.iti.svcm
+    version: current
+#    version: 1.5.0
+  ihe.iti.mxde:
+    id: iheitimxde
+    uri: https://profiles.ihe.net/ITI/mXDE/ImplementationGuide/ihe.iti.mxde
+    version: current
 # TODO likely other dependencies
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters

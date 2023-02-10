@@ -34,7 +34,7 @@ Usage: #example
 * target[+] = Reference(ex-weight)
 * target[+] = Reference(ex-weight-stone)
 * recorded = 2023-01-25T09:49:00.000Z
-* policy = "urn:ihe:iti.mxde:2023:document-provenance-policy"
+// already assigned * policy = "urn:ihe:iti.mxde:2023:document-provenance-policy"
 * activity = http://hl7.org/fhir/w3c-provenance-activity-type#Derivation
 * agent[theAssembler].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#assembler
 * agent[theAssembler].who = Reference(ex-device)
