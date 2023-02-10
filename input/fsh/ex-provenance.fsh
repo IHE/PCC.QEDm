@@ -24,7 +24,7 @@ Usage: #example
 * version.value = "1000"
 
 Instance: ex-provenance
-InstanceOf: IHE.PCC.QEDm.Provenance
+InstanceOf: IHE.ITI.mXDE.Provenance
 Title: "Provenance of extracted resources"
 Description: "Sample of a Provenance of a set of target FHIR Resource elements derived from a DocumentReference"
 Usage: #example
@@ -34,7 +34,7 @@ Usage: #example
 * target[+] = Reference(ex-weight)
 * target[+] = Reference(ex-weight-stone)
 * recorded = 2023-01-25T09:49:00.000Z
-* policy = "urn:ihe:pcc:qedm:2017:document-provenance-policy"
+* policy = "urn:ihe:iti.mxde:2023:document-provenance-policy"
 * activity = http://hl7.org/fhir/w3c-provenance-activity-type#Derivation
 * agent[theAssembler].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#assembler
 * agent[theAssembler].who = Reference(ex-device)

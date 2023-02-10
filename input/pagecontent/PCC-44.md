@@ -485,7 +485,7 @@ Resource:
 
 - `Provenance.target` shall be a reference to each of the FHIR Resources extracted from the document referenced by the Provenance.entity element.
 
-- `Provenance.policy` shall contain the static URI `“urn:ihe:pcc:qedm:2017:document-provenance-policy”`.
+- `Provenance.policy` shall contain the static URI `“urn:ihe:iti:mxde:2023:document-provenance-policy”`.
 
 - `Provenance.agent` shall contain at least one entry \[1..\*\] holding the description of the system that extracted the elements from the document.
 
@@ -538,7 +538,7 @@ resources. The document references enable the Clinical Data Consumer to
 access the documents from which the data elements were extracted.
 
 When a Provenance resource is received with Provenance.policy valued at
-`“urn:ihe:pcc:qedm:2017:document-provenance-policy”` and `Provenance.target`
+`“urn:ihe:iti:mxde:2023:document-provenance-policy”` and `Provenance.target`
 has a reference for the data element(s) for which a document reference
 is sought, the Clinical Data Consumer:
 
