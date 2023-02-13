@@ -38,14 +38,14 @@ Option in QEDm is used in particular by the mXDE Profile to address the
 combined deployment of QEDm for access to fine-grained data element with
 links to source documents accessible through the MHD or XDS Profiles.
 
-## 1:X.1 QEDm Actors, Transactions, and Content Modules
+## 1:8.1 QEDm Actors, Transactions, and Content Modules
 
 <a name="actors-and-transactions"> </a>
 
 This section defines the actors, transactions, and/or content modules in
 this implementation guide. Further information about actor and transaction definitions can be found in the IHE Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
 
-Figure X.1-1 shows the actors directly involved in the QEDm Profile and
+Figure 8.1-1 shows the actors directly involved in the QEDm Profile and
 the relevant transaction between them.
 
 <div>
@@ -53,14 +53,14 @@ the relevant transaction between them.
 </div>
 <br clear="all">
 
-**Figure: 1:X.1-1: QEDm Actor Diagram**
+**Figure: 1:8.1-1: QEDm Actor Diagram**
 
-Table 1:X.1-1 lists the transactions for each actor directly involved in
+Table 1:8.1-1 lists the transactions for each actor directly involved in
 the QEDm Profile. To claim compliance with this profile, an actor shall
 support all required transactions (labeled “R”) and may support the
 optional transactions (labeled “O”).
 
-**Table 1:X.1-1: QEDm Integration Profile - Actors and Transactions**
+**Table 1:8.1-1: QEDm Integration Profile - Actors and Transactions**
 
 | Actors                 | Transactions                           | Optionality    | Reference                 |
 |------------------------|----------------------------------------|----------------|---------------------------|
@@ -68,36 +68,35 @@ optional transactions (labeled “O”).
 | Clinical Data Consumer | Mobile Query Existing Data \[PCC-44\]  | R              | PCC TF-2: 3.44            |
 {:.grid .table-striped}
 
-### 1:X.1.1 Actor Descriptions and Actor Profile Requirements
+### 1:8.1.1 Actor Descriptions and Actor Profile Requirements
 
-#### 1:X.1.1.1 Clinical Data Source
-
-<a name="client"> </a>
-
-The Clinical Data Source in this profile responds to FHIR-based queries
-for one or more fine-grained data elements (FHIR resources) defined by
-the options listed in Section X.2.
-
-
-FHIR Capability Statement for [Client](CapabilityStatement-IHE.QEDm.client.html)
-
-#### 1:X.1.1.2 Clinical Data Consumer
+#### 1:8.1.1.1 Clinical Data Source
 
 <a name="server"> </a>
 
-The Clinical Data Consumer in this profile sends FHIR-based queries to the Clinical Data Source for one or more fine-grained data elements (FHIR resources) defined by the options listed in Section X.2. Rendering or further processing of the data is not defined by this profile.
+The Clinical Data Source in this profile responds to FHIR-based queries
+for one or more fine-grained data elements (FHIR resources) defined by
+the options listed in Section 8.2.
 
 FHIR Capability Statement for [Server](CapabilityStatement-IHE.QEDm.server.html)
 
-## 1:X.2 QEDm Actor Options
+#### 1:8.1.1.2 Clinical Data Consumer
+
+<a name="client"> </a>
+
+The Clinical Data Consumer in this profile sends FHIR-based queries to the Clinical Data Source for one or more fine-grained data elements (FHIR resources) defined by the options listed in Section 8.2. Rendering or further processing of the data is not defined by this profile.
+
+FHIR Capability Statement for [Client](CapabilityStatement-IHE.QEDm.client.html)
+
+## 1:8.2 QEDm Actor Options
 
 <a name="actor-options"> </a>
 
 Options that may be selected for each actor in this profile, if any, are
-listed in the Table 1:X.2-1. Dependencies between options when applicable
+listed in the Table 1:8.2-1. Dependencies between options when applicable
 are specified in notes.
 
-**Table 1:X.2-1: QEDm - Actors and Options**
+**Table 1:8.2-1: QEDm - Actors and Options**
 
 <table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
@@ -111,146 +110,146 @@ are specified in notes.
 <tr class="odd">
 <td rowspan="10">Clinical Data Source</td>
 <td>Simple Observations (Note 1)</td>
-<td>Section 1:X.2.1.1</td>
+<td>Section 1:8.2.1.1</td>
 </tr>
 <tr class="even">
 <td>Allergies and Intolerances (Note 1)</td>
-<td>Section 1:X.2.1.2</td>
+<td>Section 1:8.2.1.2</td>
 </tr>
 <tr class="odd">
 <td>Conditions (Note 1)</td>
-<td>Section 1:X.2.1.3</td>
+<td>Section 1:8.2.1.3</td>
 </tr>
 <tr class="even">
 <td>Diagnostic Results (Note 1)</td>
-<td>Section 1:X.2.1.4</td>
+<td>Section 1:8.2.1.4</td>
 </tr>
 <tr class="odd">
 <td>Medications (Note 1)</td>
-<td>Section 1:X.2.1.5</td>
+<td>Section 1:8.2.1.5</td>
 </tr>
 <tr class="even">
 <td>Immunizations (Note 1)</td>
-<td>Section 1:X.2.1.6</td>
+<td>Section 1:8.2.1.6</td>
 </tr>
 <tr class="odd">
 <td>Procedures (Note 1)</td>
-<td>Section 1:X.2.1.7</td>
+<td>Section 1:8.2.1.7</td>
 </tr>
 <tr class="even">
 <td>Encounters (Note 1)</td>
-<td>Section 1:X.2.1.8</td>
+<td>Section 1:8.2.1.8</td>
 </tr>
 <tr class="odd">
 <td>Document Provenance (Note 1)</td>
-<td>Section 1:X.2.1.9</td>
+<td>Section 1:8.2.1.9</td>
 </tr>
 <tr class="even">
 <td>Occuupational Data for Health (Note 1)</td>
-<td>Section 1:X.2.1.10</td>
+<td>Section 1:8.2.1.10</td>
 </tr>
 <tr class="odd">
 <td rowspan="10">Clinical Data Consumer</td>
 <td>Simple Observations (Note 1)</td>
-<td>Section 1:X.2.2.1</td>
+<td>Section 1:8.2.2.1</td>
 </tr>
 <tr class="even">
 <td>Allergies and Intolerances (Note 1)</td>
-<td>Section 1:X.2.2.2</td>
+<td>Section 1:8.2.2.2</td>
 </tr>
 <tr class="odd">
 <td>Conditions (Note 1)</td>
-<td>Section 1:X.2.2.3</td>
+<td>Section 1:8.2.2.3</td>
 </tr>
 <tr class="even">
 <td>Diagnostic Results (Note 1)</td>
-<td>Section 1:X.2.2.4</td>
+<td>Section 1:8.2.2.4</td>
 </tr>
 <tr class="odd">
 <td>Medications (Note 1)</td>
-<td>Section 1:X.2.2.5</td>
+<td>Section 1:8.2.2.5</td>
 </tr>
 <tr class="even">
 <td>Immunizations (Note 1)</td>
-<td>Section 1:X.2.2.6</td>
+<td>Section 1:8.2.2.6</td>
 </tr>
 <tr class="odd">
 <td>Procedures (Note 1)</td>
-<td>Section 1:X.2.2.7</td>
+<td>Section 1:8.2.2.7</td>
 </tr>
 <tr class="even">
 <td>Encounters (Note 1)</td>
-<td>Section 1:X.2.2.8</td>
+<td>Section 1:8.2.2.8</td>
 </tr>
 <tr class="odd">
 <td>Document Provenance (Note 1)</td>
-<td>Section 1:X.2.2.9</td>
+<td>Section 1:8.2.2.9</td>
 </tr>
 <tr class="even">
 <td>Occuupational Data for Health (Note 1)</td>
-<td>Section 1:X.2.2.10</td>
+<td>Section 1:8.2.2.10</td>
 </tr>
 </tbody>
 </table>
 
 *Note 1: At least one of these options shall be supported by the related actor.*
 
-### 1:X.2.1 Clinical Data Consumer Options
+### 1:8.2.1 Clinical Data Consumer Options
 
-#### 1:X.2.1.1 Simple Observations Option
+#### 1:8.2.1.1 Simple Observations Option
 
 A Clinical Data Consumer that implements the Simple Observations Option
 performs the Mobile Query Existing Data transaction using the vocabulary
 specified for Simple Observations in \[PCC-44\] in PCC TF-2:
 3.44.4.1.2.1.1.
 
-#### 1:X.2.1.2 Allergies and Intolerances Option
+#### 1:8.2.1.2 Allergies and Intolerances Option
 
 A Clinical Data Consumer that implements the Allergies and Intolerances
 Option performs the Mobile Query Existing Data transaction using the
 vocabulary specified for Allergies and Intolerances in \[PCC-44\] in PCC
 TF-2: 3.44.4.1.2.1.2.
 
-#### 1:X.2.1.3 Conditions Option
+#### 1:8.2.1.3 Conditions Option
 
 A Clinical Data Consumer that implements the Conditions Option performs
 the Mobile Query Existing Data transaction using the vocabulary
 specified for Conditions in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.3.
 
-#### 1:X.2.1.4 Diagnostic Results Option
+#### 1:8.2.1.4 Diagnostic Results Option
 
 A Clinical Data Consumer
 that implements the Diagnostic Results Option performs the Mobile Query
 Existing Data transaction using the vocabulary specified for Diagnostic
 Results in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.4.
 
-#### 1:X.2.1.5 Medications Option
+#### 1:8.2.1.5 Medications Option
 
 A Clinical Data Consumer
 that implements the Medications Option performs the Mobile Query
 Existing Data transaction using the vocabulary specified for Medications
 in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.5.
 
-#### 1:X.2.1.6 Immunizations Option
+#### 1:8.2.1.6 Immunizations Option
 
 A Clinical Data Consumer
 that implements the Immunizations Option performs the Mobile Query
 Existing Data transaction using the vocabulary specified for
 Immunizations in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.6.
 
-#### 1:X.2.1.7 Procedures Option
+#### 1:8.2.1.7 Procedures Option
 
 A Clinical Data Consumer that implements the Procedures Option performs
 the Mobile Query Existing Data transaction using the vocabulary
 specified for Procedures in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.7.
 
-#### 1:X.2.1.8 Encounters Option
+#### 1:8.2.1.8 Encounters Option
 
 A Clinical Data Consumer that implements the Encounters Option performs
 the Mobile Query Existing Data transaction using the vocabulary
 specified for Encounters in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.8.
 
-#### 1:X.2.1.9 Document Provenance Option
+#### 1:8.2.1.9 Document Provenance Option
 
 This option is different than the above options that allow the selection
 of appropriate clinical content to query. It provides a means to extend
@@ -264,64 +263,64 @@ A Clinical Data Consumer that implements the Document Provenance Option
 performs the Mobile Query Existing Data transaction using the vocabulary
 specified for Provenance in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.9.
 
-#### 1:X.2.1.10 Occupational Data for Health Option
+#### 1:8.2.1.10 Occupational Data for Health Option
 
 A Clinical Data Consumer that implements the Occupational Data for
 Health Option performs the Mobile Query Existing Data transaction using the vocabulary
 specified for Occupational Data for Health in \[PCC-44\] in PCC TF-2:
 3.44.4.1.2.1.10.
 
-### 1:X.2.2 Clinical Data Source Options
+### 1:8.2.2 Clinical Data Source Options
 
-#### 1:X.2.2.1 Simple Observations Option
+#### 1:8.2.2.1 Simple Observations Option
 
 A Clinical Data Source that implements the Simple Observations Option
 responds to the message semantics specified for Simple Observations in
 \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.1.
 
-#### 1:X.2.2.2 Allergies and Intolerances Option
+#### 1:8.2.2.2 Allergies and Intolerances Option
 
 A Clinical Data Source that implements the Allergies and Intolerances
 Option responds to the message semantics specified for Allergies and
 Intolerances in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.2.
 
-#### 1:X.2.2.3 Conditions Option
+#### 1:8.2.2.3 Conditions Option
 
 A Clinical Data Consumer that implements the Conditions Option responds
 to the message semantics specified for Conditions in \[PCC-44\] in PCC
 TF-2: 3.44.4.1.2.1.3.
 
-#### 1:X.2.2.4 Diagnostic Results Option
+#### 1:8.2.2.4 Diagnostic Results Option
 
 A Clinical Data Source that implements the Diagnostic Results Option
 responds to the message semantics specified for Diagnostic Results in
 \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.4.
 
-#### 1:X.2.2.5 Medications Option
+#### 1:8.2.2.5 Medications Option
 
 A Clinical Data Source that implements the Medications Option responds
 to the message semantics specified for Medications in \[PCC-44\] in PCC
 TF-2: 3.44.4.1.2.1.5.
 
-#### 1:X.2.2.6 Immunizations Option
+#### 1:8.2.2.6 Immunizations Option
 
 A Clinical Data Source that implements the Immunizations Option responds
 to the message semantics specified for Immunizations in \[PCC-44\] in
 PCC TF-2: 3.44.4.1.2.1.6.
 
-#### 1:X.2.2.7 Procedures Option
+#### 1:8.2.2.7 Procedures Option
 
 A Clinical Data Source that implements the Procedures Option responds to
 the message semantics specified for Procedures in \[PCC-44\] in PCC
 TF-2: 3.44.4.1.2.1.7.
 
-#### 1:X.2.2.8 Encounters Option
+#### 1:8.2.2.8 Encounters Option
 
 A Clinical Data Source that implements the Encounters Option responds to
 the message semantics specified for Encounters in \[PCC-44\] in PCC
 TF-2: 3.44.4.1.2.1.8.
 
-#### 1:X.2.2.9 Document Provenance Option
+#### 1:8.2.2.9 Document Provenance Option
 
 This option is different than the above options that allow the selection
 of appropriate clinical content to query. It provides a means to extend
@@ -335,18 +334,18 @@ A Clinical Data Source that implements the Document Provenance Option
 responds to the message semantics specified for Provenance in \[PCC-44\]
 in PCC TF-2: 3.44.4.1.2.1.9.
 
-#### 1:X.2.2.10 Occupational Data for Health Option
+#### 1:8.2.2.10 Occupational Data for Health Option
 
 A Clinical Data Source that implements the Occupational Data for Health
 Option responds to the message semantics specified for Occupational Data
 for Health in \[PCC-44\] in PCC TF-2: 3.44.4.1.2.1.10 with the profiled
 content specified in the Reference link location.
 
-## 1:X.3 QEDm Required Actor Groupings
+## 1:8.3 QEDm Required Actor Groupings
 
 <a name="required-groupings"> </a>
 
-**Table 1:X.3-1: QEDm - Required Actor Groupings**
+**Table 1:8.3-1: QEDm - Required Actor Groupings**
 
 | QEDm Actor             | Actor to be grouped with | Reference |
 |------------------------|--------------------------|-----------|
@@ -354,26 +353,26 @@ content specified in the Reference link location.
 | Clinical Data Source   | None                     | \-        |
 {:.grid .table-striped}
 
-## 1:X.4 QEDm Overview
+## 1:8.4 QEDm Overview
 
 <a name="overview"> </a>
 
-### 1:X.4.1 Concepts
+### 1:8.4.1 Concepts
 
 The QEDm Profile supports a broad set of the QED use cases and
 functionality while keeping the implementation as simple as possible.
 
-### 1:X.4.2 Use Cases
+### 1:8.4.2 Use Cases
 
-#### 1:X.4.2.1 Use Case \#1: Discovery and Retrieval of Existing Data Elements
+#### 1:8.4.2.1 Use Case \#1: Discovery and Retrieval of Existing Data Elements
 
-##### 1:X.4.2.1.1 Discovery and Retrieval of Existing Data Elements Description
+##### 1:8.4.2.1.1 Discovery and Retrieval of Existing Data Elements Description
 
 In this use case, the patient, by using a mobile device, needs access to
 existing data elements. For example, a mobile application involved in a workflow needs to
 discover all the current Observations and Medications.
 
-##### 1:X.4.2.1.2 Discovery and Retrieval of Existing Data Elements Process Flow
+##### 1:8.4.2.1.2 Discovery and Retrieval of Existing Data Elements Process Flow
 
 The Mobile Query Existing Data transaction is used to provide
 parameterized queries that result in a list of returned data elements.
@@ -383,11 +382,11 @@ parameterized queries that result in a list of returned data elements.
 </div>
 <br clear="all">
 
-**Figure 1:X.4.2.1.2-1: Use Case \#1 Process Flow in QEDm Profile**
+**Figure 1:8.4.2.1.2-1: Use Case \#1 Process Flow in QEDm Profile**
 
-#### 1:X.4.2.2 Use Case \#2: Discovery and Retrieval of Existing Data Elements with Source Document Links
+#### 1:8.4.2.2 Use Case \#2: Discovery and Retrieval of Existing Data Elements with Source Document Links
 
-##### 1:X.4.2.2.1 Discovery and Retrieval of Existing Data Elements with Source Document Links Description
+##### 1:8.4.2.2.1 Discovery and Retrieval of Existing Data Elements with Source Document Links Description
 
 In this use case, the physician, by using a mobile device, needs to
 access all existing data elements and eventually to retrieve and consume
@@ -398,7 +397,7 @@ discover all Encounters which the patient has participated in and, for
 those of interest, it needs to retrieve and show the related document
 where the Encounter was originally specified.
 
-##### 1:X.4.2.2.2 Discovery and Retrieval of Existing Data Elements with Source Document Links Process Flow
+##### 1:8.4.2.2.2 Discovery and Retrieval of Existing Data Elements with Source Document Links Process Flow
 
 The Mobile Query Existing Data \[PCC-44\] transaction is used to provide
 parameterized queries that result in a list of returned data elements.
@@ -413,13 +412,13 @@ retrieves the document from the MHD Document Responder by using the
 related returned document link.
 
 <div>
-<img alt="Use Case #2 Process Flow Diagram" src="qedm_x42221.png" width="100%">
+{%include usecase2-processflow.svg%}
 </div>
+<br clear="all">
 
-**Figure 1:X.4.2.2.2-1: Use Case \#2 Process Flow in QEDm Profile**
+**Figure 1:8.4.2.2.2-1: Use Case \#2 Process Flow in QEDm Profile**
 
-
-## 1:X.5 QEDm Security Considerations
+## 1:8.5 QEDm Security Considerations
 
 <a name="security-considerations"> </a>
 
@@ -440,12 +439,11 @@ associated with a Data Element returned by the Clinical Data Source
 would indicate the source of the data. In the case where Provenance is
 specific to a Document, grouping with MHD Document Consumer or XDS
 Document Consumer enables the retrieval of that source Document. The
-mXDE Profile ITI TF-1: 
-45.5 Security Considerations includes further
+mXDE Profile ITI TF-1: 45.5 Security Considerations includes further
 discussion on the specific Security Considerations of bridging between a
 Document Sharing environment and a Data Element access model.
 
-## 1:X.6 QEDm Cross-Profile Considerations
+## 1:8.6 QEDm Cross-Profile Considerations
 
 <a name="other-grouping"> </a>
 

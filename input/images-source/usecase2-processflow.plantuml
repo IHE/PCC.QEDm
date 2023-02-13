@@ -1,0 +1,19 @@
+@startuml
+skinparam svgDimensionStyle false
+hide footbox
+participant "Clinical Data Consumer \n[Grouped with MHD Document Consumer\nand mXDE Data Element Provenance Consumer]" as Client
+participant "Clinical Data Source\n[Grouped with mXDE Data Element Extractor]" as Server
+participant "MHD Document Responder" as MHD
+activate Client
+Client -> Server : 1. Mobile Query Existing Data Request [PCC-44]
+activate Server
+Server -> Server : Add Provenance Information
+Server --> Client : 2. Mobile Query Existing Data Response [PCC-44]
+deactivate Server
+Client -> Client : consume Provenance
+Client -> MHD : Retrieve Document Request [ITI-68]
+activate MHD
+Client <-- MHD : Retrieve Document Response [ITI-68]
+deactivate Client
+deactivate MHD
+@enduml

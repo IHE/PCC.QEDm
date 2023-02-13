@@ -34,7 +34,7 @@ and codes that should be considered.
 ### 2:3.44.4 Messages
 
 <div>
-{%include domain-Y-seq.svg%}
+{%include PCC-44-seq.svg%}
 </div>
 <br clear="all">
 
@@ -86,7 +86,7 @@ and Clinical Data Source are determined by a QEDm named option. An actor
 claiming named option is required to support the FHIR Resource types
 listed below. According to the supported option, the Clinical Data
 Consumer may query and the Clinical Data Source shall be capable of
-responding on the Resource types specified in Table X.3-2 by processing
+responding on the Resource types specified in Table 2:3.44.4.1.2.1-1 by processing
 all the search parameters defined in the following sections.
 
 The Clinical Data Source may choose to support additional query
@@ -561,7 +561,7 @@ include all the supported query parameters.
 
 The retrieved content contains PHI that shall be protected.
 
-See the [QEDm Security Considerations](http://build.fhir.org/ig/IHE/QEDm/branches/master/volume-1.html#1x5-qedm-security-considerations).
+See the [QEDm Security Considerations](volume-1.html#security-considerations).
 
 #### 2:3.44.5.1 Security Audit Considerations
 
