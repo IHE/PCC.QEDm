@@ -17,8 +17,6 @@ Description: "Provenance profile for use in QEDm when the data-elements (Resourc
 * . 1..1
 * policy 1..1
 * policy = "urn:ihe:pcc:qedm:2017:document-provenance-policy" (exactly)
-* activity 1..
-* activity ^code = $w3c-provenance-activity-type#Derivation
 * agent ^label = "assembler"
 * agent ^slicing.discriminator.type = #pattern
 * agent ^slicing.discriminator.path = "type"
