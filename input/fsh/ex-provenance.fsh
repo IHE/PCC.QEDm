@@ -10,8 +10,6 @@ Usage: #example
 * content.attachment.title = "Hello World"
 * content.attachment.contentType = #text/plain
 
-
-
 Instance:   ex-device
 InstanceOf: Device
 Title:      "Dummy Device example"
@@ -41,3 +39,19 @@ Usage: #example
 * entity[0].role = #source
 * entity[0].what = Reference(ex-documentreference)
 
+Instance: IHE-QEDm-Provenance-Example
+InstanceOf: IHE_QEDm_Provenance
+Description: "Provenance example for use in QEDm when the data-elements (Resources pointed to by target) come from an XDS or MHD document"
+Usage: #example
+* target[+] = Reference(ex-encounter)
+* occurredDateTime = "2023-08-15T20:16:40+02:00"
+* recorded = "2023-09-26T17:20:59.765+02:00"
+* policy = "urn:ihe:pcc:qedm:2017:document-provenance-policy"
+* agent[0].type = $provenance-participant-type#assembler "Assembler"
+* agent[=].who = Reference(ex-device)
+* entity.role = #source
+* entity.what = Reference(http://example.org/fhir/DocumentReference/urn:oid:1.2.3.99.2) "CDA Document in XDS Repository"
+* entity.what.type = "DocumentReference"
+* entity.what.identifier.use = #official
+* entity.what.identifier.system = "urn:oid:1.2.3.999"
+* entity.what.identifier.value = "urn:oid:1.2.3.999.2"
