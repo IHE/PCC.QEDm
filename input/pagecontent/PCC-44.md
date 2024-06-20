@@ -24,7 +24,7 @@ and codes that should be considered.
 
 ### 2:3.44.3 Referenced Standards
 
-- HL7 FHIR: [FHIR standard Release 4](http://www.hl7.org/fhir/R4/index.html)
+- [HL7 FHIR standard]({{site.data.fhir.path}})
 - IETF RFC2616: Hypertext Transfer Protocol – HTTP/1.1
 - IETF RFC7540: Hypertext Transfer Protocol – HTTP/2
 - IETF RFC3986: Uniform Resource Identifier (URI): Generic Syntax
@@ -58,7 +58,7 @@ Existing Data message.
 The Clinical Data Consumer executes an HTTP GET against the proper
 Clinical Data Source’s QEDm URL.
 
-The search target follows the FHIR http specification [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html), addressing the proper FHIR
+The search target follows the FHIR http specification [{{site.data.fhir.path}}http.html]({{site.data.fhir.path}}http.html), addressing the proper FHIR
 Resource type, according to the supported query options (see Section
 2:3.44.4.1.2.1). The syntax of the FHIR query is:
 
@@ -74,7 +74,7 @@ with the following constraints:
 
 - The `\[parameters\]` represents a series of encoded name-value pairs representing the filter for the query, as specified in Section 3.44.4.1.2.1, as well as control parameters to modify the behavior of the Clinical Data Source such as response format, or pagination. See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format0 for more details on response format.
 
-###### 3.44.4.1.2.1 Query Search Paramters
+###### 3.44.4.1.2.1 Query Search Parameters
 
 All query parameter values shall be appropriately encoded per RFC3986
 “percent” encoding rules. Note that percent encoding does restrict the
@@ -94,23 +94,23 @@ parameters beyond the subset defined by the profiling listed below, if
 done according to the core FHIR specification. Such additional
 parameters are considered out of scope for this transaction. The
 Clinical Data Source may ignore any additional parameter not specified
-in this transaction. See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
+in this transaction. See [{{site.data.fhir.path}}search.html#errors]({{site.data.fhir.path}}search.html#errors).
 
 **Table 2:3.44.4.1.2.1-1: QEDm Options, FHIR Resources and Query Search Parameters**
 
 | QEDm Actor Option                | FHIR Resource Type           | Reference                                                                                    | Search Parameters           |
 |----------------------------------|------------------------------|----------------------------------------------------------------------------------------------|-----------------------------|
-| **Simple Observations**          | **Observation**              | <http://hl7.org/fhir/R4/observation.html>                                                    | See Section 3.44.4.1.2.1.1  |
-| **Allergies and Intolerances**   | **AllergyIntolerance**       | <http://hl7.org/fhir/R4/allergyintolerance.html>                                             | See Section 3.44.4.1.2.1.2  |
-| **Condition**                    | **Condition (See Note 1)**   | <http://hl7.org/fhir/R4/condition.html>                                                      | See Section 3.44.4.1.2.1.3  |
-| **Diagnostic Results**           | **DiagnosticReport**         | <http://hl7.org/fhir/R4/diagnosticreport.html>                                               | See Section 3.44.4.1.2.1.4  |
-| **Medications**                  | **Medication:**              | <http://hl7.org/fhir/R4/medication.html>                                                     | See Section 3.44.4.1.2.1.5  |
-|                                  | **Medication Statement**     | <http://hl7.org/fhir/R4/medicationstatement.html>                                            |                             |
-|                                  | **Medication Request**       | <http://hl7.org/fhir/R4/medicationrequest.html>                                              |                             |
-| **Immunizations**                | **Immunization**             | <http://hl7.org/fhir/R4/immunization.html>                                                   | See Section 3.44.4.1.2.1.6  |
-| **Procedures**                   | **Procedure**                | <http://hl7.org/fhir/R4/procedure.html>                                                      | See Section 3.44.4.1.2.1.7  |
-| **Encounters**                   | **Encounter**                | <http://hl7.org/fhir/R4/encounter.html>                                                      | See Section 3.44.4.1.2.1.8  |
-| **Provenance**                   | **Provenance**               | <http://hl7.org/fhir/R4/provenance.html>                                                     | See Section 3.44.4.1.2.1.9  |
+| **Simple Observations**          | **Observation**              | <{{site.data.fhir.path}}observation.html>                                                    | See Section 3.44.4.1.2.1.1  |
+| **Allergies and Intolerances**   | **AllergyIntolerance**       | <{{site.data.fhir.path}}allergyintolerance.html>                                             | See Section 3.44.4.1.2.1.2  |
+| **Condition**                    | **Condition (See Note 1)**   | <{{site.data.fhir.path}}condition.html>                                                      | See Section 3.44.4.1.2.1.3  |
+| **Diagnostic Results**           | **DiagnosticReport**         | <{{site.data.fhir.path}}diagnosticreport.html>                                               | See Section 3.44.4.1.2.1.4  |
+| **Medications**                  | **Medication:**              | <{{site.data.fhir.path}}medication.html>                                                     | See Section 3.44.4.1.2.1.5  |
+|                                  | **Medication Statement**     | <{{site.data.fhir.path}}medicationstatement.html>                                            |                             |
+|                                  | **Medication Request**       | <{{site.data.fhir.path}}medicationrequest.html>                                              |                             |
+| **Immunizations**                | **Immunization**             | <{{site.data.fhir.path}}immunization.html>                                                   | See Section 3.44.4.1.2.1.6  |
+| **Procedures**                   | **Procedure**                | <{{site.data.fhir.path}}procedure.html>                                                      | See Section 3.44.4.1.2.1.7  |
+| **Encounters**                   | **Encounter**                | <{{site.data.fhir.path}}encounter.html>                                                      | See Section 3.44.4.1.2.1.8  |
+| **Provenance**                   | **Provenance**               | <{{site.data.fhir.path}}provenance.html>                                                     | See Section 3.44.4.1.2.1.9  |
 | **Occupational Data for Health** | **Observation (See Note 2)** | [CombatZonePeriod](http://hl7.org/fhir/us/odh/StructureDefinition-odh-CombatZonePeriod.html) | See Section 3.44.4.1.2.1.10 |
 |                                  |                              | [EmploymentStatus](http://hl7.org/fhir/us/odh/StructureDefinition-odh-EmploymentStatus.html) |                             |
 |                                  |                              | [PastOrPresentJob](http://hl7.org/fhir/us/odh/StructureDefinition-odh-PastOrPresentJob.html) |                             |
@@ -444,8 +444,8 @@ use of 200, 403 and 404 can be found in [ITI TF-2: Appendix Z.7](https://profile
 When the Clinical Data Source needs to report an error, it shall use
 HTTP error response codes and should include a FHIR OperationOutcome
 with more details on the failure. See FHIR
-<http://hl7.org/fhir/R4/http.html> and
-<http://hl7.org/fhir/R4/operationoutcome.html>.
+<{{site.data.fhir.path}}http.html> and
+<{{site.data.fhir.path}}operationoutcome.html>.
 
 In particular, if a Data Source receives a Mobile Query Existing Data
 transaction for a resource related to a QEDm Option not supported, it
@@ -565,66 +565,22 @@ See the [QEDm Security Considerations](volume-1.html#security-considerations).
 
 #### 2:3.44.5.1 Security Audit Considerations
 
-Grouping a Clinical Data Source with an ATNA Secure Node or Secure
-Application is required. Grouping a Clinical Data Consumer with an ATNA
+Grouping a Clinical Data Source with an [Audit Trail and Node Authentication (ATNA)](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) Secure Node or Secure
+Application is required. Grouping a Clinical Data Consumer with an [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html)
 Secure Node or Secure Application is recommended.
 
 The Clinical Data Consumer may be considered overburdened to fully
 implement the requirements of a Secure Node or Secure Application. The
-Clinical Data Source is likely a more robust application and shall
+Clinical Data Source is likely a more robust service and shall
 generate audit messages.
 
-Both actors generate a “Query” Audit Message, which is consistent with
-ATNA. The Mobile Query Existing Data \[PCC-44\] is a Query Information
-event as defined in [ITI TF-2: Table 3.20.4.1.1.1-1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20.4.1.1.1). The message shall
-comply with the following pattern:
+The AuditEvent resources to be recorded are refinements of the [Basic AuditEvent Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/index.html) for [RESTful Execute (search and query) where a Patient is a subject of the search](https://profiles.ihe.net/ITI/BALP/content.html#3573-restful-activities).
 
-- Event
+##### 2:3.44.5.1.1 Clinical Data Consumer
 
-    - EventID = EV(110112, DCM, “Query”)
+The Clinical Data Consumer when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) Actor SHALL be able to record a [Clinical Data Consumer AuditEvent](StructureDefinition-IHE.QEDm.Query.Audit.Consumer.html). [Audit Example for a QEDm Query transaction from consumer perspective](AuditEvent-ex-auditQedmQuery-consumer.html).
 
-    - EventTypeCode = EV(“PCC-44”, “IHE Transactions”, “Mobile Query Existing Data”)
+##### 2.3.44.5.1.2 Clinical Data Source
 
-    - EventActionCode = “E” (Execute)
+The Clinical Data Source when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) Actor SHALL be able to record a [Clinical Data Source AuditEvent](StructureDefinition-IHE.QEDm.Query.Audit.Source.html). [Audit Example for a QEDm Query transaction from source perspective](AuditEvent-ex-auditQedmQuery-source.html).
 
-- Source of the request (1..1)
-
-    - UserID = The Clinical Data Consumer Actor system identity
-
-    - RoleIDCode = EV(110153, DCM, “Source”)
-
--   Human Requestor (0..n)  one for each know User
-
-    - UserID = Identity of the human that initiated the transaction
-
-    - RoleIDCode = Access Control role(s) the user holds that allows this transaction
-
-- Destination of the request (1..1)
-
-    - Clinical Data Source Actor system identity
-
-    - RoleIDCode = EV(110152, DCM, “Destination”)
-
-- Audit Source (1..1)
-
-    - not specified
-
-- Patient (1..1)
-
-    - ParticipantObjectTypeCode = “1” (Person)
-
-    - ParticipantObjectTypeCodeRole = “1” (Patient)
-
-    - ParticipantObjectID = The ‘patient’ parameter value
-
--  Query Parameters (1..1)
-
-    - ParticipantObjectTypeCode = “2” (system object)
-
-    - ParticipantObjectTypeCode Role = “24” (query)
-
-    - ParticipantObjectIDTypeCode = EV(“PCC-44”, “IHE Transactions”, “Mobile Query Existing Data”)
-
-    - ParticipantObjectQuery = Requested URL including query parameters, base64 encoded
-
-    - ParticipantObjectDetail = HTTP Request Headers contained in the query (e.g., Accept header)

@@ -3,4 +3,11 @@
 # IHE valueset that is not yet a real valueset
 Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 
+# understood these are not yet normative
+Reference to experimental CodeSystem http://hl7.org/fhir/w3c-provenance-activity-type|4.0.1
 
+# understand these are draft
+MSG_DRAFT
+
+# ihe transactions codeSystem is not a proper codeSystem
+A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated

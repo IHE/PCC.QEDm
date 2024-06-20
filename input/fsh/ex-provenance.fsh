@@ -32,7 +32,7 @@ Usage: #example
 * target[+] = Reference(ex-IHE-QEDm-bloodPressure-0)
 * target[+] = Reference(ex-encounter)
 * target[+] = Reference(ex-weight)
-* target[+] = Reference(ex-weight-stone)
+* target[+] = Reference(ex-weight2)
 * recorded = 2023-01-25T09:49:00.000Z
 // already assigned * policy = "urn:ihe:iti.mxde:2023:document-provenance-policy"
 * activity = http://hl7.org/fhir/w3c-provenance-activity-type#Derivation

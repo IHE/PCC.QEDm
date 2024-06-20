@@ -1,12 +1,16 @@
 
 ## Significant Changes
 
-### Significant Changes from Revison 2.3 (PDF) 
+### Significant Changes from Revision 2.3 (PDF)
+
 - Converted to an IG
+- align AuditEvent with BALP
+- align with mXDE as the definer of the Provenance profile
 
 ## Issues
 
 ### Submit an Issue
+
 IHE welcomes [New Issues](https://github.com/IHE/QEDm/issues/new/choose) from the GitHub community. 
 For those without GitHub access, issues may be submitted to the [PCC Public Comment form](https://www.ihe.net/PCC_Public_Comments/).
 
@@ -14,6 +18,7 @@ As issues are submitted they will be managed on the [QEDm GitHub Issues](https:/
 It is important to note that as soon as a Change Proposal is approved, it carries the same weight as a published Implementation Guide (i.e., it is testable at an [IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is approved, even if it will not be integrated until several months later).
 
 ### Open Issues
+
 These issues were known as part of the publication and IHE invites comments.
 
 **QEDm_012:**
@@ -50,6 +55,7 @@ profiles as a method to allow for jurisdictions to specify other value
 sets.
 
 ### Closed Issues
+
 These issues have been resolved and documented in the publication.
 
 **QEDm_011: For the Medications Option, should we add split in two distinct options and add a specific query to the Medication Resource?**
