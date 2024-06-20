@@ -10,7 +10,7 @@ query a list of specific data elements, persisted as FHIR resources.
 QEDm is functionally equivalent to the QED Profile (based on HL7v3), but
 QEDm is better suited for implementation by application on mobile
 devices or where the http/REST technology is preferred. The term
-“mobile” must be understood in a wide sense: it refers not only to
+"mobile" must be understood in a wide sense: it refers not only to
 applications on devices used for mobility that are resource- and
 platform-constrained. (e.g., tablets, smartphones, and embedded devices
 including home-health devices), but also to larger systems deployed in
@@ -32,11 +32,11 @@ a list of specific data elements, persisted as FHIR resources. The
 current version of Supplement doesn’t consider the reconciliation of the
 fine-grained data elements gathered by the Clinical Data Source and/or
 Clinical Data Consumer Actors. In order to perform reconciliation a
-grouping with RECON Reconciliation Agent should be considered.
+grouping with RECON Reconciliation Agent SHOULD be considered.
 
-The QEDm Profile may also be deployed in conjunction with document
-sharing profiles such as MHD or XDS Profiles. The Document Provenance
-Option in QEDm is used in particular by the mXDE Profile to address the
+The QEDm Profile MAY also be deployed in conjunction with document
+sharing profiles such as MHD or XDS Profiles. The Provenance
+Option in QEDm is used in particular by the [mXDE Profile]({{site.data.fhir.iheitimxde}}/index.html) to address the
 combined deployment of QEDm for access to fine-grained data element with
 links to source documents accessible through the MHD or XDS Profiles
 
@@ -74,13 +74,13 @@ See also the [Table of Contents](toc.html) and the index of [Artifacts](artifact
 
 ### Conformance Expectations
 
-IHE uses the normative words: Shall, Should, and May according to [standards conventions](https://profiles.ihe.net/GeneralIntro/ch-E.html).
+IHE uses the normative words: SHALL, SHOULD, and MAY according to [standards conventions](https://profiles.ihe.net/GeneralIntro/ch-E.html).
 
 #### Must Support
 
-The use of ```mustSupport``` in StructureDefinition profiles equivalent to the IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
+The use of `mustSupport` in StructureDefinition profiles equivalent to the IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
 
-mustSupport of true - only has a meaning on items that are minimal cardinality of zero (0), and applies only to the source actor populating the data. The source actor shall populate the elements marked with MustSupport, if the concept is supported by the actor, a value exists, and security and consent rules permit. 
-The consuming actors should handle these elements being populated or being absent/empty. 
+mustSupport of true - only has a meaning on items that are minimal cardinality of zero (0), and applies only to the source actor populating the data. The source actor SHALL populate the elements marked with MustSupport, if the concept is supported by the actor, a value exists, and security and consent rules permit. 
+The consuming actors SHOULD handle these elements being populated or being absent/empty. 
 Note that sometimes mustSupport will appear on elements with a minimal cardinality greater than zero (0), this is due to inheritance from a less constrained profile.
 

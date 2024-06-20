@@ -1,20 +1,28 @@
 
 ## Significant Changes
 
-### Significant Changes from Revision 2.3 (PDF)
+### 3.0.0
 
-- Converted to an IG
+Significant Changes from Revision 2.3 (PDF)
+
+- Converted to an IG - This resulted in significant rearrangement and rewriting to better leverage IG publication and use of html linkage.
 - align AuditEvent with BALP
-- align with mXDE as the definer of the Provenance profile
+- align with mXDE as the definer of the Document specific Provenance profile
+  - made the QEDm Provenance option to focus on general Provenance capability, leaving the Document specific Provenance to mXDE where it can be defined and further elaborated upon
+- unsupported modifiers must be rejected according to FHIR core.
+- use uppercase normative words
+- added dependency on IHE-ODH (International) and HL7-ODH (US Real)
+- addressed minor issues reported in CPs: CP-PCC-0276, and CP-PCC-0277
+- have not aligned with IPA, but did add that to issue QEDm_012
 
 ## Issues
 
 ### Submit an Issue
 
 IHE welcomes [New Issues](https://github.com/IHE/QEDm/issues/new/choose) from the GitHub community. 
-For those without GitHub access, issues may be submitted to the [PCC Public Comment form](https://www.ihe.net/PCC_Public_Comments/).
+For those without GitHub access, issues MAY be submitted to the [PCC Public Comment form](https://www.ihe.net/PCC_Public_Comments/).
 
-As issues are submitted they will be managed on the [QEDm GitHub Issues](https://github.com/IHE/QEDm/issues), where discussion and workarounds may be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
+As issues are submitted they will be managed on the [QEDm GitHub Issues](https://github.com/IHE/QEDm/issues), where discussion and workarounds MAY be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
 It is important to note that as soon as a Change Proposal is approved, it carries the same weight as a published Implementation Guide (i.e., it is testable at an [IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is approved, even if it will not be integrated until several months later).
 
 ### Open Issues
@@ -34,36 +42,18 @@ Guide for US-Core, and regional experience. All are encouraged to
 participate in this effort. Participate by joining the PCC technical
 workgroup, and by interacting with the GitHub https://github.com/IHE/QEDm.
 
-Should future releases of the HL7 FHIR profile for ODH be modified as
-International Realm, this profile will be updated to point to those
-updated profiles. The scope of the modifications in the IHE ODH profiles
-is to reference ‘Patient’ instead of US Core Patient, and to reference
-the 3 US-Centric value sets with binding of ‘example’ rather than
-‘required’:
-
-   - Occupation
-
-   - Industry
-
-   - Supervisory Level or Pay Grade
-
-Occupation, Industry, and Work Classification value sets may vary by
-jurisdiction. The US CDC census valuesets are provided as an ‘example
-binding’. There is no apparent specification for an expression of
-‘concept domain’, which is leveraged by multiple IHE QRPH and PCC
-profiles as a method to allow for jurisdictions to specify other value
-sets.
+Should we align with HL7 IPA? At this point the IPA is not yet published in a form that we can profile?
 
 ### Closed Issues
 
 These issues have been resolved and documented in the publication.
 
-**QEDm_011: For the Medications Option, should we add split in two distinct options and add a specific query to the Medication Resource?**
+**QEDm_011: For the Medications Option, SHOULD we add split in two distinct options and add a specific query to the Medication Resource?**
 
-- In the current specification, the Medication Option includes both queries for the medication request and the medication statement. It was discussed if those should each be a distinct option.
+- In the current specification, the Medication Option includes both queries for the medication request and the medication statement. It was discussed if those SHOULD each be a distinct option.
    - **Resolution:** In the trial implementation version of this profile, it was decided to keep those as a single option and consider implementers feedback if they need to be split.
 
-- Current specification allows to retrieve the Medication Resource related to each MedicationRequest or MedicationStatement by performing a query by ‘patient’ for those resources and by supporting the “\_include” of the related Medication into the returned Bundle. It was discussed the need to include a specific query for the Medication Resource, along with query parameters for searching on Medication such as: code, ingredient, container, form…
+- Current specification allows to retrieve the Medication Resource related to each MedicationRequest or MedicationStatement by performing a query by ‘patient’ for those resources and by supporting the "\_include" of the related Medication into the returned Bundle. It was discussed the need to include a specific query for the Medication Resource, along with query parameters for searching on Medication such as: code, ingredient, container, form…
    - **Resolution:** It was decided in the Trial implementation version to not include a specific query for the Medication Resource and consider implementer’s feedback if such a query was needed.
    
 **QEDm_001: Agree on the list of requirements for QEDm by comparing with QED.**
@@ -91,7 +81,7 @@ FHIR  allows essentially two approaches (querying strategies in FHIR STU3):
 
 Considerations:
 - Only the support for listing Resources has sense from a clinical point of view (see Issue QEDm:001 - requirements 1,2,3)
-- FHIR List resource enumerates a flat collection of resources and provides features for managing the collection. While a particular List instance may represent a "snapshot", from a business process perspective the notion of "List" is dynamic – items are added and removed over time. The list resource references other resources. Lists may be curated and have specific business meaning (see [here](https://www.hl7.org/FHIR/list.html#queryfor) more comments).
+- FHIR List resource enumerates a flat collection of resources and provides features for managing the collection. While a particular List instance MAY represent a "snapshot", from a business process perspective the notion of "List" is dynamic – items are added and removed over time. The list resource references other resources. Lists MAY be curated and have specific business meaning (see [here](https://www.hl7.org/FHIR/list.html#queryfor) more comments).
 
 &rarr; **Resolution:** Basic remains the goal and Argonauts doesn’t consider ‘curated lists’ (aka ‘named’ Lists of resources) as a basic function   start consider querying directly the underlying resources
 
@@ -105,7 +95,7 @@ Considerations:
 
 Resolution strategy:
  - consider a subset of FHIR Resources: the stable ones.
-(keep in the Supplement the complete table to make evident all open issues about Resources until the final review: see “Classification of Information” section for more details)
+(keep in the Supplement the complete table to make evident all open issues about Resources until the final review: see "Classification of Information" section for more details)
  - consider the STU3 version of Resources
 
 Comments:
@@ -158,23 +148,23 @@ BUT:
 
 &rarr; **Resolution:** too complex, no reconciliation and no deduplication will be considered by QEDm (no automatic operations specified by RECON Profile)
 
-**QEDm_006: New name for the \[PCC-44\] transaction: “Mobile Query Existing Data”?**
+**QEDm_006: New name for the \[PCC-44\] transaction: "Mobile Query Existing Data"?**
 
-In order to appear more generic, it’s proposed to use the name “Mobile Query Existing Data” for the transaction \[PCC-44\] to be aligned with the QED \[PCC-2\] “Query Existing Data” transaction, just like done with PIX/PIXm and PDQ/PDQm.>
+In order to appear more generic, it’s proposed to use the name "Mobile Query Existing Data" for the transaction \[PCC-44\] to be aligned with the QED \[PCC-2\] "Query Existing Data" transaction, just like done with PIX/PIXm and PDQ/PDQm.>
 
 &rarr; **Resolution:** ok to rename.
 
 
-**QEDm_007:How to consider the “Multi-Patient Query Option” in the query transaction?**
+**QEDm_007:How to consider the "Multi-Patient Query Option" in the query transaction?**
 
 &rarr; **Resolution:** ok to remove this option from this year scope
 
 **QEDm_008: Consistency – How to identify Document Sources of Data Elements**
 
 Strategy:
-Consider the FHIR Provenance resource as used in PCC-RECON: “When the Data Element comes from a Document, the ID of the document is used as the source. When the Data Element is the result of a query (such as QED), the query ID is the source.
+Consider the FHIR Provenance resource as used in PCC-RECON: "When the Data Element comes from a Document, the ID of the document is used as the source. When the Data Element is the result of a query (such as QED), the query ID is the source.
 
-When the data comes directly from a system, provenance may not exist because there is not a document source ID from the system. The solution is to start broad and add the “provenance” Option (source of the data). …”
+When the data comes directly from a system, provenance MAY not exist because there is not a document source ID from the system. The solution is to start broad and add the "provenance" Option (source of the data). …"
 
 &rarr; **Resolution:**
 
@@ -186,19 +176,19 @@ When the data comes directly from a system, provenance may not exist because the
 
 - Additional considerations on query for including Provenance:
 
-   - FHIR query on “resource” (e.g., medication), add “\_revinclude” with “Provenance”. GET \[base\]/MedicationRequest?\_revinclude=Provenance:target&criteria...Always on the GET by client and server must support.
+   - FHIR query on "resource" (e.g., medication), add "\_revinclude" with "Provenance". GET \[base\]/MedicationRequest?\_revinclude=Provenance:target&criteria...Always on the GET by client and server must support.
 
-   - For list FHIR is an “operation” (not RESTful GET). Is it worth exposing “list operations” because may be perfectly reconciled.
+   - For list FHIR is an "operation" (not RESTful GET). Is it worth exposing "list operations" because MAY be perfectly reconciled.
 
    - Use Doc Resource versus and/or provenance resource.
 
 **QEDm_009: QED retirement**
 
-&rarr; **Resolution:** it may be considered, but the timing is independent of QEDm completion
+&rarr; **Resolution:** it MAY be considered, but the timing is independent of QEDm completion
 
 **QEDm_010: Which is the best FHIR Implementation Guide to refer?**
 
-- Should we move to US-Core? Are they other countries/international efforts?
+- SHOULD we move to US-Core? Are they other countries/international efforts?
 
 - Alternative is Argonaut (modified, by removing a few US specific).
 
@@ -207,3 +197,23 @@ Considerations:
 - STU 3 ‘final’ has been released and the US Core IG has been aligned to STU3
 
 &rarr; **Resolution:** No need to base the whole profile on US Core specific constrains. US Core resource specific profiling or other profiling can be referenced only if/when necessary.
+
+**QEDm_13** ODH
+
+SHOULD future releases of the HL7 FHIR profile for ODH be modified as
+International Realm, this profile will be updated to point to those
+updated profiles. The scope of the modifications in the IHE ODH profiles
+is to reference ‘Patient’ instead of US Core Patient, and to reference
+the 3 US-Centric value sets with binding of ‘example’ rather than
+‘required’:
+
+- Occupation
+- Industry
+- Supervisory Level or Pay Grade
+
+Occupation, Industry, and Work Classification value sets MAY vary by
+jurisdiction. The US CDC census valuesets are provided as an ‘example
+binding’. There is no apparent specification for an expression of
+‘concept domain’, which is leveraged by multiple IHE QRPH and PCC
+profiles as a method to allow for jurisdictions to specify other value
+sets.
