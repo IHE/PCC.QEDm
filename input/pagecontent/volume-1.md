@@ -185,7 +185,7 @@ are specified in notes.
 <td>Section 1:8.2.2.9</td>
 </tr>
 <tr class="even">
-<td>Occuupational Data for Health (Note 1)</td>
+<td>Occupational Data for Health (Note 1)</td>
 <td>Section 1:8.2.2.10</td>
 </tr>
 </tbody>

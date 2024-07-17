@@ -14,6 +14,7 @@ Significant Changes from Revision 2.3 (PDF)
 - added dependency on IHE-ODH (International) and HL7-ODH (US Real)
 - addressed minor issues reported in CPs: CP-PCC-0276, and CP-PCC-0277
 - have not aligned with IPA, but did add that to issue QEDm_012
+- test plan instructs on how this might be tested
 
 ## Issues
 
