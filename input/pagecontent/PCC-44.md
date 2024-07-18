@@ -93,7 +93,7 @@ Sections 2:3.44.4.1.2.1.1 through 2:3.44.4.1.2.1.10 detail the Resource and sear
 parameters combinations to be supported for each of the FHIR Resources
 designated by a named option.
 
-See [ITI TF-2: Appendix Z.10 "Profiling conventions for constraints on FHIR](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir) for a description of terms used in the Optionality columns.
+See [ITI TF-2: Appendix Z.10 Profiling conventions for constraints on FHIR](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir) for a description of terms used in the Optionality columns.
 
 ###### 2:3.44.4.1.2.1.1 Simple Observations Option Search Parameters
 

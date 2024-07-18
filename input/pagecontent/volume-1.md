@@ -75,17 +75,17 @@ optional transactions (labeled "O").
 
 The Clinical Data Source in this profile responds to FHIR-based queries
 for one or more fine-grained data elements (FHIR resources) defined by
-the options listed in Section 8.2.
+the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-options).
 
-FHIR Capability Statement for [Server](CapabilityStatement-IHE.QEDm.server.html)
+FHIR Capability Statement for [Server](CapabilityStatement-IHE.QEDm.Clinical-Data-Source.html)
 
 <a name="client"> </a>
 
 #### 1:8.1.1.2 Clinical Data Consumer
 
-The Clinical Data Consumer in this profile sends FHIR-based queries to the Clinical Data Source for one or more fine-grained data elements (FHIR resources) defined by the options listed in Section 8.2. Rendering or further processing of the data is not defined by this profile.
+The Clinical Data Consumer in this profile sends FHIR-based queries to the Clinical Data Source for one or more fine-grained data elements (FHIR resources) defined by the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-options). Rendering or further processing of the data is not defined by this profile.
 
-FHIR Capability Statement for [Client](CapabilityStatement-IHE.QEDm.client.html)
+FHIR Capability Statement for [Client](CapabilityStatement-IHE.QEDm.Clinical-Data-Consumer.html)
 
 <a name="actor-options"> </a>
 
@@ -238,7 +238,7 @@ A Clinical Data Consumer
 that implements the Immunizations Option performs the Mobile Query
 Existing Data transaction using the vocabulary specified for
 Immunizations in [PCC-44](PCC-44.html)
-in [PCC TF-2:3.44.4.1.2.1.6](PCC-44.html#234441217-procedures-option-search-parameters).
+in [PCC TF-2:3.44.4.1.2.1.6](PCC-44.html#234441216-immunizations-option-search-parameters).
 
 #### 1:8.2.1.7 Procedures Option
 
@@ -282,49 +282,46 @@ in [PCC TF-2:3.44.4.1.2.1.10](PCC-44.html#2344412110-occupational-data-for-healt
 
 A Clinical Data Source that implements the Simple Observations Option
 responds to the message semantics specified for Simple Observations in
-[PCC-44](PCC-44.html) in PCC TF-2:3.44.4.1.2.1.1.
+[PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.1](PCC-44.html#234441211-simple-observations-option-search-parameters).
+
 
 #### 1:8.2.2.2 Allergies and Intolerances Option
 
 A Clinical Data Source that implements the Allergies and Intolerances
 Option responds to the message semantics specified for Allergies and
-Intolerances in [PCC-44](PCC-44.html) in PCC TF-2:3.44.4.1.2.1.2.
+Intolerances in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.2](PCC-44.html#234441212-allergies-and-intolerances-option-search-parameters).
 
 #### 1:8.2.2.3 Conditions Option
 
 A Clinical Data Consumer that implements the Conditions Option responds
-to the message semantics specified for Conditions in [PCC-44](PCC-44.html) in PCC
-TF-2:3.44.4.1.2.1.3.
+to the message semantics specified for Conditions in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.3](PCC-44.html#234441213-conditions-option-search-parameters).
 
 #### 1:8.2.2.4 Diagnostic Results Option
 
 A Clinical Data Source that implements the Diagnostic Results Option
 responds to the message semantics specified for Diagnostic Results in
-[PCC-44](PCC-44.html) in PCC TF-2:3.44.4.1.2.1.4.
+[PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.4](PCC-44.html#234441214-diagnostic-reports-option-search-parameters).
 
 #### 1:8.2.2.5 Medications Option
 
 A Clinical Data Source that implements the Medications Option responds
-to the message semantics specified for Medications in [PCC-44](PCC-44.html) in PCC
-TF-2:3.44.4.1.2.1.5.
+to the message semantics specified for Medications in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.5](PCC-44.html#234441215-medications-option-search-parameters).
 
 #### 1:8.2.2.6 Immunizations Option
 
 A Clinical Data Source that implements the Immunizations Option responds
 to the message semantics specified for Immunizations in [PCC-44](PCC-44.html) in
-PCC TF-2:3.44.4.1.2.1.6.
+[PCC TF-2:3.44.4.1.2.1.6](PCC-44.html#234441216-immunizations-option-search-parameters).
 
 #### 1:8.2.2.7 Procedures Option
 
 A Clinical Data Source that implements the Procedures Option responds to
-the message semantics specified for Procedures in [PCC-44](PCC-44.html) in PCC
-TF-2:3.44.4.1.2.1.7.
+the message semantics specified for Procedures in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.7](PCC-44.html#234441217-procedures-option-search-parameters).
 
 #### 1:8.2.2.8 Encounters Option
 
 A Clinical Data Source that implements the Encounters Option responds to
-the message semantics specified for Encounters in [PCC-44](PCC-44.html) in PCC
-TF-2:3.44.4.1.2.1.8.
+the message semantics specified for Encounters in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.8](PCC-44.html#234441218-encounters-option-search-parameters).
 
 #### 1:8.2.2.9 Provenance Option
 
@@ -338,14 +335,14 @@ originally recorded, providing a valuable broader clinical context.
 
 A Clinical Data Source that implements the Provenance Option
 responds to the message semantics specified for Provenance in \[PCC-44\]
-in PCC TF-2:3.44.4.1.2.1.9.
+in [PCC TF-2:3.44.4.1.2.1.9](PCC-44.html#234441219-provenance-option-search-parameters).
 
 #### 1:8.2.2.10 Occupational Data for Health Option
 
 A Clinical Data Source that implements the Occupational Data for Health
 Option responds to the message semantics specified for Occupational Data
-for Health in [PCC-44](PCC-44.html) in PCC TF-2:3.44.4.1.2.1.10 with the profiled
-content specified in the Reference link location.
+for Health in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.10](PCC-44.html#2344412110-occupational-data-for-health-option-search-parameters) 
+with the profiled content specified in the Reference link location.
 
 <a name="required-groupings"> </a>
 
@@ -372,13 +369,13 @@ functionality while keeping the implementation as simple as possible.
 
 #### 1:8.4.2.1 Use Case #1: Discovery and Retrieval of Existing Data Elements
 
-##### 1:8.4.2.1.1 Discovery and Retrieval of Existing Data Elements Description
+##### 1:8.4.2.1.1 Description
 
 In this use case, the patient, by using a mobile device, needs access to
 existing data elements. For example, a mobile application involved in a workflow needs to
 discover all the current Observations and Medications.
 
-##### 1:8.4.2.1.2 Discovery and Retrieval of Existing Data Elements Process Flow
+##### 1:8.4.2.1.2 Process Flow
 
 The Mobile Query Existing Data transaction is used to provide
 parameterized queries that result in a list of returned data elements.
@@ -391,7 +388,7 @@ parameterized queries that result in a list of returned data elements.
 
 #### 1:8.4.2.2 Use Case #2: Discovery and Retrieval of Existing Data Elements with Source Document Links
 
-##### 1:8.4.2.2.1 Discovery and Retrieval of Existing Data Elements with Source Document Links Description
+##### 1:8.4.2.2.1 Description
 
 In this use case, the physician, by using a mobile device, needs to
 access all existing data elements and eventually to retrieve and consume
@@ -402,7 +399,7 @@ discover all Encounters which the patient has participated in and, for
 those of interest, it needs to retrieve and show the related document
 where the Encounter was originally specified.
 
-##### 1:8.4.2.2.2 Discovery and Retrieval of Existing Data Elements with Source Document Links Process Flow
+##### 1:8.4.2.2.2 Process Flow
 
 The Mobile Query Existing Data [PCC-44](PCC-44.html)transaction is used to provide
 parameterized queries that result in a returned data elements.

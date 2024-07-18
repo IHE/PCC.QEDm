@@ -11,3 +11,6 @@ MSG_DRAFT
 
 # ihe transactions codeSystem is not a proper codeSystem
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
+
+# known issue with these extensions
+This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.1.0
