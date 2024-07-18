@@ -98,7 +98,7 @@ See [ITI TF-2: Appendix Z.10 Profiling conventions for constraints on FHIR](http
 ###### 2:3.44.4.1.2.1.1 Simple Observations Option Search Parameters
 
 When supporting the Simple Observations Option, the Clinical Data
-Consumer supplies and the Clinical Data Source SHALL support the
+Consumer supplies, and the Clinical Data Source SHALL support, the
 FHIR [Observation]({{site.data.fhir.path}}observation.html) Resource
 and be at least capable
 of processing the search parameters combinations as specified by the

@@ -378,14 +378,25 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 * rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least an id value and **MAY** provide both the Type and id values.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe server **SHALL** support both."
 
 // Medication
+// IPA Medication is not searchable, it is just retrievable. QEDm has it searchable.
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHOULD
+* rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "status"
+* rest.resource[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
 * rest.resource[=].type = #Medication
 //* rest.resource[=].profile = "http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-medication"
 * rest.resource[=].documentation = "The MedicationStatement and MedicationRequest resources can represent a medication, using an external reference to a Medication resource. If an external Medication Resource is used in a MedicationStatement or a MedicationRequest, then the READ and SEARCH Criteria  **SHALL**  be supported."
-* rest.resource[=].interaction.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction.extension.valueCode = #SHALL
-* rest.resource[=].interaction.code = #read
+* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #search-type
 * rest.resource[=].updateCreate = false
 * rest.resource[=].conditionalCreate = false
 * rest.resource[=].conditionalUpdate = false
@@ -539,6 +550,7 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "date"
 * rest.resource[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+/* not in QEDm PDF
 * rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
 * rest.resource[=].extension[=].extension[+].url = "required"
@@ -548,6 +560,7 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 * rest.resource[=].extension[=].extension[+].url = "required"
 * rest.resource[=].extension[=].extension[=].valueString = "status"
 * rest.resource[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
+*/
 * rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
 * rest.resource[=].extension[=].extension[+].url = "required"
@@ -560,9 +573,29 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 * rest.resource[=].type = #Observation
 //* rest.resource[=].profile = "http://hl7.org/fhir/uv/ipa/StructureDefinition/ipa-observation"
 // TODO might need to add the profiles from ODH
-* rest.resource[=].supportedProfile = "http://hl7.org/fhir/StructureDefinition/vitalsigns"
-* rest.resource[=].supportedProfile.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].supportedProfile.extension.valueCode = #SHALL
+* rest.resource[=].supportedProfile[0] = "http://hl7.org/fhir/StructureDefinition/vitalsigns"
+* rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+// QEDm didn't mention vitalsigns, but it is now required in FHIR core, so it is worth mentioning. IPA is SHALL, since we didn't have this before then I introduce it as MAY
+* rest.resource[=].supportedProfile[=].extension.valueCode = #MAY
+// QEDm adds ODH profiles
+* rest.resource[=].supportedProfile[+] = "https://profiles.ihe.net/PCC/ODH/StructureDefinition/odh-CombatZonePeriod"
+* rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHOULD
+* rest.resource[=].supportedProfile[+] = "https://profiles.ihe.net/PCC/ODH/StructureDefinition/odh-EmploymentStatus"
+* rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHOULD
+* rest.resource[=].supportedProfile[+] = "https://profiles.ihe.net/PCC/ODH/StructureDefinition/odh-OccupationalDataForHealth"
+* rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHOULD
+* rest.resource[=].supportedProfile[+] = "https://profiles.ihe.net/PCC/ODH/StructureDefinition/odh-PastOrPresentJob"
+* rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHOULD
+* rest.resource[=].supportedProfile[+] = "https://profiles.ihe.net/PCC/ODH/StructureDefinition/odh-RetirementDate"
+* rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHOULD
+* rest.resource[=].supportedProfile[+] = "https://profiles.ihe.net/PCC/ODH/StructureDefinition/odh-UsualWork"
+* rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHOULD
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #read
@@ -592,7 +625,8 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 * rest.resource[=].searchParam[=].name = "date"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
 * rest.resource[=].searchParam[=].type = #date
-* rest.resource[=].searchParam[=].documentation = "Obtained date/time. If the obtained element is a period, a date that falls in the period"
+// added date modifiers to documentation element
+* rest.resource[=].searchParam[=].documentation = "Obtained date/time. If the obtained element is a period, a date that falls in the period. The date modifiers `ge`,`le`,`gt`,`lt` SHALL be supported."
 * rest.resource[=].searchParam[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].searchParam[=].extension.valueCode = #MAY
 * rest.resource[=].searchParam[=].name = "status"
@@ -604,7 +638,8 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 * rest.resource[=].searchParam[=].name = "patient"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
 * rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "The client **SHALL** provide at least an id value and **MAY** provide both the Type and id values.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe server **SHALL** support both."
+// Different note than IPA
+* rest.resource[=].searchParam[=].documentation = "The Clinical Data Consumer SHALL support at least one of the search parameters combinations."
 
 // Patient
 /* see PDQm
@@ -742,10 +777,20 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 // DiagnosticReport
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHOULD
+* rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "status"
+* rest.resource[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
 * rest.resource[=].type = #DiagnosticReport
-* rest.resource[=].interaction.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction.extension.valueCode = #SHALL
-* rest.resource[=].interaction.code = #read
+* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #search-type
 * rest.resource[=].updateCreate = false
 * rest.resource[=].conditionalCreate = false
 * rest.resource[=].conditionalUpdate = false
@@ -756,10 +801,20 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 // Procedures
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHOULD
+* rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "status"
+* rest.resource[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
 * rest.resource[=].type = #Procedure
-* rest.resource[=].interaction.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction.extension.valueCode = #SHALL
-* rest.resource[=].interaction.code = #read
+* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #search-type
 * rest.resource[=].updateCreate = false
 * rest.resource[=].conditionalCreate = false
 * rest.resource[=].conditionalUpdate = false
@@ -770,15 +825,26 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 // Encounter
 * rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].extension.valueCode = #SHOULD
+* rest.resource[=].extension[+].extension[0].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension[=].extension[=].valueCode = #SHOULD
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "patient"
+* rest.resource[=].extension[=].extension[+].url = "required"
+* rest.resource[=].extension[=].extension[=].valueString = "status"
+* rest.resource[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination"
 * rest.resource[=].type = #Encounter
-* rest.resource[=].interaction.extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction.extension.valueCode = #SHALL
-* rest.resource[=].interaction.code = #read
+* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #search-type
 * rest.resource[=].updateCreate = false
 * rest.resource[=].conditionalCreate = false
 * rest.resource[=].conditionalUpdate = false
 * rest.resource[=].conditionalDelete = #not-supported
 * rest.resource[=].referencePolicy = #resolves
 * rest.resource[=].searchRevInclude = "Provenance:target"
+
 
 
