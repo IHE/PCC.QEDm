@@ -1,15 +1,29 @@
 {
-    "package-id" : "{pid} -- ihe.domain.profile",
-    "version" : "{version to release}",
-    "path" : "{path} -- https://profiles.ihe.net/Domain/Profile/1.0.0",
-    "milestone" : true | false,
-    "status" : "release",
-    "sequence" : "Releases",
-    "desc" : "{desc of release} (optional)",
-    "descmd" : "{markdown desc of release} (optional)",
-    "changes" : "{relative link to description of changes} (optional)",
-    "title" : "{title} (only for first release)",
-    "ci-build" : "{link to ci-build location} (only for first release) -- http://build.fhir.org/ig/IHE/Profile",
-    "category" : "{category} (only for first release)",
-    "introduction" : "{intro} (only for first release)"
+    "package-id" : "ihe.pcc.qedm",
+    "version" : "3.0.0-comment1",
+    "path" : "https://profiles.ihe.net/PCC/QEDm/3.0.0-comment1",
+    "mode" : "milestone",
+    "status" : "ballot",
+    "sequence" : "Publication",
+    "desc" : "Public-Comment 1 - Conversion from PDF to IG",
+    "descmd" : "### 3.0.0-comment1
+
+Significant Changes from Revision 2.3 (PDF)
+
+- Converted to an IG - This resulted in significant rearrangement and rewriting to better leverage IG publication and use of html linkage.
+- align AuditEvent with BALP
+- align with mXDE as the definer of the Document specific Provenance profile
+  - made the QEDm Provenance option to focus on general Provenance capability, leaving the Document specific Provenance to mXDE where it can be defined and further elaborated upon
+- unsupported modifiers must be rejected according to FHIR core.
+- use uppercase normative words
+- added dependency on IHE-ODH (International) and HL7-ODH (US Real)
+- addressed minor issues reported in CPs: CP-PCC-0276, and CP-PCC-0277
+- have not aligned with IPA, but did add that to issue QEDm_012
+- test plan instructs on how this might be tested
+",
+    "changes" : "a_issues.html",
+    "title" : "Query for Existing Data for Mobile (QEDm)",
+    "ci-build" : "http://build.fhir.org/ig/IHE/QEDm/branches/master/index.html",
+    "category" : "EHR Access",
+    "introduction" : "The Query for Existing Data for Mobile Profile (QEDm) supports dynamic queries for clinical data elements, including observations, allergy and intolerances, problems, diagnostic results, medications, immunizations, procedures, encounters and provenance by making the information widely available to other systems within and across enterprises to support provision of better clinical care. It defines a transaction used to query a list of specific data elements, persisted as FHIR resources."
   }
