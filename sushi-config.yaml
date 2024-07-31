@@ -81,7 +81,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
 pages:
 # itemize here each narrative page. Include assigned section numbers when appropriate
   index.md:
-    title: Query for Existing Data for Mobile (QEDm)
+    title: Query for Existing Data for Mobile (QEDm) Home
     generation: markdown
   volume-1.md:
     title: 1:X Query for Existing Data for Mobile (QEDm)
@@ -96,13 +96,13 @@ pages:
     title: "Test Plan"
     generation: markdown
   issues.md:
-    title: Significant Changes & Issues
+    title: Significant Changes and Issues
     generation: markdown
   other.md:
     title: Changes to Other IHE Specifications
     generation: markdown
   downloads.md:
-    title: Downloads and Analysis
+    title: Download and Analysis
     generation: markdown
     
 menu:
@@ -120,7 +120,7 @@ menu:
   Volume 4: volume-4.html
   Artifacts: artifacts.html
   Other:  
-    Test Plan: testplan.html    
-    Changes to Other IHE Specifications: other.html
-    Downloads and Analysis: downloads.html
+    Changes to Other IHE Specifications: other.html   
+    Download and Analysis: downloads.html
+    Test Plan: testplan.html 
 
