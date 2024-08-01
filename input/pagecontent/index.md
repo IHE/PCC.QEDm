@@ -12,7 +12,7 @@ QEDm is better suited for implementation by application on mobile
 devices or where the http/REST technology is preferred. The term
 "mobile" must be understood in a wide sense: it refers not only to
 applications on devices used for mobility that are resource- and
-platform-constrained. (e.g., tablets, smartphones, and embedded devices
+platform-constrained (e.g., tablets, smartphones, and embedded devices
 including home-health devices), but also to larger systems deployed in
 environments where interoperability requirements are simple, such as
 pulling the latest summary for display.
@@ -23,22 +23,22 @@ deployment of mobile applications on resource-constrained devices with
 simple programming environment (e.g., JavaScript), simple protocol stack
 (e.g., HTTP), and simple display functionality (e.g., HTML browser). The
 goal is to limit required additional libraries that are often necessary
-to process SOAP, MIME-Multipart, MTOM/XOP Web Services.
+to process SOAP, MIME-Multipart, and MTOM/XOP Web Services.
 
-The Query for Existing Data for Mobile Profile (QEDm) Profile, uses the
+The Query for Existing Data for Mobile Profile (QEDm) Profile uses the
 already defined actors Clinical Data Consumer and Clinical Data Source,
-for which it specifies option and a transaction to be used for querying
+for which it specifies options and a transaction to be used for querying
 a list of specific data elements, persisted as FHIR resources. The
-current version of Supplement doesn’t consider the reconciliation of the
+current version of the supplement doesn’t consider the reconciliation of the
 fine-grained data elements gathered by the Clinical Data Source and/or
-Clinical Data Consumer Actors. In order to perform reconciliation a
+Clinical Data Consumer Actors. In order to perform reconciliation, a
 grouping with RECON Reconciliation Agent SHOULD be considered.
 
 The QEDm Profile MAY also be deployed in conjunction with document
-sharing profiles such as MHD or XDS Profiles. The Provenance
+sharing profiles such as the MHD or XDS Profiles. The Provenance
 Option in QEDm is used in particular by the [mXDE Profile]({{site.data.fhir.iheitimxde}}/index.html) to address the
-combined deployment of QEDm for access to fine-grained data element with
-links to source documents accessible through the MHD or XDS Profiles
+combined deployment of QEDm for access to fine-grained data elements with
+links to source documents accessible through the MHD or XDS Profiles.
 
 <div markdown="1" class="stu-note">
 
@@ -64,11 +64,10 @@ This guide is organized into the following sections:
 
 3. [Volume 4: National Extensions](volume-4.html)
 
-4. [Test Plan](testplan.html)
-
-5. Other
-   1. [Changes to Other Documents](other.html)
+4. Other
+   1. [Changes to Other IHE Specification](other.html)
    2. [Downloads and Analysis](downloads.html)
+   3. [Test Plan](testplan.html)
 
 See also the [Table of Contents](toc.html) and the index of [Artifacts](artifacts.html) defined as part of this implementation guide.
 
