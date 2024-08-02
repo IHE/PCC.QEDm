@@ -440,7 +440,7 @@ query initiator (e.g., user, system).
 ###### 2:3.44.4.2.3.1 Provenance Option
 
 A Clinical Data Consumer that supports the Provenance Option
-processes the the FHIR Provenance
+processes the FHIR Provenance
 resources.
 
 When a Provenance resource is received with Provenance.policy valued at
