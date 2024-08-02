@@ -94,7 +94,7 @@ FHIR Capability Statement for [Client](CapabilityStatement-IHE.QEDm.Clinical-Dat
 ## 1:18.2 QEDm Actor Options
 
 Options that MAY be selected for each actor in this profile, if any, are
-listed in the Table 1:18.2-1. Dependencies between options when applicable
+listed in Table 1:18.2-1. Dependencies between options when applicable
 are specified in notes.
 
 **Table 1:18.2-1: QEDm - Actors and Options**
