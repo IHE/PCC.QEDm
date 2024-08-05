@@ -14,7 +14,7 @@ and codes that SHOULD be considered.
 
 ### 2:3.44.2 Actor Roles
 
-**Table: Actor Roles**
+**Table 2:3.44.2-1: Actor Roles**
 
 | Actor                                 | Role                                              |
 |---------------------------------------|---------------------------------------------------|
@@ -33,7 +33,7 @@ and codes that SHOULD be considered.
 </div>
 <br clear="all">
 
-**Figure: 2:3.44.4-1: Interaction Diagram**
+**Figure 2:3.44.4-1: Interaction Diagram**
 
 #### 2:3.44.4.1 Mobile Query Existing Data Request message
 This message uses the HTTP GET method parameterized query to retrieve
@@ -67,7 +67,7 @@ with the following constraints:
 - The `[Resource-type]` represents the name of the FHIR Resource to consider (each option can involve one or more Resources), as specified in Section 3.44.4.1.2.1
 - The `[parameters]` represents a series of encoded name-value pairs representing the filter for the query, as specified in Section 3.44.4.1.2.1, as well as control parameters to modify the behavior of the Clinical Data Source such as response format, or pagination. See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format.
 
-###### 3.44.4.1.2.1 Query Search Parameters
+###### 2:3.44.4.1.2.1 Query Search Parameters
 
 All query parameter values SHALL be appropriately encoded per RFC3986
 "percent" encoding rules. Note that percent encoding does restrict the
@@ -181,10 +181,10 @@ Table 2:3.44.4.1.2.1.4-1: Diagnostic Reports Option Search Parameters
 
 | Parameters                       | Type                     | Modifiers                          | Clinical Data Source | Clinical Data Consumer |
 |----------------------------------|--------------------------|------------------------------------|----------------------|------------------------|
-| patient + category               | reference + token        |                                    | R                    | O                      |
-| patient + category + code        | reference + token        |                                    | R                    | O                      |
-| patient + category + date        | reference + token + date | date modifiers `ge`,`le`,`gt`,`lt` | R                    | O                      |
-| patient + category + code + date | reference + token + date | date modifiers `ge`,`le`,`gt`,`lt` | O                    | O                      |
+| patient + category               | reference + token        |                                    | R                    | O                      |
+| patient + category + code        | reference + token        |                                    | R                    | O                      |
+| patient + category + date        | reference + token + date | date modifiers `ge`,`le`,`gt`,`lt` | R                    | O                      |
+| patient + category + code + date | reference + token + date | date modifiers `ge`,`le`,`gt`,`lt` | O                    | O                      |
 {:.grid .table-striped}
 
 *Note 1: The Clinical Data Consumer SHALL support at least one of the search parameters combinations*
@@ -270,7 +270,7 @@ GET [base]/Procedure?[parameters]
 | Parameter      | Type             | Modifiers                          | Clinical Data Source | Clinical Data Consumer |
 |----------------|------------------|------------------------------------|----------------------|------------------------|
 | patient        | reference        |                                    | R                    | O                      |
-| patient + date | reference + date | date modifiers `ge`,`le`,`gt`,`lt` | R                    | O                      |
+| patient + date | reference + date | date modifiers `ge`,`le`,`gt`,`lt` | R                    | O                      |
 {:.grid .table-striped}
 
 *Note 1: The Clinical Data Consumer SHALL support at least one of the search parameters combinations*
@@ -293,7 +293,7 @@ GET [base]/Encounter?[parameters]
 | Parameter      | Type             | Modifiers                          | Clinical Data Source | Clinical Data Consumer |
 |----------------|------------------|------------------------------------|----------------------|------------------------|
 | patient        | reference        |                                    | R                    | O                      |
-| patient + date | reference + date | date modifiers `ge`,`le`,`gt`,`lt` | R                    | O                      |
+| patient + date | reference + date | date modifiers `ge`,`le`,`gt`,`lt` | R                    | O                      |
 {:.grid .table-striped}
 
 *Note 1: The Clinical Data Consumer SHALL support at least one of the search parameters combinations*
@@ -359,7 +359,7 @@ initiate the request).
 When the Provenance Option is specified, the response FHIR
 Bundle SHALL also contain FHIR Provenance Resource entries that provide
 consistency of the returned fine-grained data elements with the
-coarse-grained data origin (e.g.: Document). See Section 3.44.4.2.2.1
+coarse-grained data origin (e.g., Document). See Section 3.44.4.2.2.1
 for the specification about the Provenance content. If the fine-grained
 data element has not been extracted from a document, the Provenance
 Resource MAY be absent.
@@ -440,7 +440,7 @@ query initiator (e.g., user, system).
 ###### 2:3.44.4.2.3.1 Provenance Option
 
 A Clinical Data Consumer that supports the Provenance Option
-processes the the FHIR Provenance
+processes the FHIR Provenance
 resources.
 
 When a Provenance resource is received with Provenance.policy valued at
