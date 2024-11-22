@@ -1,16 +1,14 @@
 == Suppressed Messages ==
 # instructions for ignoreWarnings.txt https://confluence.hl7.org/pages/viewpage.action?pageId=66938614#ImplementationGuideParameters-ManagingWarningsandHints
-# IHE valueset that is not yet a real valueset
-Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 
 # understood these are not yet normative
 Reference to experimental CodeSystem http://hl7.org/fhir/w3c-provenance-activity-type|4.0.1
-
-# understand these are draft
-MSG_DRAFT
 
 # ihe transactions codeSystem is not a proper codeSystem
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
 
 # known issue with these extensions
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination|5.1.0
+
+# these come from BALP, so nothing can be done here
+SD_PATH_SLICING_DEPRECATED
