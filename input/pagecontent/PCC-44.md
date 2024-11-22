@@ -314,6 +314,24 @@ processing the `_revinclude` parameter, as defined at [FHIR Search include]({{si
 GET [base]/[Resource-type]?_revinclude=Provenance:target&criteria
 ```
 
+When supporting the Provenance Option, the Clinical Data Consumer
+supplies and the Clinical Data Source SHALL support the
+FHIR [Provenance]({{site.data.fhir.path}}provenance.html) Resource
+and be capable of processing all
+the search parameters as specified by the following table, according to
+the related optionality.
+
+```
+GET [base]/Provenance?[parameters]
+```
+
+**Table 2:3.44.4.1.2.1.9-1: Provenance Option Search Parameters**
+
+| Parameter      | Type             | Modifiers                          | Clinical Data Source | Clinical Data Consumer |
+|----------------|------------------|------------------------------------|----------------------|------------------------|
+| target         | reference        |                                    | R                    | O                      |
+{:.grid .table-striped}
+
 See Section 2:3.44.4.2.2.1 for the specification about the Provenance
 content.
 
