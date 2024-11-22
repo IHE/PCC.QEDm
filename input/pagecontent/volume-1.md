@@ -33,10 +33,10 @@ Clinical Data Consumer Actors. In order to perform reconciliation, a
 grouping with RECON Reconciliation Agent SHOULD be considered.
 
 The QEDm Profile MAY also be deployed in conjunction with document
-sharing profiles such as thee  MHD or XDS Profiles. The Provenance
-Option in QEDm is used in particular by the mXDE Profile to address the
+sharing profiles such as thee [MHD](https://profiles.ihe.net/ITI/MHD/index.html) or [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) Profiles. The Provenance
+Option in QEDm is used in particular by the [mXDE]({{site.data.fhir.iheitimxde}}/index.html) Profile to address the
 combined deployment of QEDm for access to fine-grained data element with
-links to source documents accessible through the MHD or XDS Profiles.
+links to source documents accessible through the [MHD](https://profiles.ihe.net/ITI/MHD/index.html) or [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) Profiles.
 
 ## 1:18.1 QEDm Actors, Transactions, and Content Modules
 
@@ -414,8 +414,8 @@ may be grouped with the [Mobile Cross-Enterprise Document Data Element Extractio
 The mobile application implements The Clinical Data Consumer to perform
 the query and can use the Provenance to get to the Documents from which those Resources were found.
 
-The mobile application implements an MHD Document Consumer and
-retrieves the document from the MHD Document Responder by using the
+The mobile application implements an [MHD](https://profiles.ihe.net/ITI/MHD/index.html) Document Consumer and
+retrieves the document from the [MHD](https://profiles.ihe.net/ITI/MHD/index.html) Document Responder by using the
 related returned document link.
 
 <figure>
@@ -443,9 +443,9 @@ The Provenance Option adds an additional protection against
 Data Integrity and Data Authenticity risks. The Provenance record
 associated with a Data Element returned by the Clinical Data Source
 would indicate the source of the data. In the case where Provenance is
-specific to a Document, grouping with MHD Document Consumer or XDS
+specific to a Document, grouping with [MHD](https://profiles.ihe.net/ITI/MHD/index.html) Document Consumer or [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html)
 Document Consumer enables the retrieval of that source Document. The
-mXDE Profile ITI TF-1: 45.5 Security Considerations includes further
+[mXDE Profile]({{site.data.fhir.iheitimxde}}/index.html) ITI TF-1: 45.5 Security Considerations includes further
 discussion on the specific Security Considerations of bridging between a
 Document Sharing environment and a Data Element access model.
 
@@ -489,7 +489,7 @@ Responder can be a source of information returned by the Clinical Data
 Source. It MAY include references to documents used in generating the
 QEDm returned data-elements, by using the FHIR Provenance Resource.
 
-A Clinical Data Consumer MAY be grouped with an MHD Document Consumer.
+A Clinical Data Consumer MAY be grouped with an [MHD](https://profiles.ihe.net/ITI/MHD/index.html) Document Consumer.
 The Clinical Data Consumer MAY use the references to access the source
 documents.
 

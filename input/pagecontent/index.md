@@ -35,10 +35,10 @@ Clinical Data Consumer Actors. In order to perform reconciliation, a
 grouping with RECON Reconciliation Agent SHOULD be considered.
 
 The QEDm Profile MAY also be deployed in conjunction with document
-sharing profiles such as the MHD or XDS Profiles. The Provenance
+sharing profiles such as the [MHD](https://profiles.ihe.net/ITI/MHD/index.html) or [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) Profiles. The Provenance
 Option in QEDm is used in particular by the [mXDE Profile]({{site.data.fhir.iheitimxde}}/index.html) to address the
 combined deployment of QEDm for access to fine-grained data elements with
-links to source documents accessible through the MHD or XDS Profiles.
+links to source documents accessible through the [MHD](https://profiles.ihe.net/ITI/MHD/index.html) or [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) Profiles.
 
 <div markdown="1" class="stu-note">
 

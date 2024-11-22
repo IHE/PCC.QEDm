@@ -332,7 +332,7 @@ GET [base]/Provenance?[parameters]
 | target         | reference        |                                    | R                    | O                      |
 {:.grid .table-striped}
 
-See Section 2:3.44.4.2.2.1 for the specification about the Provenance
+See Section [2:3.44.4.2.2.1 for the specification about the Provenance](PCC-44.html#23444221-provenance-option)
 content.
 
 ###### 2:3.44.4.1.2.1.10 Occupational Data for Health Option Search Parameters
@@ -377,8 +377,9 @@ initiate the request).
 When the Provenance Option is specified, the response FHIR
 Bundle SHALL also contain FHIR Provenance Resource entries that provide
 consistency of the returned fine-grained data elements with the
-coarse-grained data origin (e.g., Document). See Section 3.44.4.2.2.1
-for the specification about the Provenance content. If the fine-grained
+coarse-grained data origin (e.g., Document). 
+See Section [3.44.4.2.2.1 for the specification about the Provenance content](PCC-44.html#23444221-provenance-option). 
+If the fine-grained
 data element has not been extracted from a document, the Provenance
 Resource MAY be absent.
 
@@ -421,7 +422,7 @@ status code SHALL be 200.
 
 The Mobile Query Existing Data Response message SHALL be a FHIR Bundle
 Resource containing zero or more clinical data Resources plus optional
-Provenance Resources (see Section 2:3.44.4.2.2.1). If the Clinical Data
+Provenance Resources (see Section [2:3.44.4.2.2.1](PCC-44.html#23444221-provenance-option)). If the Clinical Data
 Source is sending warnings, the Bundle Resource SHALL also contain an
 OperationOutcome Resource that contains those warnings.
 
