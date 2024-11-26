@@ -49,7 +49,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
 * link[0].relation = "self"
-* link[0].url = "http://example.org/Observation?patient=ex-patient&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&_revinclude=Provenance:target"
+* link[0].url = "http://example.org/Observation?patient=ex-patient&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&code=http://loinc.org|29463-7&_revinclude=Provenance:target"
 * total = 3
 * timestamp = 2024-11-26T11:32:24Z
 * entry[+].fullUrl = "http://example.org/Observation/ex-weight"
