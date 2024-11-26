@@ -41,3 +41,23 @@ Usage: #example
 * entity[0].role = #source
 * entity[0].what = Reference(ex-documentreference)
 
+Instance: ex-search
+InstanceOf: Bundle
+Title: "Example of a search set bundle"
+Description: "Search on Weight Observations with reverse include requesting Provenance. This is returning two weight Observations and one Provenance."
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* type = #searchset
+* link[0].relation = "self"
+* link[0].url = "http://example.org/Observation?patient=ex-patient&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&_revinclude=Provenance:target"
+* total = 3
+* timestamp = 2024-11-26T11:32:24Z
+* entry[+].fullUrl = "http://example.org/Observation/ex-weight"
+* entry[=].resource = ex-weight
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "http://example.org/Observation/ex-weight2"
+* entry[=].resource = ex-weight2
+* entry[=].search.mode = #match
+* entry[+].fullUrl = "http://example.org/Provenance/ex-provenance"
+* entry[=].resource = ex-provenance
+* entry[=].search.mode = #include
