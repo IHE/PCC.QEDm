@@ -429,6 +429,8 @@ OperationOutcome Resource that contains those warnings.
 The response SHALL adhere to the FHIR Bundle constraints specified in
 [ITI TF-2: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles).
 
+See [an example of a search set bundle](Bundle-ex-search.html).
+
 ###### 2:3.44.4.2.2.1 Provenance Option
 
 A Clinical Data Source that supports the Provenance Option
@@ -443,8 +445,8 @@ purposes than the one defined here. These would not have the indicated
 Resource Bundling SHALL comply with the guidelines in [ITI TF-2: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles).
 
 The Clinical Data Source SHALL include all resources to be returned as a
-contained resource. This means that the query SHALL return resource data
-contained in the FHIR Bundle as entries.
+resource. This means that the query SHALL return resource data
+in the FHIR Bundle as entries. See [an example of a search set bundle](Bundle-ex-search.html).
 
 ##### 2:3.44.4.2.3 Expected Actions
 
