@@ -48,7 +48,6 @@ dependencies:
   ihe.pcc.odh:
     id: ihepccodh
     uri: https://profiles.ihe.net/PCC/ODH/ImplementationGuide/ihe.pcc.odh
-    version: 1.0.x
   hl7.fhir.us.odh:
     id: hl7fhirusodh
     uri: http://hl7.org/fhir/us/odh/ImplementationGuide/hl7.fhir.us.odh
