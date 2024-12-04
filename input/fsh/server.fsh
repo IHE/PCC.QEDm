@@ -907,4 +907,29 @@ the options listed in Section [8.2 QEDm Actor Options](volume-1.html#actor-optio
 * rest.resource[=].searchParam[=].type = #reference
 
 
+// Provenance
+* rest.resource[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHOULD
+* rest.resource[=].type = #Provenance
+* rest.resource[=].supportedProfile[+] = "https://profiles.ihe.net/ITI/mXDE/StructureDefinition/IHE.ITI.mXDE.Provenance"
+* rest.resource[=].supportedProfile[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].supportedProfile[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #search-type
+* rest.resource[=].updateCreate = false
+* rest.resource[=].conditionalCreate = false
+* rest.resource[=].conditionalUpdate = false
+* rest.resource[=].conditionalDelete = #not-supported
+* rest.resource[=].referencePolicy = #resolves
+* rest.resource[=].searchParam[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].searchParam[=].extension.valueCode = #SHALL
+* rest.resource[=].searchParam[=].name = "target"
+* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Provenance-target"
+* rest.resource[=].searchParam[=].type = #reference
+
+
 

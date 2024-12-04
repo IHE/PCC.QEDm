@@ -1,6 +1,11 @@
 
 ## Significant Changes
 
+### 3.0.0
+
+- Added Search on Provenance to CapabilityStatements
+- relaxed OperationOutcome detail on resouce not supported
+
 ### Significant Changes from Revision 2.3 (PDF) to 3.0.0-comment
 
 - Converted to an IG - This resulted in significant rearrangement and rewriting to better leverage IG publication and use of html linkage
