@@ -413,7 +413,7 @@ with more details on the failure. See FHIR
 In particular, if a Data Source receives a Mobile Query Existing Data
 transaction for a resource related to a QEDm Option not supported, it
 SHALL return an OperationOutcome.issue.code valued as: ‘not-supported’
-and an OperationOutcome.issue.details valued as: MSG_NO_MATCH No
+and SHOULD set OperationOutcome.issue.details valued as: MSG_NO_MATCH No
 Resource found matching the query "%s".
 
 If the Mobile Query Existing Data request message is processed
