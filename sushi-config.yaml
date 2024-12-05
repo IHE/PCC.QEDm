@@ -11,7 +11,7 @@ description: The Query for Existing Data for Mobile Profile (QEDm) supports dyna
 #releaseLabel: ci-build
 releaseLabel: Trial-Implementation
 #releaseLabel: ballot
-#date: 2024-08-09
+date: 2024-12-12
 status: active
 publisher:
   - name: IHE Patient Care Coordination Technical Committee
@@ -32,7 +32,7 @@ dependencies:
   ihe.iti.pdqm: 
     id: ihepdqm
     uri: https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm
-    version: 3.0.x
+    version: 3.1.x
   ihe.iti.pixm: 
     id: ihepixm
     uri: https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pixm
@@ -48,7 +48,7 @@ dependencies:
   ihe.pcc.odh:
     id: ihepccodh
     uri: https://profiles.ihe.net/PCC/ODH/ImplementationGuide/ihe.pcc.odh
-    version: 1.0.0-comment
+    version: 1.0.x
   hl7.fhir.us.odh:
     id: hl7fhirusodh
     uri: http://hl7.org/fhir/us/odh/ImplementationGuide/hl7.fhir.us.odh
