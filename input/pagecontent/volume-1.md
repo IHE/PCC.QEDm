@@ -97,8 +97,6 @@ Options that MAY be selected for each actor in this profile, if any, are
 listed in Table 1:18.2-1. Dependencies between options when applicable
 are specified in notes.
 
-**Table 1:18.2-1: QEDm - Actors and Options**
-
 <table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
 <thead>
 <tr class="header">
@@ -109,7 +107,7 @@ are specified in notes.
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="10">Clinical Data Source</td>
+<td rowspan="11">Clinical Data Source</td>
 <td>Simple Observations (Note 1)</td>
 <td>Section 1:18.2.1.1</td>
 </tr>
@@ -150,7 +148,11 @@ are specified in notes.
 <td>Section 1:18.2.1.10</td>
 </tr>
 <tr class="odd">
-<td rowspan="10">Clinical Data Consumer</td>
+<td>IPSSummary (Note 1)</td>
+<td>Section 1:18.2.1.11</td>
+</tr>
+<tr class="odd">
+<td rowspan="11">Clinical Data Consumer</td>
 <td>Simple Observations (Note 1)</td>
 <td>Section 1:18.2.2.1</td>
 </tr>
@@ -189,6 +191,10 @@ are specified in notes.
 <tr class="even">
 <td>Occupational Data for Health (Note 1)</td>
 <td>Section 1:18.2.2.10</td>
+</tr>
+<tr class="odd">
+<td>IPSSummary (Note 1)</td>
+<td>Section 1:18.2.2.11</td>
 </tr>
 </tbody>
 </table>
@@ -278,6 +284,10 @@ Health Option performs the Mobile Query Existing Data transaction using the voca
 specified for Occupational Data for Health in [PCC-44](PCC-44.html)
 in [PCC TF-2:3.44.4.1.2.1.10](PCC-44.html#2344412110-occupational-data-for-health-option-search-parameters).
 
+#### 1:18.2.1.11 IPSSummary Option
+
+A Clinical Data Consumer that implements the IPSSummary Option performs the Mobile Query Existing Data transaction using the vocabulary specified for Encounters in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.11](TBD) 
+
 ### 1:18.2.2 Clinical Data Source Options
 
 #### 1:18.2.2.1 Simple Observations Option
@@ -345,6 +355,10 @@ A Clinical Data Source that implements the Occupational Data for Health
 Option responds to the message semantics specified for Occupational Data
 for Health in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.10](PCC-44.html#2344412110-occupational-data-for-health-option-search-parameters) 
 with the profiled content specified in the Reference link location.
+
+#### 1:18.2.2.11 IPSSummary Option
+
+A Clinical Data Source that implements the Encounters Option responds to the message semantics specified for Encounters in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.11](TBD) 
 
 <a name="required-groupings"> </a>
 

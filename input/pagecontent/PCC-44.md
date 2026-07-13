@@ -342,6 +342,21 @@ Data Consumer SHALL supply and the Clinical Data Source SHALL be capable
 of supporting `Observation` Resources compliant with
 the [IHE FHIR Profile: Occupational Data for Health (ODH) - International]({{site.data.fhir.ihepccodh}}).
 
+###### 2:3.44.4.1.2.1.11 IPSSummary Option Search Parameters 
+
+When supporting the IPSSummary Option, the Clinical Data Consumer SHALL supply and the Clinical Data Source SHALL support the FHIR International Patient Summary (IPS) Bundle or one of the IHE FHIR IPS Option bundles and be capable of processing the search parameter as specified by the following table.
+
+```
+GET [base]/Patient/{id}/$summary?[parameters]
+```
+
+**Table 2:3.44.4.1.2.1.11-1: IPSSummary Option Search Parameters**
+
+| Parameter      | Type            |  Clinical Data Source | Clinical Data Consumer |
+|----------------|-----------------|-----------------------|------------------------|
+| patient        | reference       | R                     | R                      |
+{:.grid .table-striped}
+
 ###### 2:3.44.4.1.2.2 Parameter Modifiers
 
 The Clinical Data Source SHALL support the ":exact" parameter modifier
