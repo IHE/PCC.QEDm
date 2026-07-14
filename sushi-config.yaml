@@ -32,10 +32,10 @@ dependencies:
   ihe.iti.pdqm: 
     id: ihepdqm
     uri: https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm
-    version: 3.1.x
+    version: 3.2.x
   ihe.iti.pixm: 
     id: ihepixm
-    uri: https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pixm
+    uri: https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm
     version: 3.0.x
   ihe.iti.balp:
     id: iheitibasicaudit

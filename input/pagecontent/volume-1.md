@@ -286,7 +286,7 @@ in [PCC TF-2:3.44.4.1.2.1.10](PCC-44.html#2344412110-occupational-data-for-healt
 
 #### 1:18.2.1.11 IPSSummary Option
 
-A Clinical Data Consumer that implements the IPSSummary Option performs the Mobile Query Existing Data transaction using the vocabulary specified for Encounters in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.11](TBD) 
+A Clinical Data Consumer that implements the IPSSummary Option performs the Mobile Query Existing Data transaction using the vocabulary specified for Encounters in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.11](PCC-44.html#2344412111-ipssummary-option-search-parameters) 
 
 ### 1:18.2.2 Clinical Data Source Options
 
@@ -358,7 +358,7 @@ with the profiled content specified in the Reference link location.
 
 #### 1:18.2.2.11 IPSSummary Option
 
-A Clinical Data Source that implements the Encounters Option responds to the message semantics specified for Encounters in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.11](TBD) 
+A Clinical Data Source that implements the Encounters Option responds to the message semantics specified for Encounters in [PCC-44](PCC-44.html) in [PCC TF-2:3.44.4.1.2.1.11](PCC-44.html#2344412111-ipssummary-option-search-parameters) 
 
 <a name="required-groupings"> </a>
 
