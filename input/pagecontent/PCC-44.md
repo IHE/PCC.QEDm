@@ -108,7 +108,7 @@ following table, according to the related optionality.
 GET [base]/Observation?[parameters]
 ```
 
-<tablecaption><b>Table 2:3.44.4.1.2.1.1-1: Simple Observations Option Search Parameters</b></tablecaption>
+**Table 2:3.44.4.1.2.1.1-1: Simple Observations Option Search Parameters**
 
 | Parameters                       | Type                     | Modifiers                          | Clinical Data Source | Clinical Data Consumer |
 |----------------------------------|--------------------------|------------------------------------|----------------------|------------------------|
